@@ -1,15 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./components-test.css";
 
-export const Chau = () => {
+export const Component1 = () => {
     return (
-        <div>Holis</div>
+        <div className="componentify">Holis</div>
     )
 }
 
 
 
-export const Component = () => {
+export const Component2 = () => {
     return (
         <div>chau</div>
     )

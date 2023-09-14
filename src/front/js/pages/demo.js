@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import { Component, Chau } from "../component/Componentify/components-test"
+import { Component1, Component2 } from "../component/Componentify/components-test"
 
 import { Context } from "../store/appContext";
 
@@ -13,8 +13,8 @@ export const Demo = () => {
 			<Link to="/">
 				<button className="btn btn-primary">Back home</button>
 			</Link>
-			<Chau />
-			<Component />
+			<Component1 />
+			<Component2 />
 		</div>
 	);
 };
