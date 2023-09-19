@@ -129,25 +129,9 @@ export const Component10 = () => {
 
 
 
+
+
 export const Component11 = () => {
-  return (
-    <div className="simple-card">
-      <p>Componentify</p>
-    </div>
-
-  )
-}
-
-export const Component12 = () => {
-  return (
-    <div className="simple-card">
-      <p>Componentify</p>
-    </div>
-
-  )
-}
-
-export const Component13 = () => {
   return (
     <div className="border-box">
       <p>Componentify</p>
@@ -158,7 +142,7 @@ export const Component13 = () => {
   )
 }
 
-export const Component14 = () => {
+export const Component12 = () => {
   return (
     <div className="shadow-card">
       <h3>Componente con Sombra</h3>
@@ -169,7 +153,7 @@ export const Component14 = () => {
 }
 
 
-export const Component15 = () => {
+export const Component13 = () => {
   return (
     <div className="fancy-card">
       <img src="ruta_de_la_imagen.jpg" alt="Imagen del Producto" />
@@ -181,7 +165,7 @@ export const Component15 = () => {
   )
 }
 
-export const Component16 = () => {
+export const Component14 = () => {
   return (
     <div className="surprise-card">
       <div className="image-container">
@@ -191,7 +175,7 @@ export const Component16 = () => {
   )
 }
 
-export const Component17 = () => {
+export const Component15 = () => {
   return (
     <div className="content">
       <h3>Producto Sorprendente</h3>
@@ -202,7 +186,7 @@ export const Component17 = () => {
   )
 }
 
-export const Component18 = () => {
+export const Component16 = () => {
   return (
     <div className="unique-component">
       <h3>Título Único</h3>
@@ -213,7 +197,7 @@ export const Component18 = () => {
 }
 
 
-export const Component19 = () => {
+export const Component17 = () => {
   return (
     <div className="colorful-box">
       <h3>Componente Colorido</h3>
@@ -224,7 +208,7 @@ export const Component19 = () => {
   )
 }
 
-export const Component20 = () => {
+export const Component18 = () => {
   return (
     <div className="tabs">
       <div className="tab" onClick="showTab('tab1')">Pestaña 1</div>
@@ -235,7 +219,7 @@ export const Component20 = () => {
   )
 }
 
-export const Component21 = () => {
+export const Component19 = () => {
   return (
     <div className="tab-content" id="tab1">
       Contenido de la Pestaña 1
@@ -244,7 +228,7 @@ export const Component21 = () => {
   )
 }
 
-export const Component22 = () => {
+export const Component20 = () => {
   return (
     <div className="tab-content" id="tab2" style={{ display: "none" }}>
       Contenido de la Pestaña 2
@@ -254,7 +238,7 @@ export const Component22 = () => {
 }
 
 
-export const Component23 = () => {
+export const Component21 = () => {
   return (
     <div className="tab-content" id="tab3" style={{ display: "none" }}>
       Contenido de la Pestaña 3
@@ -264,30 +248,23 @@ export const Component23 = () => {
 }
 
 
-export const Component24 = () => {
+export const Component22 = () => {
   return (
     <div className="image-gallery">
-      <div className="image"><img src="imagen1.jpg" alt="Imagen 1" /></div>
-      <div className="image"><img src="imagen2.jpg" alt="Imagen 2" /></div>
-      <div className="image"><img src="imagen3.jpg" alt="Imagen 3" /></div>
-      <div className="image"><img src="imagen4.jpg" alt="Imagen 4" /></div>
+      <div className="image"><img src="" alt="" /></div>
+      <div className="image"><img src="" alt="" /></div>
+      <div className="image"><img src="" alt="" /></div>
+      <div className="image"><img src="" alt="" /></div>
     </div>
 
   )
 }
 
 
-export const Component25 = () => {
-  return (
-    <div className="heart-icon">
-      <div className="heart-body"></div>
-    </div>
-
-  )
-}
 
 
-export const Component26 = () => {
+
+export const Component23= () => {
   return (
     <div className="testimonial">
       <p>"Recomiendo completamente sus servicios. ¡No puedo estar más contento!"</p>
@@ -298,7 +275,7 @@ export const Component26 = () => {
 }
 
 
-export const Component27 = () => {
+export const Component24 = () => {
   return (
     <div className="testimonial">
       <p>"El equipo es muy profesional y atento a las necesidades de los clientes."</p>
@@ -309,7 +286,7 @@ export const Component27 = () => {
 }
 
 
-export const Component28 = () => {
+export const Component25 = () => {
   return (
     <div className="testimonial-carousel">
       <div className="testimonial">
@@ -322,7 +299,7 @@ export const Component28 = () => {
 }
 
 
-export const Component29 = () => {
+export const Component26 = () => {
   return (
     <div>
       <header className="simple-banner">
@@ -335,7 +312,7 @@ export const Component29 = () => {
   )
 }
 
-export const Component30 = () => {
+export const Component27 = () => {
   return (
     <div>
       <form className="simple-form">
@@ -347,7 +324,7 @@ export const Component30 = () => {
   )
 }
 
-export const Component31 = () => {
+export const Component28 = () => {
   return (
     <div className="puzzle-piece">
       <div className="top"></div>
@@ -359,7 +336,7 @@ export const Component31 = () => {
   )
 }
 
-export const Component32 = () => {
+export const Component29 = () => {
   return (
     <div className="heart-icon">
       <div className="heart-body"></div>
@@ -368,7 +345,7 @@ export const Component32 = () => {
   )
 }
 
-export const Component33 = () => {
+export const Component30 = () => {
   return (
     <div className="puzzle-piece">
       <div className="top"></div>
@@ -380,7 +357,7 @@ export const Component33 = () => {
   )
 }
 
-export const Component34 = () => {
+export const Component31 = () => {
   return (
     <div class="custom-card">
       <h4>Margined Component</h4>
@@ -390,7 +367,7 @@ export const Component34 = () => {
   )
 }
 
-export const Component35 = () => {
+export const Component32 = () => {
   return (
     <nav class="simple-navbar">
       <ul>
@@ -404,7 +381,7 @@ export const Component35 = () => {
   )
 }
 
-export const Component36 = () => {
+export const Component33 = () => {
   return (
     <form class="simple-form">
       <label for="nombre">Nombre:</label>
@@ -414,36 +391,17 @@ export const Component36 = () => {
   )
 }
 
-// export const Component37 = () => {
-//   return (
-//     <header class="simple-banner">
-//       <h1>¡Bienvenido !</h1>
-//       <p>Explora nuestras increíbles ofertas</p
-//       </header>
 
-//   )
-// }
-
-export const Component38 = () => {
-  return (
-    <header class="simple-header">
-      <h1>Bienvenido </h1>
-      <p>Explora nuestras ofertas especiales</p>
-    </header>
-
-  )
-}
-
-export const Component39 = () => {
+ export const Component34 = () => {
   return (
     <div class="map">
       <div class="marker"></div>
     </div>
 
   )
-}
+} 
 
-export const Component40 = () => {
+export const Component35 = () => {
   return (
     <form class="contact-form">
       <label for="name">Nombre:</label>
@@ -461,58 +419,8 @@ export const Component40 = () => {
   )
 }
 
-export const Component42 = () => {
-  return (
-    <div class="counter">
-      <span id="count">0</span>
-      <button id="increment">Incrementar</button>
-    </div>
-  )
-}
 
-// export const Component43 = () => {
-//   return (
-//     <form>
-//       <label for="name">Nombre:</label>
-//       <input type="text" id="name" name="name" required /><br></br>
-
-//       <label for="email">Correo Electrónico:</label>
-//       <input type="email" id="email" name="email" required /><br></br>
-
-//       <label for="message">Mensaje:</label><br></br>
-//       <textarea id="message" name="message" rows="5" cols="40" required></textarea><br>
-
-//         <input type="submit" value="Enviar" />
-//     </form>
-
-//   )
-// }
-
-export const Component44 = () => {
-  return (
-    <div class="alert success">
-      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-      <strong>Éxito!</strong> Este es un mensaje de éxito.
-    </div>
-
-  )
-}
-
-
-export const Component45 = () => {
-  return (
-    <div class="alert-box">
-      <div class="alert-header">
-        <h2>Alerta Importante</h2>
-        <span class="close-alert" onclick="closeAlert()">&times;</span>
-      </div>
-      <p>Este es un mensaje de alerta importante. Por favor, presta atención.</p>
-    </div>
-
-  )
-}
-
-export const Component46 = () => {
+ export const Component36 = () => {
   return (
     <div class="slider">
       <div class="slide" id="slide1"></div>
@@ -522,9 +430,9 @@ export const Component46 = () => {
     </div>
 
   )
-}
+} 
 
-export const Component47 = () => {
+export const Component37 = () => {
   return (
     <div>
       <button id="open-modal">Abrir Ventana Modal</button>
@@ -537,33 +445,34 @@ export const Component47 = () => {
         </div>
       </div>
     </div>
-
-
-
-
   )
 }
-export const Component48 = () => {
+
+
+export const Component38 = () => {
   return (
 
     <div class="gallery">
       <div class="image">
-        <img src="imagen1.jpg" alt="Imagen 1" />
+        <img src="" alt="Imagen 1" />
       </div>
       <div class="image">
-        <img src="imagen2.jpg" alt="Imagen 2" />
+        <img src="" alt="Imagen 2" />
       </div>
       <div class="image">
-        <img src="imagen3.jpg" alt="Imagen 3" />
+        <img src="" alt="Imagen 3" />
       </div>
       <div class="image">
-        <img src="imagen4.jpg" alt="Imagen 4" />
+        <img src="" alt="Imagen 4" />
       </div>
     </div>
   )
 }
 
-export const Component49 = () => {
+
+
+
+export const Component39 = () => {
   return (
 
 
@@ -580,7 +489,7 @@ export const Component49 = () => {
 }
 
 
-export const Component50 = () => {
+export const Component40 = () => {
   return (
     <nav class="navbar">
       <a href="#">Inicio</a>
@@ -592,7 +501,7 @@ export const Component50 = () => {
 }
 
 
-export const Component51 = () => {
+export const Component41 = () => {
   return (
     <nav class="navbar">
       <ul>
@@ -605,6 +514,8 @@ export const Component51 = () => {
 
   )
 }
+
+
 
 
 

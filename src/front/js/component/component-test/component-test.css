@@ -840,10 +840,10 @@ label, input, button {
     background-size: cover;
 }
 
-#slide1 { background-image: url('imagen1.jpg'); }
-#slide2 { background-image: url('imagen2.jpg'); }
-#slide3 { background-image: url('imagen3.jpg'); }
-#slide4 { background-image: url('imagen4.jpg'); }
+#slide1 { background-image: url(''); }
+#slide2 { background-image: url(''); }
+#slide3 { background-image: url(''); }
+#slide4 { background-image: url(''); }
 
 
 
@@ -1003,5 +1003,46 @@ body {
   
   .navbar a:hover {
     text-decoration: underline;
+  }
+
+
+
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+table {
+    width: 50%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+th, td {
+    text-align: center;
+}
+
+  
+
+
+
+.simple-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .simple-table th, .simple-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
   }
   
