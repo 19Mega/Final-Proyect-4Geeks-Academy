@@ -45,12 +45,12 @@ export const Navbar = () => {
                     <div className="dropdown justify-content-start" id="navbarNav">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <img src={ComponentifyLogo} alt="Logo" width="46" height="38" className="d-inline-block align-text-center me-2"/>
+                                <Link to="/">
+                                    <img src={ComponentifyLogo} alt="Logo" width="46" height="38" className="d-inline-block align-text-center me-2"/>
+                                </Link>
                             </li>
                             <li>
                                 <Link to="docs/getting-started/introduction" className="nav-link text-white align-items-left"
-                                onMouseOver={handleMouseOver}  
-                                onMouseOut={handleMouseOut}
                                 // onClick={navigate("/docs/getting-started/introduction/")}
                                 >Docs
                                 </Link>
