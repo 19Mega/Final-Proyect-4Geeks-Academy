@@ -7,10 +7,8 @@ import { prism } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 
 
-const AlertView = () => {
+const DocsIntro = () => {
 
-
-    const myStyle = { padding: "1rem 1rem" }
     return (
 
 
@@ -23,9 +21,8 @@ const AlertView = () => {
                         <div className="row">
                             {/* titulo */}
 
-                            <h1 className="mt-3">Alerts</h1>
-                            <p className="fs-5 mt-2 mb-3">The <span style={{ "color": "#FD5812" }}>c-alert component</span> is used to convey important information to the user through the use of contextual types, icons, and colors.
-                                Alerts are available for any length of text. For proper styling, use one of the eighteen required contextual classes (e.g., <span className="text-componentify">.c-alert-componentify</span>).</p>
+                            <h1 className="mt-3">Getting started with <span className="text-componentify">Componentify</span></h1>
+                            <p className="fs-5 mt-2 mb-3">Get started with Componentify, the world’s most popular Vue.js framework for building feature rich, blazing fast applications.</p>
                         </div>
 
                         <div className="row">
@@ -219,4 +216,4 @@ const AlertView = () => {
 
 
 
-export default AlertView;
+export default DocsIntro;

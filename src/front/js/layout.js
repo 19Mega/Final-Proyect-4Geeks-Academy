@@ -17,6 +17,7 @@ import { Footer } from "./component/footer";
 import { Admin } from "./pages/admin";
 import { AdminSearch } from "./pages/adminSearch";
 import { UserProfileData } from "./pages/userProfileData";
+import DocsIntro from "./pages/docs-introduction";
 
 
 //create your first component
@@ -44,7 +45,7 @@ const Layout = () => {
 
                         
 
-
+                        <Route element={<DocsIntro />} path="docs/getting-started/introduction" />
                         <Route element={<AlertView />} path="docs/components/alerts" />
                         <Route element={<ButtonView />} path="docs/components/buttons" />
 

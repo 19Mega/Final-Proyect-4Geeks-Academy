@@ -87,7 +87,7 @@ export const SideBar = () => {
 	const getting_started =[
 		{
 			title: 'Introduction',
-			path: "introduction" 
+			path: "docs/getting-started/introduction" 
 		},
 		{
 			title: 'Download',
