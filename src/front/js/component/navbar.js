@@ -42,6 +42,7 @@ export const Navbar = () => {
 		e.target.style.cursor = 'default'; 
 	}
     // #900C3F
+    // #e2d
 	return (
         <div>
 
