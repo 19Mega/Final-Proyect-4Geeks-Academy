@@ -57,9 +57,9 @@ export const UserProfileData = () => {
   // }, []);
 
   return (
-    <div className="container mt-5">
-      <h2 className="text-base font-semibold text-gray-900">Personal Information</h2>
-      <p className="mt-1 text-sm text-gray-600">You can update your personal information.</p>
+    <div className="container mx-auto mt-5 p-4 bg-white rounded-lg shadow-lg">
+      <h2 className="text-lg font-semibold text-gray-900 mb-4"> Personal Information </h2>
+      <p className="text-sm text-gray-600 mb-4">You can update your personal information.</p>
 
       <div className="mt-4">
         <label htmlFor="name" className="form-label">Name</label>
@@ -112,7 +112,7 @@ export const UserProfileData = () => {
           className="form-control"
           //value={userData.change_password}
           //value={password}
-          value= "*********************************************"
+          value= "******"
           //onChange={(e) => setUserData({ ...userData, change_password: e.target.value })}
         />
       </div>
