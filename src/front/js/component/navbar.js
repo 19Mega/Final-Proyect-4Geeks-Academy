@@ -59,7 +59,7 @@ export const Navbar = () => {
                                 <Link to="#" className="nav-link text-white align-items-left"
                                 onMouseOver={handleMouseOver}  
                                 onMouseOut={handleMouseOut}
-                                onClick={navigate("/docs/getting-started/introduction/")}
+                                // onClick={navigate("/docs/getting-started/introduction/")}
                                 >Docs
                                 </Link>
                             </li>
