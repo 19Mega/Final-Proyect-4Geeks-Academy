@@ -53,9 +53,9 @@ const Layout = () => {
                         <Route element={<UserProfileData/>} path="/userprofiledata" />
 
                     </Routes>
-                    <Footer />
-                </ScrollToTop>
-            </BrowserRouter>
+                    {window.location.pathname === "/login" || window.location.pathname === "/signup" ? null : <Footer />}
+                    </ScrollToTop>
+                </BrowserRouter>
         </div>
     );
 };
