@@ -15,12 +15,17 @@ export const SideBar = () => {
 		{
 			title: 'Badges', 
 			description: 'Small count indicators',
-			path: "badges"
+			path: "docs/components/badges"
+		},
+		{
+			title: 'Banners', 
+			description: 'Banners for your website',
+			path: "docs/components/banners"
 		},
 		{
 			title: 'Breadcrumbs',
 			description: 'Indicates page location',
-			path: "breadcrumbs"
+			path: "docs/components/breadcrumbs"
 		},
 		{
 			title: 'Buttons',
@@ -30,7 +35,7 @@ export const SideBar = () => {
 		{
 			title: 'Button Groups',
 			description: 'Grouped buttons',
-			path: "button-groups"
+			path: "docs/components/button-groups"
 		},
 		{
 			title: 'Cards',
@@ -40,47 +45,47 @@ export const SideBar = () => {
 		{
 			title: 'Carousels', 
 			description: 'Rotating content slides',
-			path: "carousels"
+			path: "docs/components/carousels"
 		},
 		{
 			title: 'Collapses',
 			description: 'Toggleable content sections', 
-			path: "collapses"
+			path: "docs/components/collapses"
 		},
 		{
 			title: 'Dropdowns',
 			description: 'Toggleable menu buttons',
-			path: "dropdowns"
+			path: "docs/components/dropdowns"
 		},
 		{
 			title: 'List Groups',
 			description: 'List element styles', 
-			path: "list-groups" 
+			path: "docs/components/list-groups" 
 		},
 		{
 			title: 'Modals',
 			description: 'Overlay pop up windows',
-			path: "modals"
+			path: "docs/components/modals"
 		},
 		{
 			title: 'Navs & Navbars',
 			description: 'Navigation components',
-			path: "navs-navbars"
+			path: "docs/components/navs-navbars"
 		},
 		{
 			title: 'Pagination', 
 			description: 'Page number indicators',
-			path: "pagination"
+			path: "docs/components/pagination"
 		},
 		{
 			title: 'Popovers',
 			description: 'Small overlay content',
-			path: "popovers"
+			path: "docs/components/popovers"
 		},
 		{
 			title: 'Progress Bars',
 			description: 'Progress indicators',
-			path: "progress-bars"
+			path: "docs/components/progress-bars"
 		}
 	]
 
@@ -91,25 +96,25 @@ export const SideBar = () => {
 		},
 		{
 			title: 'Download',
-			path: "download" 
+			path: "docs/getting-started/download" 
 		},
 		{
 			title: 'Contents',
-			path: "components" 
+			path: "docs/getting-started/contents" 
 		},
 		
 	]
 
 	const utilities_category = [
 		{
-			title: 'Colors',
-			description: 'Different text colors', 
-			path: "docs/utilities/colors" 
-		},
-		{
 			title: 'Background', 
 			description: 'Different type of background colors',
 			path: "docs/utilities/bg-colors"
+		},
+		{
+			title: 'Colors',
+			description: 'Different text colors', 
+			path: "docs/utilities/colors" 
 		}
 	]
 

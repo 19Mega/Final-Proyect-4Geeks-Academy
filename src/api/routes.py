@@ -104,7 +104,8 @@ def login_user():
     return jsonify({'msg': 'Invalid username/password'}), 401
 
   access_token = create_access_token(identity=email)
-  return jsonify(access_token=access_token)
+
+  return jsonify(access_token=access_token, user_id=user.id), 200
 
 
 # muestra todos los usuarios
