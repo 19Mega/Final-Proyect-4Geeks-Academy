@@ -18,6 +18,7 @@ import { Admin } from "./pages/admin";
 import { AdminSearch } from "./pages/adminSearch";
 import { UserProfileData } from "./pages/userProfileData";
 import Contribute from "./pages/contribute ";
+import DocsIntro from "./pages/docs-introduction";
 
 import { Context } from "./store/appContext";
 
@@ -49,7 +50,7 @@ const Layout = () => {
                         <Route element={<Contribute />} path="/contribute" />
                         
 
-
+                        <Route element={<DocsIntro />} path="docs/getting-started/introduction" />
                         <Route element={<AlertView />} path="docs/components/alerts" />
                         <Route element={<ButtonView />} path="docs/components/buttons" />
 
