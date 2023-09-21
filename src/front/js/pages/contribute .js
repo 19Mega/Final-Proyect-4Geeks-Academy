@@ -4,8 +4,8 @@ import { Context } from '../store/appContext';
 const Contribute = () => {
   const { store, actions } = useContext(Context)
 
-  const pagar = async () => {
-    let precio = 100
+  const pagar = async (precio) => {
+   
     await actions.pagoMercadoPago(precio)
 
     let direccion = await store.mercadoPago.init_point
@@ -59,9 +59,9 @@ const Contribute = () => {
                 <p>
                   Make a one-time payment or a recurring contribution.</p>
                 <hr />
-                <h6 className="card-subtitle mb-2 text-muted">$10.00/month</h6>
+                <h6 className="card-subtitle mb-2 text-muted">$199.00/month</h6>
                 <button className="c-btn  c-btn-componentify  c-btn-componentify-hover "
-                  onClick={pagar}
+                  onClick={()=>pagar(199)}
                 >Contribute</button>
               </div>
             </div>
@@ -77,9 +77,9 @@ const Contribute = () => {
                 <p>
                   Make a one-time payment or a recurring contribution.</p>
                 <hr />
-                <h6 className="card-subtitle mb-2 text-muted">$10.00/month</h6>
+                <h6 className="card-subtitle mb-2 text-muted">$499.00/month</h6>
                 <button className="c-btn  c-btn-componentify  c-btn-componentify-hover "
-                  onClick={pagar}
+                  onClick={()=>pagar(499)}
                 >Contribute</button>
               </div>
             </div>
@@ -95,9 +95,9 @@ const Contribute = () => {
                 <p>
                   Make a one-time payment or a recurring contribution.</p>
                 <hr />
-                <h6 className="card-subtitle mb-2 text-muted">$10.00/month</h6>
+                <h6 className="card-subtitle mb-2 text-muted">$999.00/month</h6>
                 <button className="c-btn  c-btn-componentify  c-btn-componentify-hover "
-                  onClick={pagar}
+                  onClick={()=>pagar(999)}
                 >Contribute</button>
               </div>
             </div>
