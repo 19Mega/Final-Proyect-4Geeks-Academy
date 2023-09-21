@@ -1,4 +1,5 @@
 import React from "react";
+import { SideBar } from "../component/sideBar"
 
 
 
