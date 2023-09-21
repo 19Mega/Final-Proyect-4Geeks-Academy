@@ -17,6 +17,7 @@ import { Footer } from "./component/footer";
 import { Admin } from "./pages/admin";
 import { AdminSearch } from "./pages/adminSearch";
 import { UserProfileData } from "./pages/userProfileData";
+import Contribute from "./pages/contribute ";
 import DocsIntro from "./pages/docs-introduction";
 
 import { Context } from "./store/appContext";
@@ -46,7 +47,7 @@ const Layout = () => {
                         <Route element={<Login />} path="/login" />
                         
                         <Route element={<Admin />} path="/admin" />
-
+                        <Route element={<Contribute />} path="/contribute" />
                         
 
                         <Route element={<DocsIntro />} path="docs/getting-started/introduction" />
