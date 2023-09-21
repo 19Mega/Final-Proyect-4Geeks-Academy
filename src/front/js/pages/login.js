@@ -30,21 +30,26 @@ const Login = () => {
 
     const formik = useFormik({
         initialValues: {
-          email: '',
-          password: '',
+              email: '',
+              password: '',
         },
 
         validationSchema: Yup.object({
-            // firstName: Yup.string().max(15, 'Must be 15 characters or less').required('Required'),
-            // lastName: Yup.string().max(20, 'Must be 20 characters or less').required('Required'),
-            email: Yup.string().email('Invalid email address.').required('Required').matches(/.*\.com$/, 'Email must end in .com'),
-            password: Yup.string().min(8, 'Must be at least 8 characters').required('Required'),
+              // firstName: Yup.string().max(15, 'Must be 15 characters or less').required('Required'),
+              // lastName: Yup.string().max(20, 'Must be 20 characters or less').required('Required'),
+              email: Yup.string().email('Invalid email address.').required('Required').matches(/.*\.com$/, 'Email must end in .com'),
+              password: Yup.string().min(4, 'Must be at least 8 characters').required('Required'),
           }),
 
-        onSubmit: values => {
-          alert(JSON.stringify(values, null, 2));
-        },
-      });
+          onSubmit: async (values) => {
+              //alert(JSON.stringify(values, null, 2));
+              let logged = await actions.login(values.email, values.password);
+              console.log("TESTTTT: ",values.email, " ", values.password)
+              if(logged) { 
+                navigate("/") 
+              }          
+          },
+    });
 
 
       const menuColor = "#900C3F"
@@ -52,16 +57,16 @@ const Login = () => {
       return (
 
         <div style={{background: "linear-gradient(to right, rgb(144 12 63 / 5%), rgb(144 12 63 / 5%))"}}>
-<div class="container">
-    <div class="row">
-      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-      <div className="card rounded-4 my-5" style={{ borderImage: 'linear-gradient(to right, #900C3F, #FD5812)', borderImageSlice: '1', borderStyle: 'solid', borderWidth: '6px'}}>
-          <div class="card-body p-2 p-sm-5" style={{backgroundColor:"#c7b08c1f"}}>
-            <h5 class="card-title text-center mb-5 fw-light fs-2 fw-semibold" style={{color:"#900C3F"}}>Log In</h5>
+<div className="container">
+    <div className="row">
+      <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div className="card my-5" style={{ borderImage: 'linear-gradient(to right, #900C3F, #FD5812)', borderImageSlice: '1', borderStyle: 'solid', borderWidth: '6px'}}>
+          <div className="card-body p-2 p-sm-5" style={{backgroundColor:"#c7b08c1f"}}>
+            <h5 className="card-title text-center mb-5 fw-light fs-2 fw-semibold" style={{color:"#900C3F"}}>Log In</h5>
             <form onSubmit={formik.handleSubmit} >
 
-              <div class="form-floating mb-4">
-                <input class="form-control" placeholder="name@example.com"
+              <div className="form-floating mb-4">
+                <input className="form-control" placeholder="name@example.com"
                 onChange={formik.handleChange}
                 value={formik.values.email}
                 id="email"
@@ -76,8 +81,8 @@ const Login = () => {
                 <label for="floatingInput" style={{ color: menuColor}}>Email address</label>
               </div>
 
-              <div class="form-floating mb-4">
-                <input class="form-control" placeholder="Password"
+              <div className="form-floating mb-4">
+                <input className="form-control" placeholder="Password"
                 onChange={formik.handleChange}
                 value={formik.values.password}
                 id="password"
@@ -92,26 +97,26 @@ const Login = () => {
                 <label for="floatingPassword" style={{ color: menuColor}}>Password</label>
               </div>
 
-              <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck"/>
+              <div className="form-check mb-3">
+                <input className="form-check-input" type="checkbox" value="" id="rememberPasswordCheck"/>
                 <label className="form-check-label" htmlFor="rememberPasswordCheck" style={{ color: menuColor}}>
                   Remember password
                 </label>
               </div>
-              <div class="d-grid">
-                <button class="btn btn-login text-uppercase fw-bold text-white" type="submit" style={{backgroundColor:menuColor}}>Log in</button>
+              <div className="d-grid">
+                <button className="btn btn-login text-uppercase fw-bold text-white" type="submit" style={{backgroundColor:menuColor}}>Log in</button>
               </div>
-              <hr class="my-4"/>
-              <div class="d-grid mb-2">
-                <button class="btn btn-google btn-login text-uppercase text-white fw-bold border border-2" type="submit" style={{backgroundColor:"#3c434c"}}>
-                <i class="fa-brands fa-github fa-lg me-2"></i> Sign in with Github
+              <hr className="my-4"/>
+              <div className="d-grid mb-2">
+                <button className="btn btn-google btn-login text-uppercase text-white fw-bold border border-2" type="submit" style={{backgroundColor:"#3c434c"}}>
+                <i className="fa-brands fa-github fa-lg me-2"></i> Sign in with Github
                 </button>
               </div>
-              <div class="d-grid">
-                <button class="btn btn-login text-uppercase fw-bold text-white" type="submit" style={{backgroundColor:menuColor}}>Sing up</button>
+              <div className="d-grid">
+                <button className="btn btn-login text-uppercase fw-bold text-white" type="submit" style={{backgroundColor:menuColor}}>Sing up</button>
         
-                {/* <button class="btn btn-facebook btn-login text-uppercase fw-bold" type="submit">
-                  <i class="fab fa-facebook-f me-2"></i> Sign in with Facebook
+                {/* <button className="btn btn-facebook btn-login text-uppercase fw-bold" type="submit">
+                  <i className="fab fa-facebook-f me-2"></i> Sign in with Facebook
                 </button> */}
               </div>
             </form>
@@ -140,7 +145,7 @@ const Login = () => {
                 onSubmit={formik.handleSubmit}
                 id="login-form">
                     <div className="mb-3">
-                        <label for="email" class="form-label">Email</label>
+                        <label for="email" className="form-label">Email</label>
                         <input 
                         onChange={formik.handleChange}
                         value={formik.values.email}
@@ -153,7 +158,7 @@ const Login = () => {
                             <div>{formik.errors.email}</div>    
                         ) : null}
 
-                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
                     </div>
 
                     <div className="mb-3">
@@ -170,11 +175,11 @@ const Login = () => {
                             <div>{formik.errors.password}</div>    
                         ) : null}
 
-                        <div id="emailHelp" class="form-text"><Link to={"/none"}>Forgot your password?</Link></div>
+                        <div id="emailHelp" className="form-text"><Link to={"/none"}>Forgot your password?</Link></div>
                     </div>
 
-                    <button type="submit" class="btn btn-success" id="btn-login">Login</button>
-                    <div id="emailHelp" class="form-text">Don't have an account yet? <Link to={"/signup"}>Sign Up.</Link></div>
+                    <button type="submit" className="btn btn-success" id="btn-login">Login</button>
+                    <div id="emailHelp" className="form-text">Don't have an account yet? <Link to={"/signup"}>Sign Up.</Link></div>
                 </form>
             </div>
         </div> */}
