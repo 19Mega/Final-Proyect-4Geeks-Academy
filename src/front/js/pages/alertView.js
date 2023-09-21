@@ -8,9 +8,6 @@ import { prism } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 
 const AlertView = () => {
-    
-
-    const myStyle = {padding: "1rem 1rem"}
     return (
 
         
