@@ -57,9 +57,10 @@ export const UserProfileData = () => {
   // }, []);
 
   return (
-    <div className="container mx-auto mt-5 p-4 bg-white rounded-lg shadow-lg">
-      <h2 className="text-lg font-semibold text-gray-900 mb-4"> Personal Information </h2>
-      <p className="text-sm text-gray-600 mb-4">You can update your personal information.</p>
+    <div className="container mx-auto mt-5 p-4 bg-white rounded-lg shadow-lg" style={{ width: '40%' , height: '630px' }}>
+      <h1 className="text-lg mb-4"> <strong>Your Account</strong> </h1>
+      <p className="text-sm mb-4" style={{ fontSize: '1.1rem' }} >Change your name, email, or password.</p>
+       
 
       <div className="mt-4">
         <label htmlFor="name" className="form-label">Name</label>
@@ -118,12 +119,12 @@ export const UserProfileData = () => {
       </div>
 
       <div className="mt-4">
-        <button type="button" className="btn btn-secondary btn-sm">
+        <button type="button" className="c-btn c-btn-slate c-btn-slate-hover">
           Cancel
         </button>
         <button
           type="submit"
-          className="btn btn-primary btn-sm"
+          className="c-btn c-btn-azure c-btn-azure-hover"
         >
           Save
         </button>
