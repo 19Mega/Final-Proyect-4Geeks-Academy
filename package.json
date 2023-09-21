@@ -77,14 +77,17 @@
 		"algoliasearch": "^4.20.0",
 		"axios": "^1.5.0",
 		"bootstrap": "^5.3.1",
+		"formik": "^2.4.5",
 		"mercadopago": "^1.5.17",
 		"prop-types": "^15.6.1",
 		"react": "^16.8.4",
 		"react-bootstrap": "^2.8.0",
 		"react-copy-to-clipboard": "^5.1.0",
 		"react-dom": "^16.8.4",
+		"react-dropzone": "^14.2.3",
 		"react-polyfills": "0.0.1",
 		"react-router-dom": "^6.3.0",
-		"react-syntax-highlighter": "^15.5.0"
+		"react-syntax-highlighter": "^15.5.0",
+		"yup": "^1.2.0"
 	}
 }

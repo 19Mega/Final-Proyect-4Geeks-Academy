@@ -4,6 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			message: null,
 			auth:false,
+			loginUserId:null,
 			demo: [
 				{
 					title: "FIRST",
@@ -27,8 +28,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 						"password":password
 					})
 					console.log(data);
+					
 					localStorage.setItem("token", data.data.access_token);
 					setStore({auth:true})
+					setStore({loginUserId:data.data.user_id})
+					
 					return true;
 				} catch (error) {
 					console.log(error)
@@ -81,7 +85,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 					
 				} catch (error) {
-					console.log("errorrrrr:" + error)
+					console.log(error)
 					if (error.response.status === 401) {
 						setStore({auth:false})
 					}
