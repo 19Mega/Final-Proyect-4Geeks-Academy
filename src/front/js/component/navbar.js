@@ -38,7 +38,7 @@ export const Navbar = () => {
 	return (
         <div>
             {/* <nav className="navbar navbar-expand-lg" style={{"background-color":"#FD5812"}}> */}
-            <nav className="navbar navbar-expand-lg" style={{"background-color":"#900C3F", borderBottom: "2px solid #b87333", background: "linear-gradient(to right, #900C3F, #FD5812)"}}>
+            <nav className="navbar navbar-expand-lg" style={{"backgroundColor":"#900C3F", borderBottom: "2px solid #b87333", background: "linear-gradient(to right, #900C3F, #FD5812)"}}>
                 <div className="container">
                     
                     {/* TODO hacer que solo cuando este en sm sea navbar-toggler (combinacion de items en uno solo) */}
@@ -109,7 +109,7 @@ export const Navbar = () => {
                                         <button type="button" className="btn btn-light dropdown-toggle dropdown-toggle-split ms-2" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
                                             <i className="fa fa-user"></i>
                                         </button>
-                                        <ul className="dropdown-menu dropdown-menu-right" style="right:0; left:auto;">
+                                        <ul className="dropdown-menu dropdown-menu-right" style={{right:"0", left:"auto"}}>
                                             <li><a className="dropdown-item" href="#">Account settings</a></li>
                                             <li><a className="dropdown-item" href="#">Favorites</a></li>
                                             <li><hr className="dropdown-divider"/></li>
@@ -117,7 +117,7 @@ export const Navbar = () => {
                                         </ul>
                                     </div> :
                                     <Link to="/login" className="btn btn-outline-light mx-2" type="submit">Login</Link>
-                                }
+                                } 
                             </li>
                         </ul>
                     </div>

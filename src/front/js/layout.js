@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useContext } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 import { BackendURL } from "./component/backendURL";
@@ -18,12 +18,16 @@ import { Admin } from "./pages/admin";
 import { AdminSearch } from "./pages/adminSearch";
 import { UserProfileData } from "./pages/userProfileData";
 
+import { Context } from "./store/appContext";
+
+
 
 //create your first component
 const Layout = () => {
     //the basename is used when your project is published in a subdirectory and not in the root of the domain
     // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
     const basename = process.env.BASENAME || "";
+    const { store, actions } = useContext(Context);
 
     if(!process.env.BACKEND_URL || process.env.BACKEND_URL == "") return <BackendURL/ >;
 
@@ -53,9 +57,10 @@ const Layout = () => {
                         <Route element={<UserProfileData/>} path="/userprofiledata" />
 
                     </Routes>
-                    <Footer />
-                </ScrollToTop>
-            </BrowserRouter>
+                    {/* {window.location.pathname === "/login" || window.location.pathname === "/signup" ? null : <Footer />} */}
+                    {store.auth ? <Footer/> : null }
+                    </ScrollToTop>
+                </BrowserRouter>
         </div>
     );
 };
