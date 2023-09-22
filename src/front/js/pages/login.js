@@ -40,7 +40,7 @@ const Login = () => {
               // firstName: Yup.string().max(15, 'Must be 15 characters or less').required('Required'),
               // lastName: Yup.string().max(20, 'Must be 20 characters or less').required('Required'),
               email: Yup.string().email('Invalid email address.').required('Required').matches(/.*\.com$/, 'Email must end in .com'),
-              password: Yup.string().min(4, 'Must be at least 8 characters').required('Required'),
+              password: Yup.string().min(8, 'Must be at least 8 characters').required('Required'),
           }),
 
           onSubmit: async (values) => {

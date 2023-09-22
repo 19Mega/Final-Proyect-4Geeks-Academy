@@ -17,6 +17,8 @@ import { Footer } from "./component/footer";
 import { Admin } from "./pages/admin";
 import { AdminSearch } from "./pages/adminSearch";
 import { UserProfileData } from "./pages/userProfileData";
+import Contribute from "./pages/contribute ";
+import DocsIntro from "./pages/docs-introduction";
 
 import { Context } from "./store/appContext";
 import CardView from "./pages/cardView";
@@ -45,10 +47,10 @@ const Layout = () => {
                         <Route element={<Login />} path="/login" />
                         
                         <Route element={<Admin />} path="/admin" />
-
+                        <Route element={<Contribute />} path="/contribute" />
                         
 
-
+                        <Route element={<DocsIntro />} path="docs/getting-started/introduction" />
                         <Route element={<AlertView />} path="docs/components/alerts" />
                         <Route element={<ButtonView />} path="docs/components/buttons" />
                         <Route element={<CardView />} path="docs/components/cards" />

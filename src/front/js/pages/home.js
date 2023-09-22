@@ -4,7 +4,7 @@ import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import IntroView from '../pages/introview';
 import LearnView from "./learnview";
-import MembershipPlans from "./planview";
+import MembershipPlans from "./contribute ";
 import AboutUs from "./aboutus"
 
 export const Home = () => {
