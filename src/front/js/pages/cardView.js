@@ -60,7 +60,7 @@ const CardView = () => {
                     <div className="row">
                         <div className="col-3">
                             <div class="c-card c-card-brd-purple">
-                                <div class="c-card-header">
+                                <div class="c-card-header-purple">
                                     <h2 class="c-card-brd-title text-purple">Card title</h2>
                                 </div>
                                     <p className="c-card-brd-description text-purple c-card-content">Card content. You can add text, links, or any other content here.
@@ -70,33 +70,33 @@ const CardView = () => {
                             </div>
                         </div>
                         <div className="col-3">
-                                <div class="c-card c-card-brd-purple">
-                                    <div class="c-card-header">
-                                        <h2 class="c-card-brd-title text-purple">Card title</h2>
+                                <div class="c-card c-card-brd-lavender">
+                                    <div class="c-card-header-lavender">
+                                        <h2 class="c-card-brd-title text-lavender">Card title</h2>
                                     </div>
-                                        <p className="c-card-brd-description text-purple c-card-content">Card content. You can add text, links, or any other content here.
+                                        <p className="c-card-brd-description text-lavender c-card-content">Card content. You can add text, links, or any other content here.
                                             The size of the card depends on what you add here.
                                             You can get creative
                                         </p>
                                 </div>
                         </div>   
                         <div className="col-3">
-                                <div class="c-card c-card-brd-purple">
-                                    <div class="c-card-header">
-                                        <h2 class="c-card-brd-title text-purple">Card title</h2>
+                                <div class="c-card c-card-brd-azure">
+                                    <div class="c-card-header-azure">
+                                        <h2 class="c-card-brd-title text-azure">Card title</h2>
                                     </div>
-                                        <p className="c-card-brd-description text-purple c-card-content">Card content. You can add text, links, or any other content here.
+                                        <p className="c-card-brd-description text-azure c-card-content">Card content. You can add text, links, or any other content here.
                                             The size of the card depends on what you add here.
                                             You can get creative
                                         </p>
                                 </div>
                         </div>
                         <div className="col-3">
-                                <div class="c-card c-card-brd-purple">
-                                    <div class="c-card-header">
-                                        <h2 class="c-card-brd-title text-purple">Card title</h2>
+                                <div class="c-card c-card-brd-mocca">
+                                    <div class="c-card-header-mocca">
+                                        <h2 class="c-card-brd-title text-mocca">Card title</h2>
                                     </div>
-                                        <p className="c-card-brd-description text-purple c-card-content">Card content. You can add text, links, or any other content here.
+                                        <p className="c-card-brd-description text-mocca c-card-content">Card content. You can add text, links, or any other content here.
                                             The size of the card depends on what you add here.
                                             You can get creative
                                         </p>
@@ -122,21 +122,63 @@ const CardView = () => {
                     </div>
                 </div>
                 <div className="container border rounded mb-2">
-                    <h3 className="mt-3 mb-3">Credit card style</h3>
-                    <div className="row">
-                        <div className="col-lg-12 col-md-4 col-sm-4 col-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h2 class="card-title">Título de la Tarjeta</h2>
+                    <h3 className="mt-3 mb-3">Subscription</h3>
+                    <div className="row mx-auto">
+                                
+
+
+                        <div className="col-2">
+                            <div className="card shadow" style={{ backgroundColor: '#F5F5F5 ', height: "300px", width: "200px" }}>
+                                <div className="card-header">
+                                    <h5>Support Our Work!</h5>
                                 </div>
-                                <div class="card-body">
-                                    <p class="card-text">Contenido de la tarjeta. Puedes agregar texto, enlaces o cualquier otro contenido aquí.</p>
-                                </div>
-                                <div class="card-footer">
-                                    <button class="btn btn-primary">Botón</button>
+                                <div className="card-body">
+                                    <p>
+                                    Make a one-time payment or a recurring contribution.</p>
+                                    <hr />
+                                    <h6 className="card-subtitle mb-2 text-muted">$999.00</h6>
+                                    <button className="c-btn  c-btn-componentify  c-btn-componentify-hover "
+                                    >Contribute</button>
                                 </div>
                             </div>
                         </div>
+                        <div className="col-2"></div> 
+                        <div className="col-2">
+                            <div className="card shadow" style={{ backgroundColor: '#F0EAD6', height: "300px", width: "200px" }}>
+                                <div className="card-header">
+                                    <h5>Support Our Work!</h5>
+                                </div>
+                                <div className="card-body">
+                                    <p>
+                                    Make a one-time payment or a recurring contribution.</p>
+                                    <hr />
+                                    <h6 className="card-subtitle mb-2 text-muted">$499.00</h6>
+                                    <button className="c-btn  c-btn-componentify  c-btn-componentify-hover "
+                                    >Contribute</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-2"></div> 
+                        
+                        <div className="col-2">
+                            <div className="card shadow" style={{ backgroundColor: '#FFDAB9', height: "300px", width: "200px" }}>
+                                <div className="card-header">
+                                    <h5>Support Our Work!</h5>
+                                </div>
+                                <div className="card-body">
+                                    <p>
+                                    Make a one-time payment or a recurring contribution.</p>
+                                    <hr />
+                                    <h6 className="card-subtitle mb-2 text-muted">$199.00</h6>
+                                    <button className="c-btn  c-btn-componentify  c-btn-componentify-hover "
+                                    >Contribute</button>
+                                </div>
+                            </div>
+                        </div>
+ 
+
+
+
                     </div>
                     <div className="row">
                         <div className="col-lg-12 col-md-8 col-sm-8 col-12 mt-2">
@@ -144,11 +186,10 @@ const CardView = () => {
                                 {
                                 `
     <div class="c-card">
-        <img src="..." alt="Image" class="c-card-image"/>
         <div class="c-card-content">
-            <h2 class="c-card-title">Card Title</h2>
+            <h2 class="c-card-title">Support Our Work!</h2>
             <p class="c-card-description">Card content. You can add text, links, or any other content here.</p>
-            <button class="c-btn c-btn-aqua">Go!</button>
+            <button class="c-btn c-btn-aqua">Contribute</button>
         </div>
     </div>`}
                             </SyntaxHighlighter>

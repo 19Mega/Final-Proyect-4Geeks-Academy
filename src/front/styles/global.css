@@ -584,10 +584,46 @@
     background-color:var(--color-purple-bg);
 }
 
-.c-card-header {
+.c-card-header-purple {
     padding: 0.75rem 1.25rem; 
     margin-bottom: 0;
     border-bottom: 1px solid var(--color-purple-txt);
+}
+
+.c-card-brd-lavender {
+    margin: 0;
+    border-color: var(--color-lavender-txt); 
+    background-color:var(--color-lavender-bg);
+}
+
+.c-card-header-lavender {
+    padding: 0.75rem 1.25rem; 
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--color-lavender-txt);
+}
+
+.c-card-brd-azure {
+    margin: 0;
+    border-color: var(--color-azure-txt); 
+    background-color:var(--color-azure-bg);
+}
+
+.c-card-header-azure {
+    padding: 0.75rem 1.25rem; 
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--color-azure-txt);
+}
+
+.c-card-brd-mocca {
+    margin: 0;
+    border-color: var(--color-mocca-txt); 
+    background-color:var(--color-mocca-bg);
+}
+
+.c-card-header-mocca {
+    padding: 0.75rem 1.25rem; 
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--color-mocca-txt);
 }
 
 .c-card-brd-description {
