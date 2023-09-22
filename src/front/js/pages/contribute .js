@@ -59,7 +59,7 @@ const Contribute = () => {
                 <p>
                   Make a one-time payment or a recurring contribution.</p>
                 <hr />
-                <h6 className="card-subtitle mb-2 text-muted">$199.00/month</h6>
+                <h6 className="card-subtitle mb-2 text-muted">$199.00</h6>
                 <button className="c-btn  c-btn-componentify  c-btn-componentify-hover "
                   onClick={()=>pagar(199)}
                 >Contribute</button>
@@ -77,7 +77,7 @@ const Contribute = () => {
                 <p>
                   Make a one-time payment or a recurring contribution.</p>
                 <hr />
-                <h6 className="card-subtitle mb-2 text-muted">$499.00/month</h6>
+                <h6 className="card-subtitle mb-2 text-muted">$499.00</h6>
                 <button className="c-btn  c-btn-componentify  c-btn-componentify-hover "
                   onClick={()=>pagar(499)}
                 >Contribute</button>
@@ -95,7 +95,7 @@ const Contribute = () => {
                 <p>
                   Make a one-time payment or a recurring contribution.</p>
                 <hr />
-                <h6 className="card-subtitle mb-2 text-muted">$999.00/month</h6>
+                <h6 className="card-subtitle mb-2 text-muted">$999.00</h6>
                 <button className="c-btn  c-btn-componentify  c-btn-componentify-hover "
                   onClick={()=>pagar(999)}
                 >Contribute</button>
