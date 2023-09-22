@@ -3,7 +3,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			message: null,
-			auth:false,
+			auth:true,
+			loginUserId:null,
+			signupStatus:false,
 			demo: [
 				{
 					title: "FIRST",
@@ -15,19 +17,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			mercadoPago:{}
 		},
 		actions: {
 
-			
-
-
-
-
-
-
-
-			// empieza cecilia línea 30
 			login: async (email, password) => {
 				try {
 					let data = await axios.post(process.env.BACKEND_URL + '/api/login',{
@@ -35,8 +29,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 						"password":password
 					})
 					console.log(data);
+					
 					localStorage.setItem("token", data.data.access_token);
 					setStore({auth:true})
+					setStore({loginUserId:data.data.user_id})
+					
 					return true;
 				} catch (error) {
 					console.log(error)
@@ -44,40 +41,26 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			
-
-
-
-
-			
-			// empieza juan línea 50 -  Falta agregar REPEATPASSWORD!!!!!
 			SignupUser: async (name, last_name, email, password, is_active) => {
-				console.log("FLUX USER SIGNUP: ", email, " >>>> ", password);
+				console.log("FLUX USER SIGNUP: ", name, last_name, email, password, is_active );
 			
 				try {
-					// if (password === repeatPassword) {
-						
-					
-						let data = await axios.post("https://effective-fortnight-pjrr4wjg9jrghrj96-3001.app.github.dev/api/signup",
-						{
-							name: name, 
-							last_name: last_name,
-							email: email,
-							password: password,
-							is_active: is_active
-						}
-						)
-						console.log(data);
-						setStore({ auth: true });
-						localStorage.setItem("token", data.data.access_token); 
-					
-				// }
-				// else {alert('Las contraseñas no coiciden')}
-					
+					let data = await axios.post(process.env.BACKEND_URL + '/api/signup',{
+						name: name, 
+						last_name: last_name,
+						email: email,
+						password: password,
+						is_active: is_active
+					})
+					console.log(data);
+					setStore({ signupStatus: true });
+					//localStorage.setItem("token", data.data.access_token); 
 				} catch (error) {
 					console.log(error);
 					setStore({ auth: false });
 				}
 			},
+
 			logout: () => {
 				console.log("Funciona")
 				localStorage.removeItem("token")
@@ -103,7 +86,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 					
 				} catch (error) {
-					console.log("errorrrrr:" + error)
+					console.log(error)
 					if (error.response.status === 401) {
 						setStore({auth:false})
 					}
@@ -111,31 +94,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			
-
-
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+			//mercado Pago 
+			pagoMercadoPago:async(precio)=>{
+				try{
+					let response = await axios.post(process.env.BACKEND_URL + '/api/preference',{
+						precio:precio
+					})
+					console.log(response.data)
+					setStore({mercadoPago: response.data})
+				} catch(error){
+					console.error(error)
+				}
+			},
 			
 			
 			// Use getActions to call a function within a fuction

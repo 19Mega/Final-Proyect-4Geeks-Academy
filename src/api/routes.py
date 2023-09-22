@@ -8,7 +8,12 @@ import json
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
+from flask_bcrypt import Bcrypt
+import mercadopago
 
+# Agrega credenciales
+sdk = mercadopago.SDK("APP_USR-2815099995655791-092911-c238fdac299eadc66456257445c5457d-1160950667")
+bcrypt = Bcrypt() 
 
 api = Blueprint('api', __name__)
 
@@ -22,56 +27,89 @@ def handle_hello():
 
     return jsonify(response_body), 200
 
+# # # # # Mercado pago
+
+@api.route('/preference', methods=['POST'])
+def preference():
+    body = json.loads(request.data)
+    precio = body["precio"]
+    
+    # Crea un ítem en la preferencia
+    preference_data = {
+        "items": [
+            {
+                "title": "Componentify",
+                "quantity": 1,
+                "unit_price": precio,
+            }
+        ],
+        "payer":{
+            "email":"test_user_17805074@testuser.com" 
+        },                                                                                          
+        "back_urls": {
+            "success": "https://effective-rotary-phone-q7q7vxvwqq7gh974r-3000.app.github.dev",
+            "failure": "https://effective-rotary-phone-q7q7vxvwqq7gh974r-3000.app.github.dev",
+            "pending": "https://effective-rotary-phone-q7q7vxvwqq7gh974r-3000.app.github.dev"
+        },
+        "auto_return": "approved"
+
+    }
+
+    preference_response = sdk.preference().create(preference_data)
+    preference = preference_response["response"]
+
+    return preference,200
+
 
 # # # # # USER 👨👨👨👨👨👨
 
-# Registro de Usuarios
+# USER SIGNUP
 @api.route('/signup', methods=['POST'])
 def signup_user():
     body = json.loads(request.data)
-    # pw_hash = current_app.bcrypt.generate_password_hash(body["password"]).decode('utf-8')
-    # busca que el usuario no exista
-    user = User.query.filter_by(email=body["email"]).first()
+    #pw_hash = current_app.bcrypt.generate_password_hash(body["password"]).decode('utf-8') # NO
 
-    if user is None:  # sino existe lo guarda en la base de datos
+    # user exist ?
+    user = User.query.filter_by(email=body["email"]).first()
+    if user is None:  
+        # hashing the password
+        #hashed_password = bcrypt.hashpw(body["password"].encode('utf-8'), bcrypt.gensalt()) # NO
+        #hashed_password = api.bcrypt.generate_password_hash(body["password"]).decode('utf-8') # NO
+        hashed_password = bcrypt.generate_password_hash(body["password"]).decode('utf-8')
+
         new_user = User(
             name=body["name"],
             last_name=body["last_name"],
             email=body["email"],
-            password=body["password"],
+            #password=body["password"],
+            password= hashed_password,
             is_active=body["is_active"],
         )
         db.session.add(new_user)
         db.session.commit()
-
-        return jsonify({"msg": "usuario creado"}), 200
-    return jsonify({"msg": "usuario ya existe"}), 400
-
-# Inicio de Session de Usuarios
+        return jsonify({"msg": "User created."}), 200
+    
+    return jsonify({"msg": "User already exists."}), 400
 
 
-@api.route('/login', methods=['POST'])
+# USER LOGIN
+@api.route('/login', methods=['POST'])  
 def login_user():
-    body = json.loads(request.data)
 
-    email = body["email"]
-    password = body["password"]
+  email = request.json.get('email', None)
+  password = request.json.get('password', None)
 
-    user = User.query.filter_by(email=email).first()
+  user = User.query.filter_by(email=email).first()
+  if not user or not bcrypt.check_password_hash(user.password, password): #check hashed password
+    return jsonify({'msg': 'Invalid username/password'}), 401
 
-    if user is None:
-        return jsonify({"msg": "not found"}), 404
+  access_token = create_access_token(identity=email)
 
-    if email != user.email or password != user.password:
-        return jsonify({"msg": "email or password are incorrect"}), 401
+  return jsonify(access_token=access_token, user_id=user.id), 200
 
-    access_token = create_access_token(identity=email)
-    return jsonify(access_token=access_token), 200
 
 # muestra todos los usuarios
-
-
-@api.route('/user', methods=['GET'])
+@api.route('/users', methods=['GET'])
 @jwt_required()
 def get_users():
     # email=get_jwt_identity()
@@ -82,9 +120,21 @@ def get_users():
         return jsonify({"msg": "no existen usuarios"}), 404
     return jsonify(results), 200
 
-# Modifica  un Usuario por id
+# SEARCH ONE USER
+@api.route('/user/<int:user_id>', methods=['GET'])
+@jwt_required()
+def get_one_user(user_id):
+    user = User.query.get(user_id)
+    if not user:
+        return jsonify({"msg": "User not found"}), 404
+    
+    response_body = {"msg": "Component:",
+                     "results": user.serialize()}
+
+    return jsonify(response_body), 200
 
 
+# Modifica un Usuario por id
 @api.route('/user/<int:user_id>', methods=['PUT'])
 @jwt_required()
 def update_users(user_id):
@@ -94,16 +144,12 @@ def update_users(user_id):
 
     if user is None:
         return jsonify({"msg": "no existe el usuario"}), 404
-
     if "name" in body:
         user.name = body["name"]
-
     if "last_name" in body:
         user.last_name = body["last_name"]
-
     if "password" in body:
         user.password = body["password"]
-
     if "is_active" in body:
         user.is_active = body["is_active"]
 
@@ -111,8 +157,6 @@ def update_users(user_id):
     return jsonify({"msg": "usuario modificado"}), 200
 
 # Borra usuario por id
-
-
 @api.route('/user/<int:user_id>', methods=['DELETE'])
 @jwt_required()
 def delete_user(user_id):
@@ -413,6 +457,7 @@ def get_one_component(component_id):
 @ api.route('/component/add', methods=['POST'])  # TODO >> only admin jwt
 def add_component():
     request_body = request.get_json(force=True)
+    
 
     new_component = Component(
                                 name = request_body["name"],

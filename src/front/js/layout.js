@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useContext } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 import { BackendURL } from "./component/backendURL";
@@ -9,10 +9,20 @@ import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 import Signup from "./pages/signup";
 import Login from "./pages/login";
+import  AlertView  from "./pages/alertView";
+import { ButtonView } from "./pages/buttonView"
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import { Components } from "./pages/components";
+
 import { Admin } from "./pages/admin";
+import { AdminSearch } from "./pages/adminSearch";
+import { UserProfileData } from "./pages/userProfileData";
+import Contribute from "./pages/contribute ";
+import DocsIntro from "./pages/docs-introduction";
+
+import { Context } from "./store/appContext";
+import CardView from "./pages/cardView";
+import { ThankYou } from "./pages/thankYou";
 
 
 //create your first component
@@ -20,6 +30,7 @@ const Layout = () => {
     //the basename is used when your project is published in a subdirectory and not in the root of the domain
     // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
     const basename = process.env.BASENAME || "";
+    const { store, actions } = useContext(Context);
 
     if(!process.env.BACKEND_URL || process.env.BACKEND_URL == "") return <BackendURL/ >;
 
@@ -35,12 +46,27 @@ const Layout = () => {
                         <Route element={<h1>Not found!</h1>} />
                         <Route element={<Signup />} path="/signup" />
                         <Route element={<Login />} path="/login" />
-                        <Route element={<Components />} path="/components" />
+                        
                         <Route element={<Admin />} path="/admin" />
+                        <Route element={<Contribute />} path="/contribute" />
+                        <Route element={<ThankYou />} path="/thankyou" />
+                   
+
+                        <Route element={<DocsIntro />} path="docs/getting-started/introduction" />
+                        <Route element={<AlertView />} path="docs/components/alerts" />
+                        <Route element={<ButtonView />} path="docs/components/buttons" />
+                        <Route element={<CardView />} path="docs/components/cards" />
+
+                        <Route element={<AdminSearch />} path="/adminsearch" />
+
+                        <Route element={<UserProfileData/>} path="/userprofiledata" />
+
                     </Routes>
-                    <Footer />
-                </ScrollToTop>
-            </BrowserRouter>
+                    <Footer/>
+                    {/* {window.location.pathname === "/login" || window.location.pathname === "/signup" ? null : <Footer />} */}
+                    {/* {store.auth ? <Footer/> : null } */}
+                    </ScrollToTop>
+                </BrowserRouter>
         </div>
     );
 };

@@ -2,20 +2,19 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
-import IntroView from '../pages/introview'; 
+import IntroView from '../pages/introview';
 import LearnView from "./learnview";
-import MembershipPlans from "./planview";
+import MembershipPlans from "./contribute ";
 import AboutUs from "./aboutus"
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="text-center mt-5">
-			 <IntroView />
-			 <LearnView/>
-			 <AboutUs/>
-			 <MembershipPlans/>
+		<div className="text-center">
+			<IntroView />
+		
+			{/* <MembershipPlans /> */}
 			{/* <h1>Hello Rigo!!</h1>
 			<p>
 				<img src={rigoImageUrl} />
