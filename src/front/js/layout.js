@@ -24,6 +24,8 @@ import { Context } from "./store/appContext";
 import CardView from "./pages/cardView";
 import { ThankYou } from "./pages/thankYou";
 
+import { ColorsView } from "./pages/colorsView";
+
 
 //create your first component
 const Layout = () => {
@@ -56,6 +58,9 @@ const Layout = () => {
                         <Route element={<AlertView />} path="docs/components/alerts" />
                         <Route element={<ButtonView />} path="docs/components/buttons" />
                         <Route element={<CardView />} path="docs/components/cards" />
+
+                        <Route element={<ColorsView />} path="docs/utilities/colors" />
+
 
                         <Route element={<AdminSearch />} path="/adminsearch" />
 
