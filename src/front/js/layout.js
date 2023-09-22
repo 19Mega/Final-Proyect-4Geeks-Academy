@@ -22,6 +22,7 @@ import DocsIntro from "./pages/docs-introduction";
 
 import { Context } from "./store/appContext";
 import CardView from "./pages/cardView";
+import { ThankYou } from "./pages/thankYou";
 
 
 //create your first component
@@ -48,7 +49,8 @@ const Layout = () => {
                         
                         <Route element={<Admin />} path="/admin" />
                         <Route element={<Contribute />} path="/contribute" />
-                        
+                        <Route element={<ThankYou />} path="/thankyou" />
+                   
 
                         <Route element={<DocsIntro />} path="docs/getting-started/introduction" />
                         <Route element={<AlertView />} path="docs/components/alerts" />
@@ -60,8 +62,9 @@ const Layout = () => {
                         <Route element={<UserProfileData/>} path="/userprofiledata" />
 
                     </Routes>
+                    <Footer/>
                     {/* {window.location.pathname === "/login" || window.location.pathname === "/signup" ? null : <Footer />} */}
-                    {store.auth ? <Footer/> : null }
+                    {/* {store.auth ? <Footer/> : null } */}
                     </ScrollToTop>
                 </BrowserRouter>
         </div>
