@@ -5,6 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			message: null,
 			auth:false,
 			loginUserId:null,
+			signupStatus:false,
 			demo: [
 				{
 					title: "FIRST",
@@ -52,8 +53,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 						is_active: is_active
 					})
 					console.log(data);
-					setStore({ auth: true });
-					localStorage.setItem("token", data.data.access_token); 
+					setStore({ signupStatus: true });
+					//localStorage.setItem("token", data.data.access_token); 
 				} catch (error) {
 					console.log(error);
 					setStore({ auth: false });
