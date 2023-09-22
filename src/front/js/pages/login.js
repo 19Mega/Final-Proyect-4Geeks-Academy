@@ -109,13 +109,15 @@ const Login = () => {
                 <button className="btn btn-login text-uppercase fw-bold text-white" type="submit" style={{backgroundColor:menuColor}}>Log in</button>
               </div>
               <hr className="my-4"/>
+
               <div className="d-grid mb-2">
                 <button className="btn btn-google btn-login text-uppercase text-white fw-bold border border-2" type="submit" style={{backgroundColor:"#3c434c"}}>
                 <i className="fa-brands fa-github fa-lg me-2"></i> Sign in with Github
                 </button>
               </div>
+              
               <div className="d-grid">
-                <button className="btn btn-login text-uppercase fw-bold text-white" type="submit" style={{backgroundColor:menuColor}}>Sing up</button>
+                <Link to="/signup" className="btn btn-login text-uppercase fw-bold text-white" type="submit" style={{backgroundColor:menuColor}}>Sing up</Link>
         
                 {/* <button className="btn btn-facebook btn-login text-uppercase fw-bold" type="submit">
                   <i className="fab fa-facebook-f me-2"></i> Sign in with Facebook
