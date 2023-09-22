@@ -3,8 +3,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			message: null,
-			auth:false,
+			auth:true,
 			loginUserId:null,
+			footerVisible:true,
 			demo: [
 				{
 					title: "FIRST",

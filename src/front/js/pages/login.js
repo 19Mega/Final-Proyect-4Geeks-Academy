@@ -11,6 +11,8 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
+    // let actualLocation = useLocation();
+    // console.log("Estoy en login", actualLocation.pathname)
 
     // function handleInputEmail (event) {
     //     setEmail(event.target.value); // captura el email que escribe el usuario

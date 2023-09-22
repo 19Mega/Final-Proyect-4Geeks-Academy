@@ -19,7 +19,7 @@ import { AdminSearch } from "./pages/adminSearch";
 import { UserProfileData } from "./pages/userProfileData";
 
 import { Context } from "./store/appContext";
-
+import CardView from "./pages/cardView";
 
 
 //create your first component
@@ -51,6 +51,7 @@ const Layout = () => {
 
                         <Route element={<AlertView />} path="docs/components/alerts" />
                         <Route element={<ButtonView />} path="docs/components/buttons" />
+                        <Route element={<CardView />} path="docs/components/cards" />
 
                         <Route element={<AdminSearch />} path="/adminsearch" />
 
