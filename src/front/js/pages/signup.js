@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from 'react-router-dom';
 import { Context } from "../store/appContext";
 import "../../styles/intro.css";
+import "../../styles/signup.css";
 
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -64,154 +65,259 @@ const Signup = () => {
 
 
     const letras = { color: "dark" };
-    const menuColor = "#900C3F"
+    const menuColor = "#FD5812"
 
     return (
-        <div style={{background: "linear-gradient(to right, rgb(144 12 63 / 5%), rgb(144 12 63 / 5%))"}}>
-            <div className="container">
-            <div className="row">
+
+<section class="text-center text-lg-start">
+  
 
 
-              <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
-              <div className="card my-5" style={{ borderImage: 'linear-gradient(to right, #900C3F, #FD5812)', borderImageSlice: '1', borderStyle: 'solid', borderWidth: '6px'}}>
-                  <div className="card-body p-2 p-sm-5" style={{backgroundColor:"#c7b08c1f"}}>
-                    <h5 className="card-title text-center mb-5 fw-light fs-2 fw-semibold" style={{color:"#900C3F"}}>Sign Up</h5>
-                    <form onSubmit={formik.handleSubmit} >
+  <div class="container py-4 mt-5">
+    <div class="row g-0 align-items-center">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <div class="card cascading-right" style={{
+            background: "hsla(0, 0%, 100%, 0.55)",
+            backdropFilter: "blur(30px)"}} >
+          <div class="card-body p-5 shadow-5">
+            <h2 class="fw-bold mb-5">Sign up now</h2>
+            <form  onSubmit={formik.handleSubmit}>
 
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input  
+                    type="name"
+                    className="form-control"
+                    placeholder="Name"
+                    onChange={formik.handleChange}
+                    value={formik.values.name}
+                    id="name"
+                    name="name"
+                    />
 
-                        {/* name */}
-                        <div className="form-floating mb-4">
-                            <input className="form-control" placeholder="Name"
-                            onChange={formik.handleChange}
-                            value={formik.values.name}
-                            id="name"
-                            name="name"
-                            type="name"
-                            />
-            
-                            {formik.touched.name && formik.errors.name ? (
-                                <div style={{ color: menuColor}} >{formik.errors.name}</div>    
-                            ) : null}
-                            
-                            <label for="floatingInput" style={{ color: menuColor}}>Name</label>
-                        </div>
+                    {formik.touched.name && formik.errors.name ? (
+                        <div style={{ color: menuColor}} >{formik.errors.name}</div>    
+                    ) : null}
+                    <label class="form-label" htmlFor="name">First name</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input
+                    placeholder="Last Name"
+                    className="form-control"
+                    onChange={formik.handleChange}
+                    value={formik.values.lastName}
+                    id="lastName"
+                    name="lastName"
+                    type="lastName"
+                    />
 
-
-
-                        {/* lastName */}
-                        <div className="form-floating mb-4">
-                            <input className="form-control" placeholder="name@example.com"
-                            onChange={formik.handleChange}
-                            value={formik.values.lastName}
-                            id="lastName"
-                            name="lastName"
-                            type="lastName"
-                            />
-            
-                            {formik.touched.lastName && formik.errors.lastName ? (
-                                <div style={{ color: menuColor}} >{formik.errors.lastName}</div>    
-                            ) : null}
-                            
-                            <label for="floatingInput" style={{ color: menuColor}}>Last Name</label>
-                        </div>
-
-
-                        {/* email */}
-                        <div className="form-floating mb-4">
-                            <input className="form-control" placeholder="name@example.com"
-                            onChange={formik.handleChange}
-                            value={formik.values.email}
-                            id="email"
-                            name="email"
-                            type="email"
-                            />
-            
-                            {formik.touched.email && formik.errors.email ? (
-                                <div style={{ color: menuColor}} >{formik.errors.email}</div>    
-                            ) : null}
-                            
-                            <label for="floatingInput" style={{ color: menuColor}}>Email address</label>
-                        </div>
-        
-
-                        {/* password */}
-                        <div className="form-floating mb-4">
-                            <input className="form-control" placeholder="Password"
-                            onChange={formik.handleChange}
-                            value={formik.values.password}
-                            id="password"
-                            name="password"
-                            type="password"
-                            />
-                            
-                            {formik.touched.password && formik.errors.password ? (
-                                <div style={{ color: menuColor}} >{formik.errors.password}</div>    
-                            ) : null}
-            
-                            <label for="floatingPassword" style={{ color: menuColor}}>Password</label>
-                        </div>
-        
-
-                        {/* isActive 
-                        <div className="form-check-input mb-3">
-                            <input className="form-check-input" placeholder=""
-                            onChange={formik.handleChange}
-                            value={formik.values.isActive}
-                            id="isActive"
-                            name="isActive"
-                            type="isActive"
-                            />
-            
-                            {formik.touched.isActive && formik.errors.isActive ? (
-                                <div style={{ color: menuColor}} >{formik.errors.isActive}</div>    
-                            ) : null}
-                            
-                            <label for="floatingInput" style={{ color: menuColor}}>Is Active ?</label>
-                        </div>
-                        */}
-
-                        {/* 
-                        <div className="form-check mb-3">
-                            <input className="form-check-input" type="checkbox" value="" id="rememberPasswordCheck"/>
-                            <label className="form-check-label" htmlFor="rememberPasswordCheck" style={{ color: menuColor}}>
-                            Remember password
-                            </label>
-                        </div> 
-                        <div className="d-grid">
-                            <button className="btn btn-login text-uppercase fw-bold text-white" type="submit" style={{backgroundColor:menuColor}}>Log in</button>
-                        </div>
-                        */}
-
-
-                      <hr className="my-4"/>
-
-                        {/* 
-                        <div className="d-grid mb-2">
-                            <button className="btn btn-google btn-login text-uppercase text-white fw-bold border border-2" type="submit" style={{backgroundColor:"#3c434c"}}>
-                            <i className="fa-brands fa-github fa-lg me-2"></i> Sign in with Github
-                            </button>
-                        </div> 
-                        */}
-
-                        <div className="d-grid">
-                            <button className="btn btn-login text-uppercase fw-bold text-white" type="submit" style={{backgroundColor:menuColor}}>Sing up</button> 
-                        </div>
-
-                    </form>
+                    {formik.touched.lastName && formik.errors.lastName ? (
+                        <div style={{ color: menuColor}} >{formik.errors.lastName}</div>    
+                    ) : null}
+                    <label class="form-label" htmlfor="lastName">Last name</label>
                   </div>
                 </div>
               </div>
 
 
-            </div>
-            </div>
-              
+              <div class="form-outline mb-4">
+                <input 
+                type="email"
+                name="email"
+                className="form-control"
+                id="email"
+                placeholder="name@example.com"
+                onChange={formik.handleChange}
+                value={formik.values.email}
+                />
+                {formik.touched.email && formik.errors.email ? (
+                <div style={{ color: menuColor}} >{formik.errors.email}</div>     
+                ) : null}
+                <label class="form-label" htmlForfor="email">Email address</label>
+              </div>
+
+ 
+              <div class="form-outline mb-4">
+                <input 
+                type="password"
+                name="password"
+                className="form-control"
+                id="password"
+                placeholder="Enter your password"
+                onChange={formik.handleChange}
+                value={formik.values.password}
+                />
+                {formik.touched.password && formik.errors.password ? (
+                <div style={{ color: menuColor}} >{formik.errors.password}</div>    
+                ) : null}
+                <label class="form-label" htmlFor="password">Password</label>
+              </div>
+
+
+
+              <button type="submit" class="c-btn c-btn-componentify c-btn-componentify-hover mb-4">
+                Sign up
+              </button>
+            </form>
+          </div>
         </div>
+      </div>
+
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <img src="https://images.pexels.com/photos/5122177/pexels-photo-5122177.jpeg?auto=compress&cs=tinysrgb&w=600" class="w-75"
+          alt="" style={{ borderRadius: "1rem", boxShadow: "0 2px 45px #FF5733" }}/>
+      </div>
+    </div>
+  </div>
+</section>
+
     );
 }
 
 export default Signup;
+{/* <div style={{background: "linear-gradient(to right, rgb(144 12 63 / 5%), rgb(144 12 63 / 5%))"}}>
+<div className="container">
+<div className="row">
 
+
+  <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
+  <div className="card my-5" style={{ borderImage: 'linear-gradient(to right, #900C3F, #FD5812)', borderImageSlice: '1', borderStyle: 'solid', borderWidth: '6px'}}>
+      <div className="card-body p-2 p-sm-5" style={{backgroundColor:"#c7b08c1f"}}>
+        <h5 className="card-title text-center mb-5 fw-light fs-2 fw-semibold" style={{color:"#900C3F"}}>Sign Up</h5>
+        <form onSubmit={formik.handleSubmit} >
+
+
+            {/* name */}
+            // <div className="form-floating mb-4">
+            //     <input className="form-control" placeholder="Name"
+            //     onChange={formik.handleChange}
+            //     value={formik.values.name}
+            //     id="name"
+            //     name="name"
+            //     type="name"
+            //     />
+
+            //     {formik.touched.name && formik.errors.name ? (
+            //         <div style={{ color: menuColor}} >{formik.errors.name}</div>    
+            //     ) : null}
+                
+            //     <label for="floatingInput" style={{ color: menuColor}}>Name</label>
+            // </div>
+
+
+
+            {/* lastName */}
+            // <div className="form-floating mb-4">
+            //     <input className="form-control" placeholder="name@example.com"
+            //     onChange={formik.handleChange}
+            //     value={formik.values.lastName}
+            //     id="lastName"
+            //     name="lastName"
+            //     type="lastName"
+            //     />
+
+            //     {formik.touched.lastName && formik.errors.lastName ? (
+            //         <div style={{ color: menuColor}} >{formik.errors.lastName}</div>    
+            //     ) : null}
+                
+            //     <label for="floatingInput" style={{ color: menuColor}}>Last Name</label>
+            // </div>
+
+
+            {/* email */}
+            // <div className="form-floating mb-4">
+            //     <input className="form-control" placeholder="name@example.com"
+            //     onChange={formik.handleChange}
+            //     value={formik.values.email}
+            //     id="email"
+            //     name="email"
+            //     type="email"
+            //     />
+
+            //     {formik.touched.email && formik.errors.email ? (
+            //         <div style={{ color: menuColor}} >{formik.errors.email}</div>    
+            //     ) : null}
+                
+            //     <label for="floatingInput" style={{ color: menuColor}}>Email address</label>
+            // </div>
+
+
+            {/* password */}
+            // <div className="form-floating mb-4">
+            //     <input className="form-control" placeholder="Password"
+            //     onChange={formik.handleChange}
+            //     value={formik.values.password}
+            //     id="password"
+            //     name="password"
+            //     type="password"
+            //     />
+                
+            //     {formik.touched.password && formik.errors.password ? (
+            //         <div style={{ color: menuColor}} >{formik.errors.password}</div>    
+            //     ) : null}
+
+            //     <label for="floatingPassword" style={{ color: menuColor}}>Password</label>
+            // </div>
+
+
+            {/* isActive 
+            <div className="form-check-input mb-3">
+                <input className="form-check-input" placeholder=""
+                onChange={formik.handleChange}
+                value={formik.values.isActive}
+                id="isActive"
+                name="isActive"
+                type="isActive"
+                />
+
+                {formik.touched.isActive && formik.errors.isActive ? (
+                    <div style={{ color: menuColor}} >{formik.errors.isActive}</div>    
+                ) : null}
+                
+                <label for="floatingInput" style={{ color: menuColor}}>Is Active ?</label>
+            </div>
+            */}
+
+            {/* 
+            <div className="form-check mb-3">
+                <input className="form-check-input" type="checkbox" value="" id="rememberPasswordCheck"/>
+                <label className="form-check-label" htmlFor="rememberPasswordCheck" style={{ color: menuColor}}>
+                Remember password
+                </label>
+            </div> 
+            <div className="d-grid">
+                <button className="btn btn-login text-uppercase fw-bold text-white" type="submit" style={{backgroundColor:menuColor}}>Log in</button>
+            </div>
+            */}
+
+
+        //   <hr className="my-4"/>
+
+            {/* 
+            <div className="d-grid mb-2">
+                <button className="btn btn-google btn-login text-uppercase text-white fw-bold border border-2" type="submit" style={{backgroundColor:"#3c434c"}}>
+                <i className="fa-brands fa-github fa-lg me-2"></i> Sign in with Github
+                </button>
+            </div> 
+            */}
+
+//             <div className="d-grid">
+//                 <button className="btn btn-login text-uppercase fw-bold text-white" type="submit" style={{backgroundColor:menuColor}}>Sing up</button> 
+//             </div>
+
+//         </form>
+//       </div>
+//     </div>
+//   </div>
+
+
+// </div>
+// </div>
+  
+// </div> 
 
 /*
 <div className="d-flex justify-content-center mt-4 pb-3">
