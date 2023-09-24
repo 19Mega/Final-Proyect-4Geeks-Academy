@@ -206,6 +206,188 @@
     color:var(--color-purple-txt)
 }
 
+/* BACKGROUND COLORS */
+
+/* RISK */
+.bg-risk {
+    background-color: var(--color-risk-bg)
+}
+/* CAUTION */
+.bg-caution {
+    background-color: var(--color-caution-bg)
+}
+
+/* SILVER */
+.bg-silver {
+    background-color: var(--color-silver-bg)
+}
+
+/* GOLD */
+.bg-gold {
+   color: var(--color-gold-bg)
+}
+
+/* LIME */
+.bg-lime {
+    color: var(--color-lime-bg)
+}
+
+/* AZURE */
+.bg-azure {
+    color: var(--color-azure-bg)
+}
+
+/* MOCCA */
+.bg-mocca {
+   color: var(--color-mocca-bg)
+}
+
+/* AQUA */
+.bg-aqua {
+    color: var(--color-aqua-bg)
+}
+
+/* SLATE */
+.bg-slate {
+    color: var(--color-slate-bg)
+}
+
+/* COMPONENTIFY */
+.bg-componentify {
+    color: var(--color-componentify-bg)
+}
+
+/* LOLLYPOP */
+.bg-lollypop {
+    color: var(--color-lollypop-bg)
+}
+
+/* MINT */
+.bg-mint {
+    color: var(--color-mint-bg)
+}
+
+/* GLOOMY */
+.bg-gloomy {
+    color: var(--color-gloomy-bg)
+}
+
+/* FOG */
+.bg-fog {
+    color: var(--color-fog-bg)
+}
+
+/* DARK */
+.bg-dark {
+    color:var(--color-dark-bg)
+}
+
+/* WIN */
+.bg-win {
+    color:var(--color-win-bg)
+}
+
+/* LAVENDER */
+.bg-lavender {
+    color: var(--color-lavender-bg)
+}
+
+/* PURPLE */
+.bg-purple {
+    color:var(--color-purple-bg)
+}
+
+/* BORDER COLORS */
+
+/* RISK */
+.brd-risk {
+    background-color: var(--color-risk-border)
+}
+/* CAUTION */
+.brd-caution {
+    background-color: var(--color-caution-border)
+}
+
+/* SILVER */
+.brd-silver {
+    background-color: var(--color-silver-border)
+}
+
+/* GOLD */
+.brd-gold {
+   color: var(--color-gold-border)
+}
+
+/* LIME */
+.brd-lime {
+    color: var(--color-lime-border)
+}
+
+/* AZURE */
+.brd-azure {
+    color: var(--color-azure-border)
+}
+
+/* MOCCA */
+.brd-mocca {
+   color: var(--color-mocca-border)
+}
+
+/* AQUA */
+.brd-aqua {
+    color: var(--color-aqua-border)
+}
+
+/* SLATE */
+.brd-slate {
+    color: var(--color-slate-border)
+}
+
+/* COMPONENTIFY */
+.brd-componentify {
+    color: var(--color-componentify-border)
+}
+
+/* LOLLYPOP */
+.brd-lollypop {
+    color: var(--color-lollypop-border)
+}
+
+/* MINT */
+.brd-mint {
+    color: var(--color-mint-border)
+}
+
+/* GLOOMY */
+.brd-gloomy {
+    color: var(--color-gloomy-border)
+}
+
+/* FOG */
+.brd-fog {
+    color: var(--color-fog-border)
+}
+
+/* DARK */
+.brd-dark {
+    color:var(--color-dark-border)
+}
+
+/* WIN */
+.brd-win {
+    color:var(--color-win-border)
+}
+
+/* LAVENDER */
+.brd-lavender {
+    color: var(--color-lavender-border)
+}
+
+/* PURPLE */
+.brd-purple {
+    color:var(--color-purple-border)
+}
+
 
 /* ALERTS */
 
