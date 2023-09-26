@@ -27,6 +27,7 @@ import { ThankYou } from "./pages/thankYou";
 import { ColorsView } from "./pages/colorsView";
 import { Suggest } from "./pages/suggest";
 
+import { BackgroundView } from "./pages/backgroundview"
 
 //create your first component
 const Layout = () => {
@@ -61,8 +62,14 @@ const Layout = () => {
                         <Route element={<ButtonView />} path="docs/components/buttons" />
                         <Route element={<CardView />} path="docs/components/cards" />
 
-                        <Route element={<ColorsView />} path="docs/utilities/colors" />
 
+
+
+                         {/* UTILITIES */}
+                        <Route element={<ColorsView />} path="docs/utilities/colors" />
+                        <Route element={<BackgroundView />} path="docs/utilities/bg-colors" />
+
+                         {/* UTILITIES */}
 
                         <Route element={<AdminSearch />} path="/adminsearch" />
 

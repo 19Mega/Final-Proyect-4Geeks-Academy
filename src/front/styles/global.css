@@ -224,77 +224,77 @@
 
 /* GOLD */
 .bg-gold {
-   color: var(--color-gold-bg)
+    background-color: var(--color-gold-bg)
 }
 
 /* LIME */
 .bg-lime {
-    color: var(--color-lime-bg)
+    background-color: var(--color-lime-bg)
 }
 
 /* AZURE */
 .bg-azure {
-    color: var(--color-azure-bg)
+    background-color: var(--color-azure-bg)
 }
 
 /* MOCCA */
 .bg-mocca {
-   color: var(--color-mocca-bg)
+    background-color: var(--color-mocca-bg)
 }
 
 /* AQUA */
 .bg-aqua {
-    color: var(--color-aqua-bg)
+    background-color: var(--color-aqua-bg)
 }
 
 /* SLATE */
 .bg-slate {
-    color: var(--color-slate-bg)
+    background-color: var(--color-slate-bg)
 }
 
 /* COMPONENTIFY */
 .bg-componentify {
-    color: var(--color-componentify-bg)
+    background-color: var(--color-componentify-bg)
 }
 
 /* LOLLYPOP */
 .bg-lollypop {
-    color: var(--color-lollypop-bg)
+    background-color: var(--color-lollypop-bg)
 }
 
 /* MINT */
 .bg-mint {
-    color: var(--color-mint-bg)
+    background-color: var(--color-mint-bg)
 }
 
 /* GLOOMY */
 .bg-gloomy {
-    color: var(--color-gloomy-bg)
+    background-color: var(--color-gloomy-bg)
 }
 
 /* FOG */
 .bg-fog {
-    color: var(--color-fog-bg)
+    background-color: var(--color-fog-bg)
 }
 
 /* DARK */
 .bg-dark {
-    color:var(--color-dark-bg)
+    background-color:var(--color-dark-bg)
 }
 
 /* WIN */
 .bg-win {
-    color:var(--color-win-bg)
+    background-color:var(--color-win-bg)
 }
 
 /* LAVENDER */
 .bg-lavender {
-    color: var(--color-lavender-bg)
+    background-color: var(--color-lavender-bg)
 }
 
 /* PURPLE */
 .bg-purple {
-    color:var(--color-purple-bg)
+    background-color:var(--color-purple-bg)
 }
 
 /* BORDER COLORS */
