@@ -25,7 +25,9 @@ import CardView from "./pages/cardView";
 import { ThankYou } from "./pages/thankYou";
 
 import { ColorsView } from "./pages/colorsView";
-import { BackgroundView } from "./pages/backgroundview"
+import { BackgroundView } from "./pages/backgroundview";
+
+import { BadgesView } from "./pages/badgesView";
 
 //create your first component
 const Layout = () => {
@@ -59,7 +61,7 @@ const Layout = () => {
                         <Route element={<ButtonView />} path="docs/components/buttons" />
                         <Route element={<CardView />} path="docs/components/cards" />
 
-
+                        <Route element={<BadgesView />} path="docs/components/badges" />
 
 
                          {/* UTILITIES */}
