@@ -105,7 +105,13 @@ def login_user():
 
   access_token = create_access_token(identity=email)
 
-  return jsonify(access_token=access_token, user_id=user.id), 200
+  return jsonify(access_token=access_token, 
+                 user_id=user.id,
+                 user_name = user.name,
+                 user_last_name = user.last_name,
+                 user_email = user.email
+                 ), 200
+                 
 
 
 # muestra todos los usuarios

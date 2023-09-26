@@ -4,7 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			message: null,
 			auth:true,
-			loginUserId:null,
+			
 			signupStatus:false,
 			demo: [
 				{
@@ -29,10 +29,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 						"password":password
 					})
 					console.log(data);
-					
-					localStorage.setItem("token", data.data.access_token);
+					localStorage.setItem("id", data.data.user_id)
+					localStorage.setItem("name", data.data.user_name)
+					localStorage.setItem("lastName", data.data.user_last_name)
+					localStorage.setItem("email", data.data.user_email)					
+					localStorage.setItem("token", data.data.access_token)
 					setStore({auth:true})
-					setStore({loginUserId:data.data.user_id})
+					// setStore({loginUserId:data.data.user_id})
+					
+				
 					
 					return true;
 				} catch (error) {
@@ -41,9 +46,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			
-			SignupUser: async (name, last_name, email, password, is_active) => {
-				console.log("FLUX USER SIGNUP: ", name, last_name, email, password, is_active );
-			
+			SignupUser: async (name, last_name, email, password, is_active) => {			
 				try {
 					let data = await axios.post(process.env.BACKEND_URL + '/api/signup',{
 						name: name, 
@@ -52,7 +55,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 						password: password,
 						is_active: is_active
 					})
-					console.log(data);
 					setStore({ signupStatus: true });
 					//localStorage.setItem("token", data.data.access_token); 
 				} catch (error) {
@@ -62,8 +64,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			logout: () => {
-				console.log("Funciona")
 				localStorage.removeItem("token")
+				localStorage.removeItem("id")
+				localStorage.removeItem("name")
+				localStorage.removeItem("lastName")
+				localStorage.removeItem("email")				
 				setStore({auth:false})
 			},
 
@@ -76,7 +81,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 							"headers":{'Authorization': 'Bearer '+token}
 						})
 						if (data.status === 200) {
-							console.log(data.status);
 							setStore({auth:true})
 							return true;
 						}
