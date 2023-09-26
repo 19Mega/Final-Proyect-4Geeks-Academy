@@ -8,11 +8,12 @@ import { prism } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 
 const DocsIntro = () => {
+    window.scrollTo(0, 0);
     return (
 
 
         <div className="container">
-            <div className="row">
+            <div className="row" id= "main">
                 <SideBar />
                 <div className="col-10">
                     {/* seccion derecha de la pagina */}
