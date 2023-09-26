@@ -11,6 +11,7 @@ const Contribute = () => {
     let direccion = await store.mercadoPago.init_point
     window.location.replace(direccion)
   }
+  window.scrollTo(0, 0);
   return (
     <div>
       <div className="container" id="plans" style={{ marginBottom: '150px', marginTop: '50px', textAlign: 'center' }}>
