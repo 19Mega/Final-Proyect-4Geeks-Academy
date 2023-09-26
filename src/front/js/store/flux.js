@@ -29,11 +29,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 						"password":password
 					})
 					console.log(data);
-					localStorage.setItem("id", data.data.user_id);
-					localStorage.setItem("name", data.data.user_name);
-					localStorage.setItem("lastName", data.data.user_last_name);
-					localStorage.setItem("email", data.data.user_email);					
-					localStorage.setItem("token", data.data.access_token);
+					localStorage.setItem("id", data.data.user_id)
+					localStorage.setItem("name", data.data.user_name)
+					localStorage.setItem("lastName", data.data.user_last_name)
+					localStorage.setItem("email", data.data.user_email)					
+					localStorage.setItem("token", data.data.access_token)
 					setStore({auth:true})
 					// setStore({loginUserId:data.data.user_id})
 					
@@ -65,6 +65,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			logout: () => {
 				localStorage.removeItem("token")
+				localStorage.removeItem("id")
+				localStorage.removeItem("name")
+				localStorage.removeItem("lastName")
+				localStorage.removeItem("email")				
 				setStore({auth:false})
 			},
 
