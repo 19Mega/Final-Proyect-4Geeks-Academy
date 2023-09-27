@@ -4,7 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			message: null,
 			auth:true,
-			
+			badges:undefined,
 			signupStatus:false,
 			demo: [
 				{
@@ -111,6 +111,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			
+			// COMPONENTS BY NAME : BADGE
+			componentsByName: async () => {
+				try{
+					const response = await fetch(process.env.BACKEND_URL + "/api/components/" + "badge");
+					const data = await response.json();
+					setStore({badges:data.results})
+				} catch(error){
+					console.error(error)
+				}
+			},
+
 			
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
