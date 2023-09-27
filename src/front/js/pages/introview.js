@@ -14,28 +14,7 @@ const IntroView = () => {
     };
   
   return (
-<div className="container-fluid fondo-difuminado">
-{/* <div className="context">
-<div className="area" >
-            <ul className="circles">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-            </ul>
-    </div > */}
-{/* <div>
-      <CopyToClipboard text={textToCopy} onCopy={handleCopy}>
-        <button> Copiar al portapapeles</button>
-      </CopyToClipboard>
-    </div> */}
-
+<div className="container-fluid">
   <div className="d-flex align-items-center justify-content-center vh-20">
     <div className="jumbotron-content text-center" style={{ marginTop: '70px' }}>
     
