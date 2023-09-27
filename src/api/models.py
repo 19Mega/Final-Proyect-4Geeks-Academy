@@ -116,3 +116,23 @@ class Payment(db.Model):
             "id_plan":self.id_plan,     
             # do not serialize the password, its a security breach
         }
+
+
+class Quote(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), unique=False, nullable=False)
+    email = db.Column(db.String(120), unique=False, nullable=False)
+    message = db.Column(db.String(120), unique=False, nullable=False)  
+    image = db.Column(db.LargeBinary)
+
+    def __repr__(self):
+        return f'<Quote {self.id}>'
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "email": self.email,
+            "message": self.message,
+            "image":self.image,     
+        }
