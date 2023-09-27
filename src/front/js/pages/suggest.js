@@ -1,15 +1,35 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useContext } from 'react';
+import { Link, useNavigate } from "react-router-dom";
 import emailjs from '@emailjs/browser';
 import "../../styles/suggest.css"
 import "../../styles/global.css"
+import Swal from 'sweetalert2';
+import { Context } from '../store/appContext';
+
 
 export const Suggest = () => {
+  const navigate = useNavigate();
+  const {store, actions} = useContext(Context);
 
   let userName = localStorage.getItem("name");
-  // useEffect (()=>{
+  useEffect(() => {
+    // Verifica si el usuario está autenticado al cargar la página
+    const isAuthenticated = !!localStorage.getItem('token'); 
 
-
-  // }, 2000)
+    if (!isAuthenticated) {
+      // Si el usuario no está autenticado, alert
+      Swal.fire({
+        icon: 'warning',
+        title: 'Acceso denegado',
+        text: 'Debes iniciar sesión para acceder a esta página.',
+        confirmButtonText: 'Ir a la página de inicio de sesión',
+        allowOutsideClick: false,
+      }).then(() => {
+        // Redirige a la página de inicio de login
+        navigate('/login');
+      });
+    }
+  }, []);
 
   return (
 
