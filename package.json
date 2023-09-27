@@ -73,6 +73,13 @@
 		]
 	},
 	"dependencies": {
+<<<<<<< HEAD
+		"@fortawesome/fontawesome-svg-core": "^6.4.2",
+		"@fortawesome/free-solid-svg-icons": "^6.4.2",
+		"@fortawesome/react-fontawesome": "^0.2.0",
+=======
+		"@emailjs/browser": "^3.11.0",
+>>>>>>> fb6c657cb78bde540daf602aa2b0c158b1dc536f
 		"@stackblitz/sdk": "^1.9.0",
 		"algoliasearch": "^4.20.0",
 		"axios": "^1.5.0",
@@ -85,9 +92,11 @@
 		"react-copy-to-clipboard": "^5.1.0",
 		"react-dom": "^16.14.0",
 		"react-dropzone": "^14.2.3",
+		"react-icons": "^4.11.0",
 		"react-polyfills": "^0.0.1",
 		"react-router-dom": "^6.3.0",
 		"react-syntax-highlighter": "^15.5.0",
+		"sweetalert2": "^11.7.31",
 		"yup": "^1.2.0"
 	}
 }

@@ -206,6 +206,12 @@
     color:var(--color-purple-txt)
 }
 
+/* WHITE */
+
+.text-white {
+    color:#ffffff;
+}
+
 /* BACKGROUND COLORS */
 
 /* RISK */
@@ -815,4 +821,15 @@
 
 
 /* CREDIT CARD STYLE */
+
+
+/* BADGES */
+
+.c-badge {
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
 
