@@ -25,6 +25,8 @@ import CardView from "./pages/cardView";
 import { ThankYou } from "./pages/thankYou";
 
 import { ColorsView } from "./pages/colorsView";
+import { Suggest } from "./pages/suggest";
+
 import { BackgroundView } from "./pages/backgroundview"
 
 //create your first component
@@ -52,6 +54,7 @@ const Layout = () => {
                         <Route element={<Admin />} path="/admin" />
                         <Route element={<Contribute />} path="/contribute" />
                         <Route element={<ThankYou />} path="/thankyou" />
+                        <Route element={<Suggest />} path="/suggest" />
                    
 
                         <Route element={<DocsIntro />} path="docs/getting-started/introduction" />
