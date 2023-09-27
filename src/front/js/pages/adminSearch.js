@@ -2,17 +2,22 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export const AdminSearch = () => {
-  const [component, setComponent] = useState({});
-  const [search, setSearch] = useState("");
+  const [component, setComponent] = useState({}) // deprecateddd
+  const [serchResult, setSearchResult] = useState([])
 
-  const [id, setId] = useState("");
-  const [name, setName] = useState("");
-  const [type, setType] = useState("");
-  const [html, setHtml] = useState("");
-  const [css, setCss] = useState("");
-  const [js, setJs] = useState("");
-  const [react, setReact] = useState("");
+  const [search, setSearch] = useState("")
 
+  const [searchId, setSearchId] = useState("")
+  const [searchName, setSearchName]= useState("")
+  const [searchType, setSearchType]= useState("")
+
+  const [id, setId] = useState("")
+  const [name, setName] = useState("")
+  const [type, setType] = useState("")
+  const [html, setHtml] = useState("")
+  const [css, setCss] = useState("")
+  const [js, setJs] = useState("")
+  const [react, setReact] = useState("")
 
 
   // CREATE COMPONENT
@@ -33,7 +38,6 @@ export const AdminSearch = () => {
     })
     console.log(response)
   }
-
 
   // DELETE COMPONENT
   const fetchComponentDelete = async (id) =>{
@@ -60,7 +64,7 @@ export const AdminSearch = () => {
     }
   }
 
-  // GET COMPONENT
+  // GET COMPONENT (SEARCH)
   const fetchComponent = async (id) => {
     const response = await fetch(process.env.BACKEND_URL + "/api/component/" + id);
     const data = await response.json();
@@ -77,24 +81,24 @@ export const AdminSearch = () => {
     console.log(response)
   };
 
-// UPDATE COMPONENT
-const fetchComponentUpdate = async (id) => {
-  const response = await fetch(process.env.BACKEND_URL + "/api/component/update/" + id, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      name: name, 
-      type: type, 
-      html_code: html,
-      css_code: css,  
-      js_code: js,  
-      react_code: react 
+  // UPDATE COMPONENT
+  const fetchComponentUpdate = async (id) => {
+    const response = await fetch(process.env.BACKEND_URL + "/api/component/update/" + id, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: name, 
+        type: type, 
+        html_code: html,
+        css_code: css,  
+        js_code: js,  
+        react_code: react 
+      })
     })
-  })
-  console.log(response)
-}
+    console.log(response)
+  }
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -127,6 +131,8 @@ const fetchComponentUpdate = async (id) => {
 
   return (
     <div className="container">
+
+
       <div className="m-5 p-3 border border-4 border-warning rounded text-light bg-dark">
         <strong>Alert!</strong> This is a dangerous section that directly affects the database and is exclusively for administrators.
         <ul>
@@ -134,22 +140,10 @@ const fetchComponentUpdate = async (id) => {
             <li><strong>R</strong>ead: search by component id.</li>
             <li><strong>U</strong>pdate: search first, then update.</li>
             <li><strong>D</strong>elete: will delete the search id component.</li>
-
         </ul>
       </div>
 
-      <form>
-        <div className="">
-          <label className="form-label me-2">
-            <strong>#id to search</strong>
-          </label>
-          <input onChange={(e) => setSearch(e.target.value)} />
-          <button type="submit" className="btn btn-dark btn-sm ms-2 mb-1" onClick={(e) => { e.preventDefault(); fetchComponent(search); }}>
-            Search component
-          </button>
-          <span className="ms-2">🍀</span>
-        </div>
-      </form>
+
 
       <form className="mt-2 shadow ps-4 pe-2 pt-4 pb-4 border-bottom border-4 border-warning">
         <div className="input-group mb-2">
@@ -239,14 +233,67 @@ const fetchComponentUpdate = async (id) => {
           </div>
         </div>
 
+        <div className="d-flex justify-content-between">
+        <button className="btn btn-secondary me-3" onClick={(e) => { e.preventDefault(); fetchComponent(id); }} >Search by ID</button> 
         <button type="submit" className="btn btn-success me-3" onClick={(e) => { e.preventDefault(); fetchComponentCreate()}}>Add Component</button>
-
-        {/* <button className="btn btn-primary me-3">Check</button> */}
-
-        <button className="btn btn-warning me-3" onClick={(e) => { e.preventDefault(); fetchComponentUpdate(id)}}>Modify Component</button>
-        <button className="btn btn-danger me-3" onClick={(e) => { e.preventDefault(); fetchComponentDelete(id)}}>Delete Component</button>
+        <button type="submit" className="btn btn-warning me-3" onClick={(e) => { e.preventDefault(); fetchComponentUpdate(id)}}>Modify Component</button>
+        <button type="submit" className="btn btn-danger me-3 ms-auto" onClick={(e) => { e.preventDefault(); fetchComponentDelete(id)}}>Delete Component</button>
+        </div>
       </form>
-    </div>
+   
+
+
+      {/**** search section ****/}
+      <form className="mt-3 shadow ps-4 pe-2 pt-2 pb-4 border-bottom border-4 border-warning">
+
+
+        <div className="my-4 p-3 border border-4 border-warning rounded text-light bg-secondary">    
+            <strong>S</strong>EARCH SECTION.      
+        </div>
+
+        {/* TODO: cambiar los fetchs */}
+        <form className="d-flex justify-content-between align-items-center">
+          <div className="input-group mb-3 mx-3">
+            <input type="text" className="form-control" placeholder="ID" onChange={(e) => setSearchId(e.target.value)} />
+            <button type="submit" className="btn btn-dark btn-sm" onClick={(e) => { e.preventDefault(); fetchComponent(search); }}>
+              By ID
+            </button>
+          </div>
+
+          <div className="input-group mb-3 ">
+            <input type="text" className="form-control" placeholder="Name" onChange={(e) => setSearchName(e.target.value)} />
+            <button type="submit" className="btn btn-dark btn-sm" onClick={(e) => { e.preventDefault(); fetchComponent(search); }}>
+              By Name
+            </button>
+          </div>
+
+          <div className="input-group mb-3 mx-3">
+            <input type="text" className="form-control" placeholder="Type" onChange={(e) => setSearchType(e.target.value)} />
+            <button type="submit" className="btn btn-dark btn-sm" onClick={(e) => { e.preventDefault(); fetchComponent(search); }}>
+              By Type
+            </button>
+          </div>
+        </form>
+
+        {/* SEARCH RESULT MAP */}
+        <div className="mt-3">
+          {serchResult.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))} 
+        </div>
+
+
+      {/* end form search */}
+      </form>
+
+      
+
+
+
+
+
+      {/* end cointainer */}
+      </div> 
   );
 };
 
