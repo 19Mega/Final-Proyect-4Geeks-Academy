@@ -13,6 +13,29 @@ export const AdminSearch = () => {
   const [js, setJs] = useState("");
   const [react, setReact] = useState("");
 
+
+
+  // CREATE COMPONENT
+  const fetchComponentCreate = async () =>{
+    const response = await fetch(process.env.BACKEND_URL + "/api/component/add",{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: name, 
+        type: type, 
+        html_code: html,
+        css_code: css,  
+        js_code: js,  
+        react_code: react 
+      })
+    })
+    console.log(response)
+  }
+
+
+  // DELETE COMPONENT
   const fetchComponentDelete = async (id) =>{
     try { 
         const response = await fetch(process.env.BACKEND_URL + "/api/component/delete/" + id,{method: "DELETE"})
@@ -32,13 +55,12 @@ export const AdminSearch = () => {
           } else {
             alert("Failed to delete component");
           }
-
     } catch (error) {
         console.log(error)
     }
-
   }
 
+  // GET COMPONENT
   const fetchComponent = async (id) => {
     const response = await fetch(process.env.BACKEND_URL + "/api/component/" + id);
     const data = await response.json();
@@ -51,7 +73,28 @@ export const AdminSearch = () => {
     setCss(data.results.css_code);
     setJs(data.results.js_code);
     setReact(data.results.react_code);
+
+    console.log(response)
   };
+
+// UPDATE COMPONENT
+const fetchComponentUpdate = async (id) => {
+  const response = await fetch(process.env.BACKEND_URL + "/api/component/update/" + id, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      name: name, 
+      type: type, 
+      html_code: html,
+      css_code: css,  
+      js_code: js,  
+      react_code: react 
+    })
+  })
+  console.log(response)
+}
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -196,12 +239,12 @@ export const AdminSearch = () => {
           </div>
         </div>
 
-        <button type="submit" className="btn btn-success me-3">
-          Add Component
-        </button>
-        <button className="btn btn-primary me-3">Check</button>
-        <button className="btn btn-warning me-3">Modify</button>
-        <button className="btn btn-danger me-3" onClick={(e) => { e.preventDefault(); fetchComponentDelete(id)}}>Delete</button>
+        <button type="submit" className="btn btn-success me-3" onClick={(e) => { e.preventDefault(); fetchComponentCreate()}}>Add Component</button>
+
+        {/* <button className="btn btn-primary me-3">Check</button> */}
+
+        <button className="btn btn-warning me-3" onClick={(e) => { e.preventDefault(); fetchComponentUpdate(id)}}>Modify Component</button>
+        <button className="btn btn-danger me-3" onClick={(e) => { e.preventDefault(); fetchComponentDelete(id)}}>Delete Component</button>
       </form>
     </div>
   );

@@ -447,7 +447,7 @@ def get_components():
     return jsonify(response_body), 200
 
 
-@ api.route('/component/<int:component_id>', methods=['GET'])
+@api.route('/component/<int:component_id>', methods=['GET'])
 def get_one_component(component_id):
 
     component = Component.query.filter_by(id=component_id).first()
@@ -460,7 +460,7 @@ def get_one_component(component_id):
     return jsonify(response_body), 200
 
 
-@ api.route('/component/add', methods=['POST'])  # TODO >> only admin jwt
+@api.route('/component/add', methods=['POST'])  # TODO >> only admin jwt
 def add_component():
     request_body = request.get_json(force=True)
     
