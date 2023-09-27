@@ -517,3 +517,29 @@ def update_component(component_id):
                     "response": component.serialize() }), 200
 
 
+@api.route('/components/<string:component_name>', methods = ['GET'])
+def get_components_by_name(component_name):
+    # /components?page=1&per_page=10 #get first page, 10 components.
+    # /components?page=2&per_page=10 #get second page, 10 components.
+
+    # page=request.args.get('page', default = 1, type = int)
+    # per_page=request.args.get('per_page', default = 10, type = int)
+
+    # start_index=(page - 1) * per_page
+    # end_index=start_index + per_page
+
+    #component_query=Component.query.slice(start_index, end_index).all()  # Pagination
+
+    component_query = Component.query.filter_by(name=component_name).all() # No pagination
+    if not component_query:
+        empty_list = ["No components found with that Name"]
+        return jsonify({"msg": "Component not found", 
+                        "results":empty_list}), 404
+
+    results=list(map(lambda item: item.serialize(), component_query))
+
+
+    response_body= {"msg": "All components:",
+                     "results": results}
+
+    return jsonify(response_body), 200

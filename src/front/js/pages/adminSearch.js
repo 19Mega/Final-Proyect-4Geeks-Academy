@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const AdminSearch = () => {
   const [component, setComponent] = useState({}) // deprecateddd
-  const [serchResult, setSearchResult] = useState([])
+  const [searchResult, setSearchResult] = useState([]) 
 
   const [search, setSearch] = useState("")
 
@@ -100,6 +100,23 @@ export const AdminSearch = () => {
     console.log(response)
   }
 
+
+  //
+  // SEARCH SECTION 🟥🟧🟨🟩🟦🟪
+
+  // COMPONENTS BY NAME
+  const fetchComponentsByName = async (searchName) => {
+    const response = await fetch(process.env.BACKEND_URL + "/api/components/" + searchName);
+    const data = await response.json();
+    setSearchResult(data.results);
+    //console.log("BY NAME: ", response)
+    console.log("BY NAME: ", data.results)
+  };
+
+
+
+
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     switch (name) {
@@ -130,17 +147,12 @@ export const AdminSearch = () => {
   };
 
   return (
-    <div className="container">
+    <div style={{backgroundColor:"rgb(222,222,222)"}}>
+    <div className="container" >
 
 
       <div className="m-5 p-3 border border-4 border-warning rounded text-light bg-dark">
         <strong>Alert!</strong> This is a dangerous section that directly affects the database and is exclusively for administrators.
-        <ul>
-            <li><strong>C</strong>reate: fields need to be in blank to create a new component.</li>
-            <li><strong>R</strong>ead: search by component id.</li>
-            <li><strong>U</strong>pdate: search first, then update.</li>
-            <li><strong>D</strong>elete: will delete the search id component.</li>
-        </ul>
       </div>
 
 
@@ -244,11 +256,11 @@ export const AdminSearch = () => {
 
 
       {/**** search section ****/}
-      <form className="mt-3 shadow ps-4 pe-2 pt-2 pb-4 border-bottom border-4 border-warning">
+      <form className="my-5 pt-2 shadow border-bottom border-4 border-warning">
 
 
-        <div className="my-4 p-3 border border-4 border-warning rounded text-light bg-secondary">    
-            <strong>S</strong>EARCH SECTION.      
+        <div className="m-4 p-3 border border-4 border-warning rounded text-light bg-dark">    
+            <strong>🔎 SEARCH SECTION</strong>
         </div>
 
         {/* TODO: cambiar los fetchs */}
@@ -262,7 +274,7 @@ export const AdminSearch = () => {
 
           <div className="input-group mb-3 ">
             <input type="text" className="form-control" placeholder="Name" onChange={(e) => setSearchName(e.target.value)} />
-            <button type="submit" className="btn btn-dark btn-sm" onClick={(e) => { e.preventDefault(); fetchComponent(search); }}>
+            <button type="submit" className="btn btn-dark btn-sm" onClick={(e) => { e.preventDefault(); fetchComponentsByName(searchName); }}>
               By Name
             </button>
           </div>
@@ -276,10 +288,14 @@ export const AdminSearch = () => {
         </form>
 
         {/* SEARCH RESULT MAP */}
-        <div className="mt-3">
-          {serchResult.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))} 
+        <div className="mt-3 mb-5 mx-3">
+            <textarea
+              className="form-control"
+              rows="12"
+              name="result"
+              value={JSON.stringify(searchResult, null, 5)} // El tercer argumento (2) agrega espaciado para una mejor legibilidad
+              readOnly 
+            ></textarea>
         </div>
 
 
@@ -290,9 +306,12 @@ export const AdminSearch = () => {
 
 
 
-
+      <br></br>
+      <br></br>
+      <br></br>
 
       {/* end cointainer */}
+      </div> 
       </div> 
   );
 };
