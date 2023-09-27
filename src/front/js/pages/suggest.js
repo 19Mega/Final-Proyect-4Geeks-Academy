@@ -1,9 +1,16 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import "../../styles/suggest.css"
 import "../../styles/global.css"
 
 export const Suggest = () => {
+
+  let userName = localStorage.getItem("name");
+  // useEffect (()=>{
+
+
+  // }, 2000)
+
   return (
 
 
@@ -11,9 +18,9 @@ export const Suggest = () => {
     <div class="container">
       <div class="row gx-lg-5 align-items-center">
         <div class="col-lg-6 mb-5 mb-lg-0">
-        <h1 class="my-5 display-3 fw-bold ls-tight">
+        <h1 class="mb-5 display-3 fw-bold ls-tight">
             Hello, <br />
-            <span class="text-componentify">USER</span>
+            <span class="text-componentify">{userName}</span>
           </h1>
           <h2 class="my-5 fw-bold ls-tight">
           Share your Ideas with  <br />
@@ -34,7 +41,7 @@ export const Suggest = () => {
                 <div class="row">
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
-                      <input type="text" id="form3Example1" class="form-control" />
+                      <input type="text" id="form3Example1" class="form-control" value={localStorage.getItem("name")} disabled/>
                       <label class="form-label" for="form3Example1"></label>
                     </div>
                   </div>
@@ -44,9 +51,9 @@ export const Suggest = () => {
                 <div class="form-outline mb-4">
                   <input type="email"
                         name="email"
-                        // value={localStorage.getItem("email")}
+                        value={localStorage.getItem("email")}
                         className="form-control"
-                        required id="form3Example3" class="form-control" />
+                        required id="form3Example3" disabled class="form-control" />
                   <label class="form-label" for="form3Example3"></label>
                 </div>
                 <div class="form-outline mb-4">
@@ -61,18 +68,9 @@ export const Suggest = () => {
                 required
               ></textarea>
               </div>
-                
-
-                
-                
-
-                
                 <button type="submit" class="c-btn c-btn-componentify c-btn-componentify-hover btn-block mb-4">
                   Send
                 </button>
-
-                
-                
               </form>
             </div>
           </div>
