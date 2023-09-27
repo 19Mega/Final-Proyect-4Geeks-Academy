@@ -29,6 +29,7 @@ import { BackgroundView } from "./pages/backgroundview";
 
 import { BadgesView } from "./pages/badgesView";
 import { Suggest } from "./pages/suggest";
+import  { GetAquote } from "./pages/getAquote"
 
 
 
@@ -58,7 +59,7 @@ const Layout = () => {
                         <Route element={<Contribute />} path="/contribute" />
                         <Route element={<ThankYou />} path="/thankyou" />
                         <Route element={<Suggest />} path="/suggest" />
-                   
+                        <Route element={<GetAquote />} path="/quotes" />
 
                         <Route element={<DocsIntro />} path="docs/getting-started/introduction" />
                         <Route element={<AlertView />} path="docs/components/alerts" />

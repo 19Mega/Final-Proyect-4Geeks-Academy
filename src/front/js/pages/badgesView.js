@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { Context } from "../store/appContext";
 import "../../styles/global.css";
 import "./global.js";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -7,7 +8,12 @@ import { SideBar } from '../component/sideBar';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 export const BadgesView = () => {
+  const { store, actions } = useContext(Context);
+
   const [copiedIndexes, setCopiedIndexes] = useState([]);
+  const [badgeList2, setBadgeList2] = useState(store.badges);
+  //console.log(badgeList2)
+
 
   const handleCopy = (i) => {
     setCopiedIndexes([...copiedIndexes, i]);
@@ -45,27 +51,27 @@ export const BadgesView = () => {
                       </div>
 
                                         {/* MAP >>> ACA HACE UN ROW POR CADA COMPONENTE CON SUS COSITAS*/}
-                                        {badgeList.map((item, i) => (
+                                        {badgeList2.map((item, i) => (
                                         <div key={i} className='row'>
 
                                             {/* component */}
                                             <div className='col-3'>
                                                 {/* Utiliza dangerouslySetInnerHTML para mostrar el HTML */}
-                                                <div dangerouslySetInnerHTML={{ __html: item }} />
+                                                <div dangerouslySetInnerHTML={{ __html: item.html_code }} />
                                             </div>
 
                                             {/* code */}
                                             <div className='col-8'>
                                                 <div>
                                                     <SyntaxHighlighter className="mt-0 c-alert" language="html" style={prism}>
-                                                    {item}
+                                                    {item.html_code}
                                                     </SyntaxHighlighter>
                                                 </div>
                                             </div>
 
                                             {/* copy to clipboard */}
                                             <div className='col-1'>
-                                                <CopyToClipboard text={item} onCopy={() => handleCopy(i)}>
+                                                <CopyToClipboard text={item.html_code} onCopy={() => handleCopy(i)}>
                                                 {copiedIndexes.includes(i) ? <i class="fa-solid fa-check"></i>: <i class="fa-regular fa-clipboard"></i>}
                                                 </CopyToClipboard>
                                             </div>
