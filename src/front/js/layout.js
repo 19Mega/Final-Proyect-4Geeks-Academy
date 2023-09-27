@@ -30,7 +30,7 @@ import { BackgroundView } from "./pages/backgroundview";
 import { BadgesView } from "./pages/badgesView";
 import { Suggest } from "./pages/suggest";
 
-import { BackgroundView } from "./pages/backgroundview"
+
 
 //create your first component
 const Layout = () => {
