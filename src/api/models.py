@@ -65,6 +65,7 @@ class Component(db.Model):
         return {
             "id": self.id,
             "type": self.type,
+            "name": self.name,
             "html_code": self.html_code,
             "css_code": self.css_code,
             "js_code": self.js_code,
