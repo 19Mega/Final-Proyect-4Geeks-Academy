@@ -115,7 +115,7 @@ const IntroView = () => {
 
 
 
-      <div className="container" id="learn" style={{ marginBottom: '130px', marginTop: '150px' }}>
+      <div className="container" id="learn" style={{ marginTop: '150px' }}>
           <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" className="bi bi-code-square" viewBox="0 0 16 16">
           <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
           <path d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0zm2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0z"/>
@@ -149,7 +149,7 @@ const IntroView = () => {
 
 
       <div className="row">
-        <div className="col-lg-6 py-lg-4 pe-lg-5" style={{ textAlign: "left", borderRight: "1px solid #ccc"}}>
+        <div className="col-lg-6 py-lg-4 pe-lg-5" style={{ textAlign: "left", borderRight: "1px solid #ccc", marginBottom: '7rem'}}>
           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-box-seam" viewBox="0 0 16 16">
             <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z" />
           </svg>
@@ -165,7 +165,7 @@ const IntroView = () => {
             gem i Componentify -v 5.3.2
           </div>
           <p>
-            <a href="/docs/5.3/getting-started/download/">Read our installation docs</a> for more info and additional package managers.
+          <Link to="/docs/getting-started/introduction"> Read our installation docs </Link> for more info and additional package managers.
           </p>
         </div>
         <div className="col-lg-6 py-lg-4 pe-lg-5" style={{ textAlign: "left", paddingLeft: "50px" }}>
