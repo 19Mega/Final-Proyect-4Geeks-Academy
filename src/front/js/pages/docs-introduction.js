@@ -21,7 +21,7 @@ const DocsIntro = () => {
                         <div className="row">
                             {/* titulo */}
 
-                            <h1 className="mt-3">Getting started with <span className="text-componentify">Componentify</span></h1>
+                            <h1 className="mt-3"> <strong>Getting started with </strong><span className="text-componentify"><strong>Componentify</strong></span></h1>
                             <p className="fs-5 mt-2 mb-3">Componentify is the world’s most popular component framework for building feature rich, blazing fast applications. Build anything—from prototype to production—in minutes.</p>
                             <h5 className="text-componentify">No CSS knowledge required.</h5>
                             <h2 className="mt-4">Quick & easy start</h2>

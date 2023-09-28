@@ -14,7 +14,7 @@ export const Footer = () => {
       <hr style={{
         color: "#FD5812",
         border: "0px",
-        height: "2px",
+        height: "0px",
         textAlign: "center",
         backgroundImage: "linear-gradient(left, #fff, #FD5812, )"
       }} />
