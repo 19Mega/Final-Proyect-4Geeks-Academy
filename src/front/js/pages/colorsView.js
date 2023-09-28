@@ -1,13 +1,45 @@
-import React from "react";
+import React, {useState} from "react";
 import "../../styles/global.css"
 import "./global.js"
 import { SideBar } from "../component/sideBar"
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { prism } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 
 
 export const ColorsView = () => {
+    const [copiedIndexes, setCopiedIndexes] = useState([]);
+    const handleCopy = (i) => {
+        setCopiedIndexes([...copiedIndexes, i]);
+    
+        setTimeout(() => {
+          setCopiedIndexes((prevIndexes) => prevIndexes.filter((index) => index !== i));
+          console.log('Texto revertido después de 3 segundos');
+        }, 3000); // 3 seconds delay
+    
+      };
+
+      const colorList = [
+        '<p class="text-risk">.text-risk</p>',
+        '<p class="text-caution">.text-caution</p>',
+        '<p class="text-silver">.text-silver</p>',
+        '<p class="text-gold">.text-gold</p>',
+        '<p class="text-lime">.text-lime </p>',
+        '<p class="text-azure">.text-azure</p>',
+        '<p class="text-mocca">.text-mocca</p>',
+        '<p class="text-aqua">.text-aqua</p>',
+        '<p class="text-slate">.text-slate</p>',
+        '<p class="text-componentify">.text-componentify</p>',
+        '<p class="text-lollypop">.text-lollypop</p>',
+        '<p class="text-mint">.text-mint</p>',
+        '<p class="text-gloomy">.text-gloomy</p>',
+        '<p class="text-fog">.text-fog</p>',
+        '<p class="text-dark">.text-dark</p>',
+        '<p class="text-win">.text-win</p>',
+        '<p class="text-lavender">.text-lavender</p>',
+        '<p class="text-purple">.text-purple</p>'
+      ]
     return (
         <div className="container">
             <div className="row">
@@ -24,58 +56,36 @@ export const ColorsView = () => {
                         </div>
 
                         <div className="container border rounded my-3 py-3">
-                            <div className="row">
-                                <div className="col-lg-12 col-md-12 col-sm-12 col-12 ">
-                                    <p className="text-risk">.text-risk</p>
-                                    <p className="text-caution">.text-caution</p>
-                                    <p className="text-silver">.text-silver</p>
-                                    <p className="text-gold">.text-gold</p>
-                                    <p className="text-lime">.text-lime </p>
-                                    <p className="text-azure">.text-azure</p>
-                                    <p className="text-mocca">.text-mocca</p>
-                                    <p className="text-aqua">.text-aqua</p>
-                                    <p className="text-slate">.text-slate</p>
-                                    <p className="text-componentify">.text-componentify</p>
-                                    <p className="text-lollypop">.text-lollypop</p>
-                                    <p className="text-mint">.text-mint</p>
-                                    <p className="text-gloomy">.text-gloomy</p>
-                                    <p className="text-fog">.text-fog</p>
-                                    <p className="text-dark">.text-dark</p>
-                                    <p className="text-win">.text-win</p>
-                                    <p className="text-lavender">.text-lavender</p>
-                                    <p className="text-purple">.text-purple</p>
+                            {/* Acá empieza el bello MAP */}
+                            {colorList.map((color, i) => (
+                            <div key={i} className="row">
+                                <div className="col-lg-3 col-md-3 col-sm-3 col-12 align-self-center">
+                                    {/* Utiliza dangerouslySetInnerHTML para mostrar el HTML */}
+                                    <div dangerouslySetInnerHTML={{ __html: color }} />
                                 </div>
 
 
 
 
-                                <div className="col-lg-9 col-md-9 col-sm-9 col-12" style={{ width: '100%' }}>
+                                <div className="col-lg-8 col-md-8 col-sm-8 col-12" >
                                     <SyntaxHighlighter className="mt-0 c-alert" language="html" style={prism}>
-                                        {
-`<p class="text-risk">.text-risk</p>
-<p class="text-caution">.text-caution</p>
-<p class="text-silver">.text-silver</p>
-<p class="text-gold">.text-gold</p>
-<p class="text-lime">.text-lime</p>
-<p class="text-azure">.text-azure</p>
-<p class="text-mocca">.text-mocca</p>
-<p class="text-aqua">.text-aqua</p>
-<p class="text-slate">.text-slate</p>
-<p class="text-componentify">.text-componentify</p>
-<p class="text-lollypop">.text-lollypop</p>
-<p class="text-mint">.text-mint</p>
-<p class="text-gloomy">.text-gloomy</p>
-<p class="text-fog">.text-fog</p>
-<p class="text-dark">.text-dark</p>
-<p class="text-win">.text-win</p>
-<p class="text-lavender">.text-lavender</p>
-<p class="text-purple">.text-purple</p>`}
+                                        {color}
                                     </SyntaxHighlighter>
                                 </div>
+                                {/* copy to clipboard */}
+                                <div className='col-1 col-md-1 col-sm-1 align-self-center'>
+                                    <CopyToClipboard text={color} onCopy={() => handleCopy(i)}>
+                                        {copiedIndexes.includes(i) ? <i class="fa-solid fa-check fa-xl text-componentify"></i>: <i class="fa-regular fa-clipboard fa-xl text-fog"></i>}
+                                    </CopyToClipboard>
                             </div>
+                            </div>
+                            ))} 
 
-
+                        {/* Acá termina el bello MAP y cerramos la row */}
                         </div>
+
+
+                        
                     </div>
                 </div>
             </div>
