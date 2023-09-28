@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { Context } from "../store/appContext";
 
 
 export const Admin = () => {
   const [quoteData, setQuoteData] = useState([]);
   const navigate = useNavigate();
+  const { store, actions } = useContext(Context);
 
   useEffect(() => {
-
     const fetchQuotes = async () => {
       const response = await fetch(process.env.BACKEND_URL + "/api/quotes");
       const data = await response.json();
@@ -59,6 +60,12 @@ export const Admin = () => {
     return buffer;
   };
 
+  async function logout(event) { // al presionar el botón logout, redirecciona al home y tiene que aparecer el botón login en la barra
+    event.preventDefault()
+    actions.logout()
+    navigate("/")
+}
+
 
   // admin-component
   return (
@@ -73,9 +80,9 @@ export const Admin = () => {
       <button type="button" className="c-btn c-btn-lavender c-btn-lavender-hover">To admin components</button>
       </Link>
 
-      <Link to={"/"} >
-      <button type="button" class="c-btn c-btn-fog c-btn-fog-hover ms-5">Log out</button>
-      </Link>
+      
+      <button type="button" class="c-btn c-btn-fog c-btn-fog-hover ms-5" onClick={logout} >Log out</button>
+     
 
       </div>
 

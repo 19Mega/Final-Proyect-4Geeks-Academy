@@ -57,7 +57,7 @@ const Layout = () => {
                         <Route element={<Signup />} path="/signup" />
                         <Route element={<Login />} path="/login" />
                         
-                        <Route element={<Admin />} path="/admin" />
+                        <Route element={<Admin />} path="/c-admin" />
                         <Route element={<Contribute />} path="/contribute" />
                         <Route element={<ThankYou />} path="/thankyou" />
                         <Route element={<Suggest />} path="/suggest" />
