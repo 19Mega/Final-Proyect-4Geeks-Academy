@@ -115,6 +115,11 @@ export const SideBar = () => {
 			title: 'Colors',
 			description: 'Different text colors', 
 			path: "docs/utilities/colors" 
+		},
+		{
+			title: 'Borders', 
+			description: 'Different type of border colors',
+			path: "docs/utilities/borders"
 		}
 	]
 

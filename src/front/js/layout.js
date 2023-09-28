@@ -19,7 +19,7 @@ import { AdminComponent } from "./pages/adminComponent";
 import { UserProfileData } from "./pages/userProfileData";
 import Contribute from "./pages/contribute ";
 import DocsIntro from "./pages/docs-introduction";
-
+import Download from "./pages/download";
 import { Context } from "./store/appContext";
 import CardView from "./pages/cardView";
 import { ThankYou } from "./pages/thankYou";
@@ -29,7 +29,8 @@ import { BackgroundView } from "./pages/backgroundview";
 
 import { BadgesView } from "./pages/badgesView";
 import { Suggest } from "./pages/suggest";
-import  { GetAquote } from "./pages/getAquote"
+import  { GetAquote } from "./pages/getAquote";
+import { BorderView } from "./pages/bordersView";
 
 
 
@@ -67,12 +68,12 @@ const Layout = () => {
                         <Route element={<CardView />} path="docs/components/cards" />
 
                         <Route element={<BadgesView />} path="docs/components/badges" />
-
+                        <Route element={<Download />} path="docs/getting-started/download" />
 
                          {/* UTILITIES */}
                         <Route element={<ColorsView />} path="docs/utilities/colors" />
                         <Route element={<BackgroundView />} path="docs/utilities/bg-colors" />
-
+                        <Route element={<BorderView />} path="docs/utilities/borders" />
                          {/* UTILITIES */}
 
                         <Route element={<AdminComponent />} path="/admin-component" />
