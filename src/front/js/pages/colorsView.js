@@ -77,7 +77,7 @@ export const ColorsView = () => {
                                     <CopyToClipboard text={color} onCopy={() => handleCopy(i)}>
                                         {copiedIndexes.includes(i) ? <i class="fa-solid fa-check fa-xl text-componentify"></i>: <i class="fa-regular fa-clipboard fa-xl text-fog"></i>}
                                     </CopyToClipboard>
-                            </div>
+                                </div>
                             </div>
                             ))} 
 

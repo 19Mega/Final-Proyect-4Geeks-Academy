@@ -394,6 +394,97 @@
     border: solid 2px var(--color-purple-border)
 }
 
+/* SHADOWS */
+
+/* Shadow Risk */
+.c-shadow-risk {
+    box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+}
+
+/* Shadow Caution */
+.c-shadow-caution {
+    box-shadow: 0 6px 20px rgba(255, 202, 40, 0.4);
+}
+
+/* Shadow Silver */
+.c-shadow-silver {
+    box-shadow: 0 6px 20px rgba(196, 196, 196, 0.4);
+}
+
+/* Shadow Gold */
+.c-shadow-gold {
+    box-shadow: 0 6px 20px rgba(223, 194, 35, 0.4);
+}
+
+/* Shadow con color Lime */
+.c-shadow-lime {
+    box-shadow: 0 6px 20px rgba(100, 245, 100, 0.4);
+}
+
+/* Shadow con color Azure */
+.c-shadow-azure {
+    box-shadow: 0 6px 20px rgba(0, 127, 255, 0.4);
+}
+
+/* Shadow con color Mocca */
+.c-shadow-mocca {
+    box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+}
+
+/* Shadow con color Aqua */
+.c-shadow-aqua {
+    box-shadow: 0 6px 20px rgba(81, 243, 243, 0.4);
+}
+
+/* Shadow con color Slate */
+.c-shadow-slate {
+    box-shadow: 0 6px 20px rgba(112, 128, 144, 0.4);
+}
+
+/* Shadow con color Componentify */
+.c-shadow-componentify {
+    box-shadow: 0 6px 20px rgba(253, 88, 18, 0.4);
+}
+
+/* Shadow con color Lollypop */
+.c-shadow-lollypop {
+    box-shadow: 0 6px 20px rgba(247, 93, 170, 0.4);
+}
+
+/* Shadow con color Mint */
+.c-shadow-mint {
+    box-shadow: 0 6px 20px rgba(62, 180, 137, 0.4);
+}
+
+/* Shadow con color Gloomy */
+.c-shadow-gloomy {
+    box-shadow: 0 6px 20px rgba(41, 43, 46, 0.4);
+}
+
+/* Shadow con color Fog */
+.c-shadow-fog {
+    box-shadow: 0 6px 20px rgba(248, 249, 250, 0.4);
+}
+
+/* Shadow con color Dark */
+.c-shadow-dark {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Shadow con color Win */
+.c-shadow-win {
+    box-shadow: 0 6px 20px rgba(25, 135, 84, 0.4);
+}
+
+/* Shadow con color Lavender */
+.c-shadow-lavender {
+    box-shadow: 0 6px 20px rgba(214, 214, 250, 0.4);
+}
+
+/* Shadow con color Purple */
+.c-shadow-purple {
+    box-shadow: 0 6px 20px rgba(160, 8, 160, 0.4);
+}
 
 /* ALERTS */
 
