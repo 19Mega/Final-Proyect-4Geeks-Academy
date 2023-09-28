@@ -153,7 +153,7 @@ const BannerView = () => {
                         <div className="row">
                             {/* titulo */}
 
-                            <h1 className="mt-3">Banners</h1>
+                            <h1 className="mt-3"><strong>Banners</strong></h1>
                             <p className="fs-5 mt-2 mb-3">The <span style={{ "color": "#FD5812" }}>c-banner component</span> a lightweight, flexible component that can optionally extend the entire viewport to showcase key marketing messages on your site.</p>
                             <h6 className="mb-4 c-alert c-alert-fog mx-3" style={{ "width": "97%", fontWeight: "normal" }}><strong>Color Tip:  </strong>Here, we provide you with some examples using a selection of our colors. You can mix and match our <a style={{ "color": "#FD5812" }} href="/docs/utilities/bg-colors">backgrounds,</a> <a style={{ "color": "#FD5812" }} href="/docs/utilities/borders">borders,</a> <a style={{ "color": "#FD5812" }} href="/docs/utilities/colors"> texts,</a> <a style={{ "color": "#FD5812" }} href="/docs/components/buttons">buttons</a> and more. We'll leave that to your imagination.</h6>
                         </div>

@@ -88,7 +88,7 @@ const FormView = () => {
                         <div className="row">
                             {/* titulo */}
 
-                            <h1 className="mt-3">Forms</h1>
+                            <h1 className="mt-3"><strong>Forms</strong></h1>
                             <p className= "fs-5 mt-2 mb-3">The <span style={{ "color": "#FD5812" }}>c-form components</span> are elegantly designed, user-friendly, and highly customizable. They are crafted to enhance user interactions and capture data effectively. With a sleek and modern appearance, these forms offer a seamless user experience, making data input and submission a breeze. Whether you need a simple contact form or a complex multi-step survey, "c-formas" forms provide a stylish solution for all your data collection needs. Tailor them to match your website's unique style and enjoy the flexibility of integrating them into any web project effortlessly.</p>
                             
                         </div>

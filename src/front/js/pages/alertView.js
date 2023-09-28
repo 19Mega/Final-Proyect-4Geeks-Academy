@@ -47,17 +47,13 @@ const AlertView = () => {
             <div className="row">
                 <SideBar />
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
                 <div className="col-10">
                     {/* seccion derecha de la pagina */}
                     <div className="container">
                         <div className="row">
                             {/* titulo */}
 
-                            <h1 className="mt-3">Alerts</h1>
+                            <h1 className="mt-3"><strong>Alerts</strong></h1>
                             <p className="fs-5 mt-2 mb-3">The <span style={{ "color": "#FD5812" }}>c-alert component</span> is used to convey important information to the user through the use of contextual types, icons, and colors.
                                 Alerts are available for any length of text. For proper styling, use one of the eighteen required contextual classes (e.g., <span className="text-componentify">.c-alert-componentify</span>).</p>
                         </div>

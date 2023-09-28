@@ -93,7 +93,7 @@ const ProgressBarsView = () => {
                         <div className="row">
                             {/* titulo */}
 
-                            <h1 className="mt-3">Progress bars</h1>
+                            <h1 className="mt-3"><strong>Progress bars</strong></h1>
                             <p className="fs-5 mt-2 mb-3">The <span style={{ "color": "#FD5812" }}>c-progress bar component</span> is used to convey data visually to users. It supports both indeterminate amounts, such as loading or processing, and finite amounts of progress.</p>
                             <h6 className="mb-4 c-alert c-alert-fog mx-3" style={{ "width": "97%", fontWeight: "normal" }}><strong>Color Tip:  </strong>Here, we provide you with some examples using a selection of our colors. You can mix and match our <a style={{ "color": "#FD5812" }} href="/docs/utilities/bg-colors">backgrounds,</a> <a style={{ "color": "#FD5812" }} href="/docs/utilities/borders">borders,</a> <a style={{ "color": "#FD5812" }} href="/docs/utilities/colors"> texts,</a> <a style={{ "color": "#FD5812" }} href="/docs/components/buttons">buttons</a> and more. We'll leave that to your imagination.</h6>
                         </div>

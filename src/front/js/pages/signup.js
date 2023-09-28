@@ -102,7 +102,7 @@ const Signup = () => {
             background: "hsla(0, 0%, 100%, 0.55)",
             backdropFilter: "blur(30px)"}} >
           <div class="card-body p-5 shadow-5">
-            <h2 class="fw-bold mb-5">Sign up now</h2>
+            <h2 class="fw-bold mb-5">Add new admin user</h2>
             <form  onSubmit={formik.handleSubmit}>
 
               <div class="row">

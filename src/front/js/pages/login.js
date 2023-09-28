@@ -80,7 +80,7 @@ const Login = () => {
                             <span class="h1 fw-bold mb-0">Componentify</span>
                           </div>
 
-                          <h5 class="fw-normal mb-3 pb-3" style={{ letterSpacing: "1px" }}>Log into your account</h5>
+                          <h5 class="fw-normal mb-3 pb-3" style={{ letterSpacing: "1px" }}>Developers section, admin login</h5>
 
                           <div class="form-outline mb-4">
                             <input class="form-control form-control-lg" placeholder="name@example.com"

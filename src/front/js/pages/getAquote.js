@@ -61,7 +61,7 @@ export const GetAquote = () => {
               Request a Custom <span class="text-componentify">Component</span> Quote
             </h1>
             <h2 class="my-5 fw-bold ls-tight">
-            Share your Ideas with  
+            Get in touch with 
             <br/>
               <span class="text-componentify">Componentify</span>
             </h2>
@@ -80,26 +80,26 @@ export const GetAquote = () => {
                <div>
 
                <div class="mb-3">
-      <label for="name" class="form-label">Nombre:</label>
+      <label for="name" class="form-label"style={{color: "hsl(217, 10%, 50.8%)"}}>Name:</label>
       <input type="text" class="form-control" id="name" value={name} onChange={(e) => setName(e.target.value)} />
     </div>
     
     <div class="mb-3">
-      <label for="email" class="form-label">Email:</label>
+      <label for="email" class="form-label"style={{color: "hsl(217, 10%, 50.8%)"}}>Email:</label>
       <input type="email" class="form-control" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
     </div>
 
     <div class="mb-3">
-      <label for="message" class="form-label">Mensaje:</label>
+      <label for="message" class="form-label"style={{color: "hsl(217, 10%, 50.8%)"}}>Message:</label>
       <textarea class="form-control" id="message" rows="4" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
     </div>
 
     <div class="mb-3">
-      <label for="file" class="form-label">Subir Imagen:</label>
+      <label for="file" class="form-label"style={{color: "hsl(217, 10%, 50.8%)"}}>Upload image:</label>
       <input type="file" class="form-control-file" id="file" onChange={handleFileChange} />
     </div>
 
-    <button type="button" class="btn btn-primary" onClick={handleUpload}>Enviar Cotización</button>
+    <button type="button" class="c-btn c-btn-componentify c-btn-componentify-hover" onClick={handleUpload}>Submit</button>
               </div>
 
 

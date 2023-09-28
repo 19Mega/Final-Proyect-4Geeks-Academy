@@ -39,7 +39,7 @@ export const Suggest = () => {
       <div class="row gx-lg-5 align-items-center">
         <div class="col-lg-6 mb-5 mb-lg-0">
         <h1 class="mb-5 display-3 fw-bold ls-tight">
-            Hello
+            Hello there,
           </h1>
           <h2 class="my-5 fw-bold ls-tight">
           Share your Ideas with  <br />
@@ -53,7 +53,7 @@ export const Suggest = () => {
         </div>
 
         <div class="col-lg-6 mb-5 mb-lg-0">
-          <div class="card" style={{ borderRadius: "1rem", boxShadow: "0 2px 45px #FF5733" }}>
+          <div class="card" style={{ borderRadius: "1rem"}}>
             <div class="card-body py-5 px-md-5">
               <form action="https://formspree.io/f/mnqkgkeb"
                     method="POST">
