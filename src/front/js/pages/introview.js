@@ -60,7 +60,7 @@ const IntroView = () => {
 
             <div className="d-flex justify-content-center mt-3">
 
-              <div className={`c-alert c-alert-silver col-5 mb-3 ${copiedInstallHome ? "copied" : ""}`} role="alert" style={{ height: "3.5rem", width: "20rem" }}>
+              <div className={`c-alert c-alert-silver col-5 mb-3 me-2 ${copiedInstallHome ? "copied" : ""}`} role="alert" style={{ height: "3.5rem", width: "20rem" }}>
                 <span style={{ marginRight: "1rem" }}>
                   $ npm i componentify-23
                 </span>
@@ -75,7 +75,7 @@ const IntroView = () => {
                 type="button"
                 className="btn custom-btn mx-1 text-white"
                 style={{
-                  height: '60px',
+                  height: '55px',
                   display: 'flex',
                   alignItems: 'center',
                   fontSize: '20px',
