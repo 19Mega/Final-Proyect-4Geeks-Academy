@@ -29,7 +29,8 @@ import { BackgroundView } from "./pages/backgroundview";
 
 import { BadgesView } from "./pages/badgesView";
 import { Suggest } from "./pages/suggest";
-import  { GetAquote } from "./pages/getAquote"
+import  { GetAquote } from "./pages/getAquote";
+import { BorderView } from "./pages/bordersView";
 
 
 
@@ -72,7 +73,7 @@ const Layout = () => {
                          {/* UTILITIES */}
                         <Route element={<ColorsView />} path="docs/utilities/colors" />
                         <Route element={<BackgroundView />} path="docs/utilities/bg-colors" />
-
+                        <Route element={<BorderView />} path="docs/utilities/borders" />
                          {/* UTILITIES */}
 
                         <Route element={<AdminSearch />} path="/adminsearch" />

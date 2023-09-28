@@ -307,91 +307,91 @@
 
 /* RISK */
 .brd-risk {
-    border-color: var(--color-risk-border)
+    border: solid 2px var(--color-risk-border)
 }
 /* CAUTION */
 .brd-caution {
-    border-color: var(--color-caution-border)
+    border: solid 2px var(--color-caution-border)
 }
 
 /* SILVER */
 .brd-silver {
-    border-color: var(--color-silver-border)
+    border: solid 2px var(--color-silver-border)
 }
 
 /* GOLD */
 .brd-gold {
-    border: var(--color-gold-border)
+    border: solid 2px var(--color-gold-border)
 }
 
 /* LIME */
 .brd-lime {
-    border: var(--color-lime-border)
+    border: solid 2px var(--color-lime-border)
 }
 
 /* AZURE */
 .brd-azure {
-    border: var(--color-azure-border)
+    border: solid 2px var(--color-azure-border)
 }
 
 /* MOCCA */
 .brd-mocca {
-    border: var(--color-mocca-border)
+    border: solid 2px var(--color-mocca-border)
 }
 
 /* AQUA */
 .brd-aqua {
-    border: var(--color-aqua-border)
+    border: solid 2px var(--color-aqua-border)
 }
 
 /* SLATE */
 .brd-slate {
-    border: var(--color-slate-border)
+    border: solid 2px var(--color-slate-border)
 }
 
 /* COMPONENTIFY */
 .brd-componentify {
-    border: var(--color-componentify-border)
+    border: solid 2px var(--color-componentify-border)
 }
 
 /* LOLLYPOP */
 .brd-lollypop {
-    border: var(--color-lollypop-border)
+    border: solid 2px var(--color-lollypop-border)
 }
 
 /* MINT */
 .brd-mint {
-    border: var(--color-mint-border)
+    border: solid 2px var(--color-mint-border)
 }
 
 /* GLOOMY */
 .brd-gloomy {
-    border: var(--color-gloomy-border)
+    border: solid 2px var(--color-gloomy-border)
 }
 
 /* FOG */
 .brd-fog {
-    border: var(--color-fog-border)
+    border: solid 2px var(--color-fog-border)
 }
 
 /* DARK */
 .brd-dark {
-    border:var(--color-dark-border)
+    border: solid 2px var(--color-dark-border)
 }
 
 /* WIN */
 .brd-win {
-    border:var(--color-win-border)
+    border: solid 2px var(--color-win-border)
 }
 
 /* LAVENDER */
 .brd-lavender {
-    border: var(--color-lavender-border)
+    border: solid 2px var(--color-lavender-border)
 }
 
 /* PURPLE */
 .brd-purple {
-    border:var(--color-purple-border)
+    border: solid 2px var(--color-purple-border)
 }
 
 
@@ -832,4 +832,34 @@
     font-size: 0.875rem;
     font-weight: 600;
 }
+
+/* PROGRESS BARS */
+.progress-container {
+    width: 100%;
+    background-color: #ccc;
+    height: 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  
+  .progress-bar {
+    width: 0;
+    height: 100%;
+    background-color: #007BFF;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  
+  .progress-bar.loading {
+    background-color: #007BFF;
+  }
+  
+  .progress-bar.success {
+    background-color: #28A745;
+  }
+  
+  .progress-bar.error {
+    background-color: #DC3545;
+  }
 
