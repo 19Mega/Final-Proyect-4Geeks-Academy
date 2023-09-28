@@ -11,7 +11,7 @@ export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="text-center">
+		<div className="text-center introview">
 			<IntroView />
 		
 			{/* <MembershipPlans /> */}
