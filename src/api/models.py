@@ -1,5 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
-
+from sqlalchemy import LargeBinary
 
 db = SQLAlchemy()
 
@@ -120,10 +120,10 @@ class Payment(db.Model):
 
 class Quote(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(50), unique=False, nullable=False)
-    email = db.Column(db.String(120), unique=False, nullable=False)
-    message = db.Column(db.String(120), unique=False, nullable=False)  
-    image = db.Column(db.LargeBinary)
+    name = db.Column(db.String(50), nullable=False)
+    data = db.Column(LargeBinary, nullable=False)  # Usamos LargeBinary para almacenar la imagen en binario
+
+
 
     def __repr__(self):
         return f'<Quote {self.id}>'
@@ -132,7 +132,9 @@ class Quote(db.Model):
         return {
             "id": self.id,
             "name": self.name,
-            "email": self.email,
-            "message": self.message,
-            "image":self.image,     
+            "data": self.data,
+         
         }
+    
+
+   

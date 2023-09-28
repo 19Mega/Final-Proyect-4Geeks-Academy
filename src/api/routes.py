@@ -1,8 +1,8 @@
 """
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
-from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Favorite, Component, Plan, Payment
+from flask import Flask, request, jsonify, url_for, Blueprint, render_template_string
+from api.models import db, User, Favorite, Component, Plan, Payment, Quote
 from api.utils import generate_sitemap, APIException
 import json
 from flask_jwt_extended import create_access_token
@@ -10,6 +10,9 @@ from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 from flask_bcrypt import Bcrypt
 import mercadopago
+
+import binascii
+
 
 # Agrega credenciales
 sdk = mercadopago.SDK("APP_USR-2815099995655791-092911-c238fdac299eadc66456257445c5457d-1160950667")
@@ -541,5 +544,46 @@ def get_components_by_name(component_name):
 
     response_body= {"msg": "All components:",
                      "results": results}
+
+    return jsonify(response_body), 200
+
+
+## QUOTE IMAGENNNN ✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+
+@api.route('/upload', methods=['POST'])
+def upload_image():
+    try:
+        image_file = request.files['image']
+        name = request.form['name']
+        
+        if image_file:
+            image_data = image_file.read()
+            new_image = Quote(name=name, data=image_data)
+
+            db.session.add(new_image)
+            db.session.commit()
+            return jsonify({"message": "Image uploaded successfully"})
+        else:
+            return jsonify({"error": "No image provided"}), 400
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@api.route('/image/<int:image_id>', methods=['GET'])
+def get_image(image_id):
+    image = Quote.query.filter_by(id=image_id).first()
+    if not image:
+        return jsonify({"msg": "Image not found"}), 404
+
+    # Obtén la imagen en formato largebinary
+    imagen_largebinary = image.data
+
+    # Convierte la imagen a hexadecimal
+    imagen_hexadecimal = binascii.hexlify(imagen_largebinary).decode('utf-8')
+
+    response_body = {
+        "msg": "Image:",
+        "results": imagen_hexadecimal
+    }
 
     return jsonify(response_body), 200
