@@ -28,7 +28,7 @@ const DocsIntro = () => {
                             <p>Get started by including Componentify's production-ready CSS via CDN without the need for any build steps.</p>
                             <p><span className="text-componentify">1. </span>Create a new index.html file in your project root. Include the <code className="text-componentify">{`<meta name="viewport">`}</code> tag as well for proper responsive behavior in 
                             mobile devices.</p>
-                            <div className="col-9">
+                            <div className="col-12">
                                 <SyntaxHighlighter language="html" style={prism}>
                                 {`<!doctype html>
 <html lang="en">
