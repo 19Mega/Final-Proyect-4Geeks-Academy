@@ -11,25 +11,25 @@ export const Suggest = () => {
   const navigate = useNavigate();
   const {store, actions} = useContext(Context);
 
-  let userName = localStorage.getItem("name");
-  useEffect(() => {
-    // Verifica si el usuario está autenticado al cargar la página
-    const isAuthenticated = !!localStorage.getItem('token'); 
+  // let userName = localStorage.getItem("name");
+  // useEffect(() => {
+  //   // Verifica si el usuario está autenticado al cargar la página
+  //   const isAuthenticated = !!localStorage.getItem('token'); 
 
-    if (!isAuthenticated) {
-      // Si el usuario no está autenticado, alert
-      Swal.fire({
-        icon: 'warning',
-        title: 'Acceso denegado',
-        text: 'Debes iniciar sesión para acceder a esta página.',
-        confirmButtonText: 'Ir a la página de inicio de sesión',
-        allowOutsideClick: false,
-      }).then(() => {
-        // Redirige a la página de inicio de login
-        navigate('/login');
-      });
-    }
-  }, []);
+  //   if (!isAuthenticated) {
+  //     // Si el usuario no está autenticado, alert
+  //     Swal.fire({
+  //       icon: 'warning',
+  //       title: 'Acceso denegado',
+  //       text: 'Debes iniciar sesión para acceder a esta página.',
+  //       confirmButtonText: 'Ir a la página de inicio de sesión',
+  //       allowOutsideClick: false,
+  //     }).then(() => {
+  //       // Redirige a la página de inicio de login
+  //       navigate('/login');
+  //     });
+  //   }
+  // }, []);
 
   return (
 
@@ -39,8 +39,7 @@ export const Suggest = () => {
       <div class="row gx-lg-5 align-items-center">
         <div class="col-lg-6 mb-5 mb-lg-0">
         <h1 class="mb-5 display-3 fw-bold ls-tight">
-            Hello, <br />
-            <span class="text-componentify">{userName}</span>
+            Hello
           </h1>
           <h2 class="my-5 fw-bold ls-tight">
           Share your Ideas with  <br />
@@ -61,20 +60,19 @@ export const Suggest = () => {
                 <div class="row">
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
-                      <input type="text" id="form3Example1" class="form-control" value={localStorage.getItem("name")} disabled/>
-                      <label class="form-label" for="form3Example1"></label>
+                    <label class="form-label" for="form3Example1"style={{color: "hsl(217, 10%, 50.8%)"}}>Name</label>
+                      <input type="text" id="form3Example1" class="form-control"/>
                     </div>
                   </div>
                 </div>
 
                 
                 <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example3"style={{color: "hsl(217, 10%, 50.8%)"}}>Email</label>
                   <input type="email"
                         name="email"
-                        value={localStorage.getItem("email")}
                         className="form-control"
-                        required id="form3Example3" disabled class="form-control" />
-                  <label class="form-label" for="form3Example3"></label>
+                        required id="form3Example3" class="form-control" />
                 </div>
                 <div class="form-outline mb-4">
                 <label htmlFor="message" className="form-label" style={{color: "hsl(217, 10%, 50.8%)"}}>
