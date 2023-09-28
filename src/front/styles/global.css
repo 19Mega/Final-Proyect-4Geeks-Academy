@@ -307,91 +307,91 @@
 
 /* RISK */
 .brd-risk {
-    background-color: var(--color-risk-border)
+    border-color: var(--color-risk-border)
 }
 /* CAUTION */
 .brd-caution {
-    background-color: var(--color-caution-border)
+    border-color: var(--color-caution-border)
 }
 
 /* SILVER */
 .brd-silver {
-    background-color: var(--color-silver-border)
+    border-color: var(--color-silver-border)
 }
 
 /* GOLD */
 .brd-gold {
-   color: var(--color-gold-border)
+    border: var(--color-gold-border)
 }
 
 /* LIME */
 .brd-lime {
-    color: var(--color-lime-border)
+    border: var(--color-lime-border)
 }
 
 /* AZURE */
 .brd-azure {
-    color: var(--color-azure-border)
+    border: var(--color-azure-border)
 }
 
 /* MOCCA */
 .brd-mocca {
-   color: var(--color-mocca-border)
+    border: var(--color-mocca-border)
 }
 
 /* AQUA */
 .brd-aqua {
-    color: var(--color-aqua-border)
+    border: var(--color-aqua-border)
 }
 
 /* SLATE */
 .brd-slate {
-    color: var(--color-slate-border)
+    border: var(--color-slate-border)
 }
 
 /* COMPONENTIFY */
 .brd-componentify {
-    color: var(--color-componentify-border)
+    border: var(--color-componentify-border)
 }
 
 /* LOLLYPOP */
 .brd-lollypop {
-    color: var(--color-lollypop-border)
+    border: var(--color-lollypop-border)
 }
 
 /* MINT */
 .brd-mint {
-    color: var(--color-mint-border)
+    border: var(--color-mint-border)
 }
 
 /* GLOOMY */
 .brd-gloomy {
-    color: var(--color-gloomy-border)
+    border: var(--color-gloomy-border)
 }
 
 /* FOG */
 .brd-fog {
-    color: var(--color-fog-border)
+    border: var(--color-fog-border)
 }
 
 /* DARK */
 .brd-dark {
-    color:var(--color-dark-border)
+    border:var(--color-dark-border)
 }
 
 /* WIN */
 .brd-win {
-    color:var(--color-win-border)
+    border:var(--color-win-border)
 }
 
 /* LAVENDER */
 .brd-lavender {
-    color: var(--color-lavender-border)
+    border: var(--color-lavender-border)
 }
 
 /* PURPLE */
 .brd-purple {
-    color:var(--color-purple-border)
+    border:var(--color-purple-border)
 }
 
 
