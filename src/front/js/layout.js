@@ -34,6 +34,7 @@ import { BorderView } from "./pages/bordersView";
 import BannerView from "./pages/bannerView";
 import ProgressBarsView from "./pages/progressBarsView";
 import { ShadowView } from "./pages/shadowsView";
+import FormView from "./pages/formView";
 
 
 //create your first component
@@ -72,6 +73,7 @@ const Layout = () => {
                         <Route element={<BadgesView />} path="docs/components/badges" />
                         <Route element={<Download />} path="docs/getting-started/download" />
                         <Route element={<ProgressBarsView />} path="docs/components/progress-bars" />
+                        <Route element={<FormView />} path="docs/components/forms" />
 
                          {/* UTILITIES */}
                         <Route element={<ColorsView />} path="docs/utilities/colors" />

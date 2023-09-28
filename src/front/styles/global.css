@@ -1078,3 +1078,85 @@
       width: 100%;
     }
   }
+
+ /* FORM */
+ .c-contact-form-azure {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    border-left: solid 2px var(--color-azure)
+  }
+  
+  .c-form {
+    margin-top: 10px;
+  }
+  
+  .c-form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .c-form-control-azure {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .c-form-control-azure:focus {
+    outline: none;
+    border-color: var(--color-azure-border);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .c-contact-form-lavender {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    border-left: solid 3px var(--color-lavender)
+  }
+
+  .c-form-control-lavender {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .c-form-control-lavender:focus {
+    outline: none;
+    border-color: var(--color-lavender-border);
+    box-shadow: 0 0 5px rgba(213, 214, 255, 0.5);
+  }
+  
+  .c-contact-form-mint {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    border-left: solid 3px var(--color-mint)
+  }
+
+  .c-form-control-mint {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .c-form-control-mint:focus {
+    outline: none;
+    border-color: var(--color-mint-border);
+    box-shadow: 0 0 5px rgba(62, 180, 137, 0.5);
+  }
+  
