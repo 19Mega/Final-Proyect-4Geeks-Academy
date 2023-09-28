@@ -152,8 +152,8 @@ export const SideBar = () => {
 	}
 
 	return (
-		<div className="col-2 mt-3 border-end" style={{backgroundColor: "#f8f9fa"}}>
 
+		<div className="col-2 mt-3 border-end" style={{backgroundColor: "#f8f9fa"}}>
 			<nav className="nav flex-column mt-3">
 			<h5 className="fw-medium" style={{fontSize: '1.1rem'}}>
 				<i className="bi bi-boxes"></i>
@@ -218,8 +218,9 @@ export const SideBar = () => {
 				))}
 			</ul>
 			</nav>
-
+			
 		</div>
+		
 	)
 }
 

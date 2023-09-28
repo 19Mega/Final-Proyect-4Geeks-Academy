@@ -46,6 +46,11 @@ const AlertView = () => {
         <div className="container">
             <div className="row">
                 <SideBar />
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
                 <div className="col-10">
                     {/* seccion derecha de la pagina */}
                     <div className="container">
