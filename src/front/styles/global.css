@@ -872,4 +872,118 @@
 
 /* PROGRESS BARS */
 
+.c-progress-25 {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 9px;
+  }
+  
+  .c-progress-25-bar {
+    width: 0;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    animation: c-progress-25 3s ease-in-out forwards;
+    border-radius: 4px;
+  }
+  
+  .c-progress-text {
+    display: block;
+  }
+  
+  /* animation 25 % */
+  @keyframes c-progress-25 {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 25%;
+    }
+  }
 
+  .c-progress-50 {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 9px;
+  }
+  
+  .c-progress-50-bar {
+    width: 0;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    animation: c-progress-50 3s ease-in-out forwards;
+    border-radius: 4px;
+  }
+  
+  .c-progress-text {
+    display: block;
+  }
+  
+  /* animation 50 % */
+  @keyframes c-progress-50 {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 50%;
+    }
+  }
+
+  .c-progress-75 {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 9px;
+  }
+  
+  .c-progress-75-bar {
+    width: 0;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    animation: c-progress-75 3s ease-in-out forwards;
+    border-radius: 4px;
+  }
+  
+  .c-progress-text {
+    display: block;
+  }
+  
+  /* animation 75 % */
+  @keyframes c-progress-75 {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 75%;
+    }
+  }
+
+  .c-progress-100 {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 9px;
+  }
+  
+  .c-progress-100-bar {
+    width: 0;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    animation: c-progress-100 3s ease-in-out forwards;
+    border-radius: 4px;
+  }
+  
+  .c-progress-text {
+    display: block;
+  }
+  
+  /* animation 100 % */
+  @keyframes c-progress-100 {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
