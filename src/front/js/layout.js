@@ -33,7 +33,7 @@ import  { GetAquote } from "./pages/getAquote";
 import { BorderView } from "./pages/bordersView";
 import BannerView from "./pages/bannerView";
 import ProgressBarsView from "./pages/progressBarsView";
-
+import { ShadowView } from "./pages/shadowsView";
 
 
 //create your first component
@@ -77,6 +77,7 @@ const Layout = () => {
                         <Route element={<ColorsView />} path="docs/utilities/colors" />
                         <Route element={<BackgroundView />} path="docs/utilities/bg-colors" />
                         <Route element={<BorderView />} path="docs/utilities/borders" />
+                        <Route element={<ShadowView />} path="docs/utilities/shadows" />
                          {/* UTILITIES */}
 
                         <Route element={<AdminComponent />} path="/admin-component" />

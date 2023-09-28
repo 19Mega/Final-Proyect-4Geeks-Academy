@@ -112,15 +112,21 @@ export const SideBar = () => {
 			path: "docs/utilities/bg-colors"
 		},
 		{
+			title: 'Borders', 
+			description: 'Different type of border colors',
+			path: "docs/utilities/borders"
+		},
+		{
 			title: 'Colors',
 			description: 'Different text colors', 
 			path: "docs/utilities/colors" 
 		},
 		{
-			title: 'Borders', 
-			description: 'Different type of border colors',
-			path: "docs/utilities/borders"
+			title: 'Shadows', 
+			description: 'Different type of shadow colors',
+			path: "docs/utilities/shadows"
 		}
+		
 	]
 
 	const handleMouseOver = (e) => {
