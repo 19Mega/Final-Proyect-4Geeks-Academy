@@ -37,6 +37,12 @@ export const AdminComponent = () => {
       })
     })
     console.log(response)
+    if (response.status) {
+      alert("Component created.")
+      clearForm();
+    }
+ 
+    
   }
 
   // DELETE COMPONENT
@@ -48,14 +54,7 @@ export const AdminComponent = () => {
 
         if (data.response === 200) {
             alert("Component deleted successfully");
-            // Limpia los campos después de la eliminación.
-            setId("");
-            setName("");
-            setType("");
-            setHtml("");
-            setCss("");
-            setJs("");
-            setReact("");
+            clearForm();
           } else {
             alert("Failed to delete component");
           }
@@ -98,6 +97,10 @@ export const AdminComponent = () => {
       })
     })
     console.log(response)
+    if (response.status) {
+      alert("Update done.")
+      
+    }
   }
 
 
@@ -145,6 +148,18 @@ export const AdminComponent = () => {
         break;
     }
   };
+
+
+  const clearForm = () => {
+    setId('');
+    setName('');
+    setType('');
+    setHtml('');
+    setCss('');
+    setJs('');
+    setReact('');
+  };
+
 
   return (
     <div >

@@ -18,7 +18,7 @@ export const Admin = () => {
   // Función para convertir datos hexadecimales en una URL de imagen
   const hexToImageUrl = (hex) => {
     const buffer = hexToBuffer(hex);
-    const blob = new Blob([buffer], { type: 'image/jpeg' });
+    const blob = new Blob([buffer], { type: "image/jpeg" });
     return URL.createObjectURL(blob);
   };
 
@@ -34,22 +34,61 @@ export const Admin = () => {
     return buffer;
   };
 
+
+  // admin-component
   return (
     <div className="container">
-      {quoteData.map((quote, index) => (
-        <div key={index} className="card my-3">
-          <img
-            className="card-img-top p-3" style={{height:"200px", width:"300px"}}
-            src={hexToImageUrl(quote.image)}
-            alt="Imagen"
-          />
-          <div className="card-body">
-            <h5 className="card-title">{quote.name}</h5>
-            <p className="card-text">{quote.email}</p>
-            <p className="card-text">{quote.message}</p>
+
+      <h3 class="text-lavender my-3">Admin Section</h3>
+
+      <hr/>
+
+      <div className="m-2 mt-4">
+      <Link to={"/admin-component"} >
+      <button type="button" className="c-btn c-btn-lavender c-btn-lavender-hover">To admin components</button>
+      </Link>
+
+      <Link to={"/"} >
+      <button type="button" class="c-btn c-btn-fog c-btn-fog-hover ms-5">Log out</button>
+      </Link>
+
+      </div>
+
+      
+
+      <hr/>
+
+      <div class="c-alert c-alert-lavender" role="alert">  Quote list </div>
+
+
+      <div className="row mt-5">
+      {quoteData.map((quote) => (
+        <div key={quote.id} className="col-md-6 col-lg-4 mb-4 ">
+          <div className="card h-100 brd-lavender">
+            <img 
+              src={hexToImageUrl(quote.image)}
+              className="card-img-top p-3"
+              alt="..."
+              style={{
+                height: "300px",
+                objectFit: "cover"
+              }} 
+              />
+              <div className="card-body d-flex flex-column">
+                <h5 className="card-title">{quote.name}</h5>
+                <p className="card-text flex-grow-1">{quote.message}</p>
+                <p className="mt-auto">{quote.email}</p>
+              </div>
+              <div className="m-2">
+                <button type="button" className="c-btn c-btn-lavender c-btn-lavender-hover">Reply</button>
+                <span class="c-badge text-lavender bg-lavender p-1 m-2"> Soon!</span>
+              </div>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+
+
+      </div>
     </div>
   );
 };
