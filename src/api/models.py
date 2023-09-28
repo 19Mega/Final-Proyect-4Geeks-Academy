@@ -121,6 +121,8 @@ class Payment(db.Model):
 class Quote(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
+    email = db.Column(db.String(100), nullable=False)
+    message = db.Column(db.String(1000), nullable=False)
     data = db.Column(LargeBinary, nullable=False)  # Usamos LargeBinary para almacenar la imagen en binario
 
 
@@ -132,8 +134,9 @@ class Quote(db.Model):
         return {
             "id": self.id,
             "name": self.name,
+            "email": self.email,
+            "message": self.message,
             "data": self.data,
-         
         }
     
 

@@ -550,15 +550,17 @@ def get_components_by_name(component_name):
 
 ## QUOTE IMAGENNNN ✅✅✅✅✅✅✅✅✅✅✅✅✅✅
 
-@api.route('/upload', methods=['POST'])
+@api.route('/quote/add', methods=['POST'])
 def upload_image():
     try:
         image_file = request.files['image']
         name = request.form['name']
-        
+        email = request.form['email']
+        message = request.form['message']
+
         if image_file:
             image_data = image_file.read()
-            new_image = Quote(name=name, data=image_data)
+            new_image = Quote(name=name, email=email, message=message, data=image_data)
 
             db.session.add(new_image)
             db.session.commit()
@@ -569,9 +571,9 @@ def upload_image():
         return jsonify({"error": str(e)}), 500
 
 
-@api.route('/image/<int:image_id>', methods=['GET'])
-def get_image(image_id):
-    image = Quote.query.filter_by(id=image_id).first()
+@api.route('/quote/<int:quote_id>', methods=['GET'])
+def get_image(quote_id):
+    image = Quote.query.filter_by(id=quote_id).first()
     if not image:
         return jsonify({"msg": "Image not found"}), 404
 
@@ -584,6 +586,35 @@ def get_image(image_id):
     response_body = {
         "msg": "Image:",
         "results": imagen_hexadecimal
+    }
+
+    return jsonify(response_body), 200
+
+
+@api.route('/quotes', methods=['GET'])
+def get_all_quotes():
+    quotes = Quote.query.all()
+    if not quotes:
+        return jsonify({"msg": "No quotes found"}), 404
+
+    quote_list = []
+    for quote in quotes:
+        quote_data = {
+            "name": quote.name,
+            "email": quote.email,
+            "message": quote.message
+        }
+
+        # Convierte la imagen a hexadecimal
+        imagen_largebinary = quote.data
+        imagen_hexadecimal = binascii.hexlify(imagen_largebinary).decode('utf-8')
+        quote_data["image"] = imagen_hexadecimal
+
+        quote_list.append(quote_data)
+
+    response_body = {
+        "msg": "All Quotes:",
+        "results": quote_list
     }
 
     return jsonify(response_body), 200
