@@ -8,8 +8,8 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 const Download = () => {
     window.scrollTo(0, 0);
     // const [copied, setCopied] = useState(false);
-    const [copiedCDN, setCopiedCDN] = useState(false); 
-    const [copiedInstall, setCopiedInstall] = useState(false); 
+    const [copiedCDN, setCopiedCDN] = useState(false);
+    const [copiedInstall, setCopiedInstall] = useState(false);
 
     // const handleCopy = () => {
     //     setCopied(true);
@@ -22,14 +22,14 @@ const Download = () => {
         setCopiedCDN(true);
         setTimeout(() => {
             setCopiedCDN(false);
-        }, 2500); 
+        }, 2500);
     };
 
     const handleCopyInstall = () => {
         setCopiedInstall(true);
         setTimeout(() => {
             setCopiedInstall(false);
-        }, 2500); 
+        }, 2500);
     };
 
 
@@ -72,11 +72,11 @@ const Download = () => {
                                     If you prefer a more controlled approach or want access to full documentation and all build scripts, we recommend installing Componentify's CSS source via npm. Below is the command to do so:
                                 </p>
 
-                                <div className={`c-alert c-alert-silver col-5 mb-3 ${copiedInstall ? "copied" : ""}`} role="alert" style={{ height: "3.5rem", width: "20rem" }}>
+                                <div className={`c-alert c-alert-silver col-5 mb-3 ${copiedInstall ? "copied" : ""}`} role="alert" style={{ height: "3.5rem", width: "20rem", display: "flex", alignItems: "center", justifyContent: "space-between", }}>
                                     <span style={{ marginRight: "1rem" }}>
-                                        $ npm install Componentify@1.0.0
+                                        $ npm i componentify-23
                                     </span>
-                                    <CopyToClipboard text="$npm install Componentify@1.0.0" onCopy={handleCopyInstall}>
+                                    <CopyToClipboard text="npm i componentify-23" onCopy={handleCopyInstall}>
                                         <i className={`mr-2 ${copiedInstall ? "fa-solid fa-check fa-xl text-componentify" : "fa-regular fa-clipboard"} fa-xl text-fog`}></i>
                                     </CopyToClipboard>
                                 </div>
