@@ -20,7 +20,7 @@ const BannerView = () => {
       };
       
       const bannerList = [
-`<div class="c-banner bg-lavender">
+`<div class="c-banner bg-componentify">
     <h1 class="display-4">Welcome to our website!</h1>
     <p class="c-lead">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan libero 
@@ -28,7 +28,7 @@ const BannerView = () => {
     </p>
     <hr class="c-my-4"/>
     <p>This is an example of a custom banner.</p>
-    <button class="c-btn c-btn-lavender c-btn-lavender-hover" href="#" role="button">Learn More</button>
+    <button class="c-btn c-btn-componentify c-btn-componentify-hover" href="#" role="button">Learn More</button>
 </div>`,
 `<div class="c-banner bg-slate">
     <h1 class="display-4">Welcome to our website!</h1>
@@ -130,7 +130,7 @@ const BannerView = () => {
     <p>This is an example of a custom banner.</p>
     <button class="c-btn c-btn-risk c-btn-risk-hover" href="#" role="button">Learn More</button>
 </div>`,
-`<div class="c-banner bg-componentify">
+`<div class="c-banner bg-lavender">
     <h1 class="display-4">Welcome to our website!</h1>
     <p class="c-lead">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan libero 
@@ -138,7 +138,7 @@ const BannerView = () => {
     </p>
     <hr class="c-my-4"/>
     <p>This is an example of a custom banner.</p>
-    <button class="c-btn c-btn-componentify c-btn-componentify-hover" href="#" role="button">Learn More</button>
+    <button class="c-btn c-btn-lavender c-btn-lavender-hover" href="#" role="button">Learn More</button>
 </div>`
       ]
     return (
@@ -157,6 +157,7 @@ const BannerView = () => {
                             <p className="fs-5 mt-2 mb-3">The <span style={{ "color": "#FD5812" }}>c-banner component</span> a lightweight, flexible component that can optionally extend the entire viewport to showcase key marketing messages on your site.</p>
                             <h6 className="mb-4 c-alert c-alert-fog mx-3" style={{ "width": "97%", fontWeight: "normal" }}><strong>Color Tip:  </strong>Here, we provide you with some examples using a selection of our colors. You can mix and match our <a style={{ "color": "#FD5812" }} href="/docs/utilities/bg-colors">backgrounds,</a> <a style={{ "color": "#FD5812" }} href="/docs/utilities/borders">borders,</a> <a style={{ "color": "#FD5812" }} href="/docs/utilities/colors"> texts,</a> <a style={{ "color": "#FD5812" }} href="/docs/components/buttons">buttons</a> and more. We'll leave that to your imagination.</h6>
                         </div>
+                        
                         {/* Acá empieza el bello MAP */}
                         {bannerList.map((banner, i) => (
                         <div key={i} className="row">
