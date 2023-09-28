@@ -6,7 +6,6 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { prism } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import ComponentifyLogoDark from "../../img/componentify-logo-dark.png";
 import Sky from "../../img/sky.jpeg";
-import cardImage from "../../img/card-image.png";
 
 
 const CardView = () => {
