@@ -1,5 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
-
+from sqlalchemy import LargeBinary
 
 db = SQLAlchemy()
 
@@ -116,3 +116,28 @@ class Payment(db.Model):
             "id_plan":self.id_plan,     
             # do not serialize the password, its a security breach
         }
+
+
+class Quote(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), nullable=False)
+    email = db.Column(db.String(100), nullable=False)
+    message = db.Column(db.String(1000), nullable=False)
+    data = db.Column(LargeBinary, nullable=False)  # Usamos LargeBinary para almacenar la imagen en binario
+
+
+
+    def __repr__(self):
+        return f'<Quote {self.id}>'
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "email": self.email,
+            "message": self.message,
+            "data": self.data,
+        }
+    
+
+   

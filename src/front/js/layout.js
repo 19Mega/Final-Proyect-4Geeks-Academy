@@ -15,7 +15,7 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
 import { Admin } from "./pages/admin";
-import { AdminSearch } from "./pages/adminSearch";
+import { AdminComponent } from "./pages/adminComponent";
 import { UserProfileData } from "./pages/userProfileData";
 import Contribute from "./pages/contribute ";
 import DocsIntro from "./pages/docs-introduction";
@@ -76,7 +76,7 @@ const Layout = () => {
                         <Route element={<BorderView />} path="docs/utilities/borders" />
                          {/* UTILITIES */}
 
-                        <Route element={<AdminSearch />} path="/adminsearch" />
+                        <Route element={<AdminComponent />} path="/admin-component" />
 
                         <Route element={<UserProfileData/>} path="/userprofiledata" />
 

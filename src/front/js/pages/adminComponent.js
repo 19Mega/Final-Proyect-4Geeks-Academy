@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export const AdminSearch = () => {
+export const AdminComponent = () => {
   const [component, setComponent] = useState({}) // deprecateddd
   const [searchResult, setSearchResult] = useState([]) 
 
@@ -37,6 +37,12 @@ export const AdminSearch = () => {
       })
     })
     console.log(response)
+    if (response.status) {
+      alert("Component created.")
+      clearForm();
+    }
+ 
+    
   }
 
   // DELETE COMPONENT
@@ -48,14 +54,7 @@ export const AdminSearch = () => {
 
         if (data.response === 200) {
             alert("Component deleted successfully");
-            // Limpia los campos después de la eliminación.
-            setId("");
-            setName("");
-            setType("");
-            setHtml("");
-            setCss("");
-            setJs("");
-            setReact("");
+            clearForm();
           } else {
             alert("Failed to delete component");
           }
@@ -98,6 +97,10 @@ export const AdminSearch = () => {
       })
     })
     console.log(response)
+    if (response.status) {
+      alert("Update done.")
+      
+    }
   }
 
 
@@ -146,8 +149,20 @@ export const AdminSearch = () => {
     }
   };
 
+
+  const clearForm = () => {
+    setId('');
+    setName('');
+    setType('');
+    setHtml('');
+    setCss('');
+    setJs('');
+    setReact('');
+  };
+
+
   return (
-    <div style={{backgroundColor:"rgb(222,222,222)"}}>
+    <div >
     <div className="container" >
 
 
@@ -157,7 +172,7 @@ export const AdminSearch = () => {
 
 
 
-      <form className="mt-2 shadow ps-4 pe-2 pt-4 pb-4 border-bottom border-4 border-warning">
+      <form className="mt-2 shadow ps-4 pe-2 pt-4 pb-4 border-bottom border-4 border-warning" style={{backgroundColor:"rgb(212,212,212)"}}>
         <div className="input-group mb-2">
           <div className="me-2">
             <div className="input-group-text">#id</div>
@@ -256,10 +271,10 @@ export const AdminSearch = () => {
 
 
       {/**** search section ****/}
-      <form className="my-5 pt-2 shadow border-bottom border-4 border-warning">
+      <form className="my-5 pt-2 shadow border-bottom border-4 border-warning" style={{backgroundColor:"rgb(212,212,212)"}}> 
 
 
-        <div className="m-4 p-3 border border-4 border-warning rounded text-light bg-dark">    
+        <div className="m-4 p-3 border border-4 border-warning rounded text-light bg-dark" >    
             <strong>🔎 SEARCH SECTION</strong>
         </div>
 
