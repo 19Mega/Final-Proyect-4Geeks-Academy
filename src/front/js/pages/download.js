@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../../styles/global.css"
 import "./global.js"
 import { SideBar } from "../component/sideBar"
-import { CopyToClipboard } from "react-copy-to-clipboard"; // Asegúrate de importar react-copy-to-clipboard
+import { CopyToClipboard } from "react-copy-to-clipboard"; 
 
 
 const Download = () => {
@@ -22,7 +22,6 @@ const Download = () => {
         <div className="row" id="main">
             <SideBar />
             <div className="col-10">
-                {/* Sección derecha de la página */}
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
