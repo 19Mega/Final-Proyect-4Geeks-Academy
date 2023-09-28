@@ -62,7 +62,7 @@ export const Navbar = () => {
           </li>
 
           <li className="nav-item d-flex align-items-center">
-            <Link to="/getaquote" className="nav-link text-white">
+            <Link to="/quotes" className="nav-link text-white">
             Get a Quote
             </Link>
           </li>

@@ -19,7 +19,7 @@ import { AdminSearch } from "./pages/adminSearch";
 import { UserProfileData } from "./pages/userProfileData";
 import Contribute from "./pages/contribute ";
 import DocsIntro from "./pages/docs-introduction";
-
+import Download from "./pages/download";
 import { Context } from "./store/appContext";
 import CardView from "./pages/cardView";
 import { ThankYou } from "./pages/thankYou";
@@ -68,7 +68,7 @@ const Layout = () => {
                         <Route element={<CardView />} path="docs/components/cards" />
 
                         <Route element={<BadgesView />} path="docs/components/badges" />
-
+                        <Route element={<Download />} path="docs/getting-started/download" />
 
                          {/* UTILITIES */}
                         <Route element={<ColorsView />} path="docs/utilities/colors" />
