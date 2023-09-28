@@ -833,33 +833,43 @@
     font-weight: 600;
 }
 
+/* BANNERS */
+
+.c-banner {
+    padding: 2rem 1rem;
+    border-radius: 0.3rem; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* title */
+  .display-4 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* p */
+  .c-lead {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* hr */
+  .c-my-4 {
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+    margin: 1rem 0;
+  }
+  
+  /* p secondary */
+  .c-banner p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .c-banner a {
+    text-decoration:none;
+  }
+
+
 /* PROGRESS BARS */
-.progress-container {
-    width: 100%;
-    background-color: #ccc;
-    height: 20px;
-    border-radius: 4px;
-    margin-bottom: 20px;
-    overflow: hidden;
-  }
-  
-  .progress-bar {
-    width: 0;
-    height: 100%;
-    background-color: #007BFF;
-    transition: width 0.3s ease-in-out;
-  }
-  
-  
-  .progress-bar.loading {
-    background-color: #007BFF;
-  }
-  
-  .progress-bar.success {
-    background-color: #28A745;
-  }
-  
-  .progress-bar.error {
-    background-color: #DC3545;
-  }
+
 

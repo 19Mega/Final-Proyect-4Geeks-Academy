@@ -31,6 +31,7 @@ import { BadgesView } from "./pages/badgesView";
 import { Suggest } from "./pages/suggest";
 import  { GetAquote } from "./pages/getAquote";
 import { BorderView } from "./pages/bordersView";
+import BannerView from "./pages/bannerView";
 
 
 
@@ -66,7 +67,7 @@ const Layout = () => {
                         <Route element={<AlertView />} path="docs/components/alerts" />
                         <Route element={<ButtonView />} path="docs/components/buttons" />
                         <Route element={<CardView />} path="docs/components/cards" />
-
+                        <Route element={<BannerView />} path="docs/components/banners" />
                         <Route element={<BadgesView />} path="docs/components/badges" />
                         <Route element={<Download />} path="docs/getting-started/download" />
 
