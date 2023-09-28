@@ -63,9 +63,9 @@ export const SideBar = () => {
 			path: "docs/components/list-groups" 
 		},
 		{
-			title: 'Modals',
-			description: 'Overlay pop up windows',
-			path: "docs/components/modals"
+			title: 'Forms',
+			description: 'Forms',
+			path: "docs/components/forms"
 		},
 		{
 			title: 'Navs & Navbars',
