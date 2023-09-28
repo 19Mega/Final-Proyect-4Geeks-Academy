@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { Context } from "../store/appContext";
 import "../../styles/intro.css";
 import "../../styles/signup.css";
+import Swal from 'sweetalert2';
+
 
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -66,6 +68,26 @@ const Signup = () => {
 
     const letras = { color: "dark" };
     const menuColor = "#FD5812"
+
+
+    useEffect(() => {
+      // Verifica si el usuario está autenticado al cargar la página
+      const isAuthenticated = !!localStorage.getItem('token'); 
+  
+      if (!isAuthenticated) {
+        // Si el usuario no está autenticado, alert
+        Swal.fire({
+          icon: 'warning',
+          title: 'Access Denied',
+          text: 'You must loggin as an admin to access this section.',
+          confirmButtonText: 'Go to Login',
+          allowOutsideClick: false,
+        }).then(() => {
+          // Redirige a la página de inicio de login
+          navigate('/login');
+        });
+      }
+    }, []);
 
     return (
 

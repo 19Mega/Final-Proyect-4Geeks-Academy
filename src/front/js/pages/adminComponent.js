@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 export const AdminComponent = () => {
+  const navigate = useNavigate();
+
   const [component, setComponent] = useState({}) // deprecateddd
   const [searchResult, setSearchResult] = useState([]) 
 
@@ -117,9 +120,6 @@ export const AdminComponent = () => {
   };
 
 
-
-
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     switch (name) {
@@ -160,19 +160,44 @@ export const AdminComponent = () => {
     setReact('');
   };
 
+useEffect(() => {
+    // Verifica si el usuario está autenticado al cargar la página
+    const isAuthenticated = !!localStorage.getItem('token'); 
+
+    if (!isAuthenticated) {
+      // Si el usuario no está autenticado, alert
+      Swal.fire({
+        icon: 'warning',
+        title: 'Access Denied',
+        text: 'You must loggin as an admin to access this section.',
+        confirmButtonText: 'Go to Login',
+        allowOutsideClick: false,
+      }).then(() => {
+        // Redirige a la página de inicio de login
+        navigate('/login');
+      });
+    }
+  }, []);
+
 
   return (
     <div >
     <div className="container" >
 
+    <h3 class="text-lavender my-3">Admin Component</h3>
 
-      <div className="m-5 p-3 border border-4 border-warning rounded text-light bg-dark">
-        <strong>Alert!</strong> This is a dangerous section that directly affects the database and is exclusively for administrators.
+<hr/>
+
+
+      <div className="m-2 ">
+        <Link to={"/c-admin"} >
+          <button type="button" className="c-btn c-btn-lavender c-btn-lavender-hover">To admin</button>
+        </Link>
       </div>
 
+      <hr className="my-3"/>
 
-
-      <form className="mt-2 shadow ps-4 pe-2 pt-4 pb-4 border-bottom border-4 border-warning" style={{backgroundColor:"rgb(212,212,212)"}}>
+      <form className="mt-2 ps-4 pe-2 pt-4 pb-4 bg-lavender text-lavender brd-lavender" >
         <div className="input-group mb-2">
           <div className="me-2">
             <div className="input-group-text">#id</div>
@@ -261,10 +286,11 @@ export const AdminComponent = () => {
         </div>
 
         <div className="d-flex justify-content-between">
-        <button className="btn btn-secondary me-3" onClick={(e) => { e.preventDefault(); fetchComponent(id); }} >Search by ID</button> 
-        <button type="submit" className="btn btn-success me-3" onClick={(e) => { e.preventDefault(); fetchComponentCreate()}}>Add Component</button>
-        <button type="submit" className="btn btn-warning me-3" onClick={(e) => { e.preventDefault(); fetchComponentUpdate(id)}}>Modify Component</button>
-        <button type="submit" className="btn btn-danger me-3 ms-auto" onClick={(e) => { e.preventDefault(); fetchComponentDelete(id)}}>Delete Component</button>
+
+        <button type="button" class="c-btn c-btn-lavender c-btn-lavender-hover me-3" onClick={(e) => { e.preventDefault(); fetchComponent(id); }}> Search by ID </button>
+        <button type="button" class="c-btn c-btn-azure c-btn-lavender-hover me-3" onClick={(e) => { e.preventDefault(); fetchComponentCreate()}}>Add Component</button>
+        <button type="button" class="c-btn c-btn-gold c-btn-lavender-hover me-3" onClick={(e) => { e.preventDefault(); fetchComponentUpdate(id)}}>Modify Component</button>
+        <button type="button" class="c-btn c-btn-risk c-btn-risk-hover ms-auto" onClick={(e) => { e.preventDefault(); fetchComponentDelete(id)}}>Delete Component</button>
         </div>
       </form>
    
@@ -273,10 +299,8 @@ export const AdminComponent = () => {
       {/**** search section ****/}
       <form className="my-5 pt-2 shadow border-bottom border-4 border-warning" style={{backgroundColor:"rgb(212,212,212)"}}> 
 
+      <div class="c-alert c-alert-fog m-4 p-3" role="alert">🔎 SEARCH SECTION</div>
 
-        <div className="m-4 p-3 border border-4 border-warning rounded text-light bg-dark" >    
-            <strong>🔎 SEARCH SECTION</strong>
-        </div>
 
         {/* TODO: cambiar los fetchs */}
         <form className="d-flex justify-content-between align-items-center">

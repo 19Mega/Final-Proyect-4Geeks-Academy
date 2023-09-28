@@ -1,8 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+import { Link, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import { Context } from "../store/appContext";
+
 
 export const Admin = () => {
   const [quoteData, setQuoteData] = useState([]);
+  const navigate = useNavigate();
+  const { store, actions } = useContext(Context);
 
   useEffect(() => {
     const fetchQuotes = async () => {
@@ -12,7 +17,28 @@ export const Admin = () => {
       console.log("All Quotes: ", data.results);
     };
 
-    fetchQuotes();
+
+    // Verifica si el usuario está autenticado al cargar la página
+    const isAuthenticated = !!localStorage.getItem('token'); 
+
+    if (!isAuthenticated) {
+      // Si el usuario no está autenticado, alert
+      Swal.fire({
+        icon: 'warning',
+        title: 'Access Denied',
+        text: 'You must loggin as an admin to access this section.',
+        confirmButtonText: 'Go to Login',
+        allowOutsideClick: false,
+      }).then(() => {
+        // Redirige a la página de inicio de login
+        navigate('/login');
+      });
+    }
+    else{
+      fetchQuotes();
+    }
+ 
+    
   }, []);
 
   // Función para convertir datos hexadecimales en una URL de imagen
@@ -34,6 +60,12 @@ export const Admin = () => {
     return buffer;
   };
 
+  async function logout(event) { // al presionar el botón logout, redirecciona al home y tiene que aparecer el botón login en la barra
+    event.preventDefault()
+    actions.logout()
+    navigate("/")
+}
+
 
   // admin-component
   return (
@@ -48,9 +80,9 @@ export const Admin = () => {
       <button type="button" className="c-btn c-btn-lavender c-btn-lavender-hover">To admin components</button>
       </Link>
 
-      <Link to={"/"} >
-      <button type="button" class="c-btn c-btn-fog c-btn-fog-hover ms-5">Log out</button>
-      </Link>
+      
+      <button type="button" class="c-btn c-btn-fog c-btn-fog-hover ms-5" onClick={logout} >Log out</button>
+     
 
       </div>
 
@@ -81,7 +113,7 @@ export const Admin = () => {
               </div>
               <div className="m-2">
                 <button type="button" className="c-btn c-btn-lavender c-btn-lavender-hover">Reply</button>
-                <span class="c-badge text-lavender bg-lavender p-1 m-2"> Soon!</span>
+                
               </div>
             </div>
           </div>

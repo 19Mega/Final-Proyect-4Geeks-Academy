@@ -50,25 +50,85 @@ export const GetAquote = () => {
   };
 
   return (
-    <div>
-      <label>
-        Nombre:
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-      </label>
-      <br />
-      <label>
-        Email:
-        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      </label>
-      <br />
-      <label>
-        Mensaje:
-        <textarea value={message} onChange={(e) => setMessage(e.target.value)} />
-      </label>
-      <br />
-      <input type="file" onChange={handleFileChange} />
-      <button onClick={handleUpload}>Subir Imagen</button>
+
+    <div class="px-4 py-5 px-md-5 text-center text-lg-start h-100" style={{backgroundColor: "hsl(0, 0%, 100%)"}}>
+      <div class="container">
+        <div class="row gx-lg-5 align-items-center">
+          
+          <div class="col-lg-6 mb-5 mb-lg-0">
+        
+            <h1 class="mb-5 display-3 fw-bold ls-tight mt-0">
+              Request a Custom <span class="text-componentify">Component</span> Quote
+            </h1>
+            <h2 class="my-5 fw-bold ls-tight">
+            Share your Ideas with  
+            <br/>
+              <span class="text-componentify">Componentify</span>
+            </h2>
+            <p style={{color: "hsl(217, 10%, 50.8%)"}}>
+            We're thrilled that you're interested in Componentify for your custom component needs! Let us know what you have in mind, 
+            and we'll get back to you with a personalized quote. We're all about making your component dreams come true, 
+            so don't hesitate to reach out. We're here to help!
+            </p>
+
+          </div>
+            
+          <div class="col-lg-6 mb-5 mb-lg-0">
+             <div class="card shadow p-3" style={{ borderRadius: "1rem"}}>
+               <div class="card-body py-5 px-md-5">
+
+               <div>
+
+               <div class="mb-3">
+      <label for="name" class="form-label">Nombre:</label>
+      <input type="text" class="form-control" id="name" value={name} onChange={(e) => setName(e.target.value)} />
     </div>
+    
+    <div class="mb-3">
+      <label for="email" class="form-label">Email:</label>
+      <input type="email" class="form-control" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+    </div>
+
+    <div class="mb-3">
+      <label for="message" class="form-label">Mensaje:</label>
+      <textarea class="form-control" id="message" rows="4" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="file" class="form-label">Subir Imagen:</label>
+      <input type="file" class="form-control-file" id="file" onChange={handleFileChange} />
+    </div>
+
+    <button type="button" class="btn btn-primary" onClick={handleUpload}>Enviar Cotización</button>
+              </div>
+
+
+               </div> 
+            </div> 
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
   );
 };
 
@@ -107,23 +167,23 @@ export const GetAquote = () => {
 // return (
 
 
-//     <div class="px-4 py-5 px-md-5 text-center text-lg-start h-100" style={{backgroundColor: "hsl(0, 0%, 100%)"}}>
-//       <div class="container">
-//         <div class="row gx-lg-5 align-items-center">
-//           <div class="col-lg-6 mb-5 mb-lg-0">
-//           <h1 class="mb-5 display-3 fw-bold ls-tight mt-0">
-//               Request a Custom <span class="text-componentify">Component</span> Quote
-//             </h1>
-//             <h2 class="my-5 fw-bold ls-tight">
-//             Share your Ideas with  <br />
-//               <span class="text-componentify">Componentify</span>
-//             </h2>
-//             <p style={{color: "hsl(217, 10%, 50.8%)"}}>
-//             We're thrilled that you're interested in Componentify for your custom component needs! Let us know what you have in mind, 
-//             and we'll get back to you with a personalized quote. We're all about making your component dreams come true, 
-//             so don't hesitate to reach out. We're here to help!
-//             </p>
-//           </div>
+    // <div class="px-4 py-5 px-md-5 text-center text-lg-start h-100" style={{backgroundColor: "hsl(0, 0%, 100%)"}}>
+    //   <div class="container">
+    //     <div class="row gx-lg-5 align-items-center">
+    //       <div class="col-lg-6 mb-5 mb-lg-0">
+    //       <h1 class="mb-5 display-3 fw-bold ls-tight mt-0">
+    //           Request a Custom <span class="text-componentify">Component</span> Quote
+    //         </h1>
+    //         <h2 class="my-5 fw-bold ls-tight">
+    //         Share your Ideas with  <br />
+    //           <span class="text-componentify">Componentify</span>
+    //         </h2>
+    //         <p style={{color: "hsl(217, 10%, 50.8%)"}}>
+    //         We're thrilled that you're interested in Componentify for your custom component needs! Let us know what you have in mind, 
+    //         and we'll get back to you with a personalized quote. We're all about making your component dreams come true, 
+    //         so don't hesitate to reach out. We're here to help!
+    //         </p>
+    //       </div>
   
 //           <div class="col-lg-6 mb-5 mb-lg-0">
 //             <div class="card shadow p-3" style={{ borderRadius: "1rem"}}>

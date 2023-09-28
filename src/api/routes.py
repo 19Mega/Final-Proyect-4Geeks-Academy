@@ -68,6 +68,7 @@ def preference():
 
 # USER SIGNUP
 @api.route('/signup', methods=['POST'])
+@jwt_required() # SOLO ADMINS
 def signup_user():
     body = json.loads(request.data)
     #pw_hash = current_app.bcrypt.generate_password_hash(body["password"]).decode('utf-8') # NO
@@ -429,6 +430,7 @@ def delete_plan(plan_id):
 # # # # # COMPONENT 🔳🔳🔳🟧🟨🟩🟦
 
 @api.route('/components', methods = ['GET'])
+
 def get_components():
     # /components?page=1&per_page=10 #get first page, 10 components.
     # /components?page=2&per_page=10 #get second page, 10 components.
@@ -451,6 +453,7 @@ def get_components():
 
 
 @api.route('/component/<int:component_id>', methods=['GET'])
+
 def get_one_component(component_id):
 
     component = Component.query.filter_by(id=component_id).first()
@@ -464,6 +467,7 @@ def get_one_component(component_id):
 
 
 @api.route('/component/add', methods=['POST'])  # TODO >> only admin jwt
+
 def add_component():
     request_body = request.get_json(force=True)
     
@@ -486,6 +490,7 @@ def add_component():
 
 
 @api.route('/component/delete/<int:component_id>', methods=['DELETE']) # TODO >> only admin jwt
+
 def delete_component(component_id):
     # component exist ?
     component = Component.query.get(component_id)
@@ -498,6 +503,7 @@ def delete_component(component_id):
 
 
 @api.route('/component/update/<int:component_id>', methods=['PUT'])  # TODO >> only admin jwt
+
 def update_component(component_id):
     # component exist ?
     component = Component.query.get(component_id)
@@ -572,6 +578,7 @@ def upload_image():
 
 
 @api.route('/quote/<int:quote_id>', methods=['GET'])
+@jwt_required()
 def get_image(quote_id):
     image = Quote.query.filter_by(id=quote_id).first()
     if not image:
@@ -592,6 +599,7 @@ def get_image(quote_id):
 
 
 @api.route('/quotes', methods=['GET'])
+#@jwt_required() # se rompe y no sale alerta
 def get_all_quotes():
     quotes = Quote.query.all()
     if not quotes:
