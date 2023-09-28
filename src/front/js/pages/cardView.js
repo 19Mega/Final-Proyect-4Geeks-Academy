@@ -19,7 +19,7 @@ const CardView = () => {
         <div className="col-10">
             <div className="container">
                 <div className="row">
-                    <h1 className="mt-3">Cards</h1>
+                    <h1 className="mt-3"><strong>Cards</strong></h1>
                     <p className="fs-5 mt-2 mb-3">The <span className="text-componentify">c-card</span> component is a versatile and enhanced version
                         that provides a simple interface for headings, text, images, icons, and more.
                     </p>

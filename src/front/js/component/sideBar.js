@@ -63,9 +63,9 @@ export const SideBar = () => {
 			path: "docs/components/list-groups" 
 		},
 		{
-			title: 'Modals',
-			description: 'Overlay pop up windows',
-			path: "docs/components/modals"
+			title: 'Forms',
+			description: 'Forms',
+			path: "docs/components/forms"
 		},
 		{
 			title: 'Navs & Navbars',
@@ -112,10 +112,21 @@ export const SideBar = () => {
 			path: "docs/utilities/bg-colors"
 		},
 		{
+			title: 'Borders', 
+			description: 'Different type of border colors',
+			path: "docs/utilities/borders"
+		},
+		{
 			title: 'Colors',
 			description: 'Different text colors', 
 			path: "docs/utilities/colors" 
+		},
+		{
+			title: 'Shadows', 
+			description: 'Different type of shadow colors',
+			path: "docs/utilities/shadows"
 		}
+		
 	]
 
 	const handleMouseOver = (e) => {
@@ -141,8 +152,8 @@ export const SideBar = () => {
 	}
 
 	return (
-		<div className="col-2 mt-3 border-end" style={{backgroundColor: "#f8f9fa"}}>
 
+		<div className="col-2 mt-3 border-end" style={{backgroundColor: "#f8f9fa"}}>
 			<nav className="nav flex-column mt-3">
 			<h5 className="fw-medium" style={{fontSize: '1.1rem'}}>
 				<i className="bi bi-boxes"></i>
@@ -207,8 +218,9 @@ export const SideBar = () => {
 				))}
 			</ul>
 			</nav>
-
+			
 		</div>
+		
 	)
 }
 

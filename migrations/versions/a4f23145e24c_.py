@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 185ea1240922
+Revision ID: a4f23145e24c
 Revises: 
-Create Date: 2023-09-18 19:35:52.179242
+Create Date: 2023-09-28 04:49:35.021132
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '185ea1240922'
+revision = 'a4f23145e24c'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -33,6 +33,14 @@ def upgrade():
     sa.Column('plan_type_name', sa.String(length=120), nullable=False),
     sa.Column('price', sa.Float(precision=50), nullable=False),
     sa.Column('description', sa.String(length=120), nullable=False),
+    sa.PrimaryKeyConstraint('id')
+    )
+    op.create_table('quote',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('name', sa.String(length=50), nullable=False),
+    sa.Column('email', sa.String(length=100), nullable=False),
+    sa.Column('message', sa.String(length=1000), nullable=False),
+    sa.Column('data', sa.LargeBinary(), nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('user',
@@ -71,6 +79,7 @@ def downgrade():
     op.drop_table('payment')
     op.drop_table('favorite')
     op.drop_table('user')
+    op.drop_table('quote')
     op.drop_table('plan')
     op.drop_table('component')
     # ### end Alembic commands ###

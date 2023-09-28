@@ -1,8 +1,8 @@
 """
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
-from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Favorite, Component, Plan, Payment
+from flask import Flask, request, jsonify, url_for, Blueprint, render_template_string
+from api.models import db, User, Favorite, Component, Plan, Payment, Quote
 from api.utils import generate_sitemap, APIException
 import json
 from flask_jwt_extended import create_access_token
@@ -10,6 +10,9 @@ from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 from flask_bcrypt import Bcrypt
 import mercadopago
+
+import binascii
+
 
 # Agrega credenciales
 sdk = mercadopago.SDK("APP_USR-2815099995655791-092911-c238fdac299eadc66456257445c5457d-1160950667")
@@ -47,7 +50,7 @@ def preference():
             "email":"test_user_17805074@testuser.com" 
         },                                                                                          
         "back_urls": {
-            "success": "https://effective-rotary-phone-q7q7vxvwqq7gh974r-3000.app.github.dev",
+            "success": "https://sample-service-name-j4oc.onrender.com/thankyou",
             "failure": "https://effective-rotary-phone-q7q7vxvwqq7gh974r-3000.app.github.dev",
             "pending": "https://effective-rotary-phone-q7q7vxvwqq7gh974r-3000.app.github.dev"
         },
@@ -65,6 +68,7 @@ def preference():
 
 # USER SIGNUP
 @api.route('/signup', methods=['POST'])
+@jwt_required() # SOLO ADMINS
 def signup_user():
     body = json.loads(request.data)
     #pw_hash = current_app.bcrypt.generate_password_hash(body["password"]).decode('utf-8') # NO
@@ -426,6 +430,7 @@ def delete_plan(plan_id):
 # # # # # COMPONENT 🔳🔳🔳🟧🟨🟩🟦
 
 @api.route('/components', methods = ['GET'])
+
 def get_components():
     # /components?page=1&per_page=10 #get first page, 10 components.
     # /components?page=2&per_page=10 #get second page, 10 components.
@@ -447,7 +452,8 @@ def get_components():
     return jsonify(response_body), 200
 
 
-@ api.route('/component/<int:component_id>', methods=['GET'])
+@api.route('/component/<int:component_id>', methods=['GET'])
+
 def get_one_component(component_id):
 
     component = Component.query.filter_by(id=component_id).first()
@@ -460,7 +466,8 @@ def get_one_component(component_id):
     return jsonify(response_body), 200
 
 
-@ api.route('/component/add', methods=['POST'])  # TODO >> only admin jwt
+@api.route('/component/add', methods=['POST'])  # TODO >> only admin jwt
+
 def add_component():
     request_body = request.get_json(force=True)
     
@@ -483,6 +490,7 @@ def add_component():
 
 
 @api.route('/component/delete/<int:component_id>', methods=['DELETE']) # TODO >> only admin jwt
+
 def delete_component(component_id):
     # component exist ?
     component = Component.query.get(component_id)
@@ -495,6 +503,7 @@ def delete_component(component_id):
 
 
 @api.route('/component/update/<int:component_id>', methods=['PUT'])  # TODO >> only admin jwt
+
 def update_component(component_id):
     # component exist ?
     component = Component.query.get(component_id)
@@ -517,3 +526,103 @@ def update_component(component_id):
                     "response": component.serialize() }), 200
 
 
+@api.route('/components/<string:component_name>', methods = ['GET'])
+def get_components_by_name(component_name):
+    # /components?page=1&per_page=10 #get first page, 10 components.
+    # /components?page=2&per_page=10 #get second page, 10 components.
+
+    # page=request.args.get('page', default = 1, type = int)
+    # per_page=request.args.get('per_page', default = 10, type = int)
+
+    # start_index=(page - 1) * per_page
+    # end_index=start_index + per_page
+
+    #component_query=Component.query.slice(start_index, end_index).all()  # Pagination
+
+    component_query = Component.query.filter_by(name=component_name).all() # No pagination
+    if not component_query:
+        empty_list = ["No components found with that Name"]
+        return jsonify({"msg": "Component not found", 
+                        "results":empty_list}), 404
+
+    results=list(map(lambda item: item.serialize(), component_query))
+
+
+    response_body= {"msg": "All components:",
+                     "results": results}
+
+    return jsonify(response_body), 200
+
+
+## QUOTE IMAGENNNN ✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+
+@api.route('/quote/add', methods=['POST'])
+def upload_image():
+    try:
+        image_file = request.files['image']
+        name = request.form['name']
+        email = request.form['email']
+        message = request.form['message']
+
+        if image_file:
+            image_data = image_file.read()
+            new_image = Quote(name=name, email=email, message=message, data=image_data)
+
+            db.session.add(new_image)
+            db.session.commit()
+            return jsonify({"message": "Image uploaded successfully"})
+        else:
+            return jsonify({"error": "No image provided"}), 400
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@api.route('/quote/<int:quote_id>', methods=['GET'])
+@jwt_required()
+def get_image(quote_id):
+    image = Quote.query.filter_by(id=quote_id).first()
+    if not image:
+        return jsonify({"msg": "Image not found"}), 404
+
+    # Obtén la imagen en formato largebinary
+    imagen_largebinary = image.data
+
+    # Convierte la imagen a hexadecimal
+    imagen_hexadecimal = binascii.hexlify(imagen_largebinary).decode('utf-8')
+
+    response_body = {
+        "msg": "Image:",
+        "results": imagen_hexadecimal
+    }
+
+    return jsonify(response_body), 200
+
+
+@api.route('/quotes', methods=['GET'])
+#@jwt_required() # se rompe y no sale alerta
+def get_all_quotes():
+    quotes = Quote.query.all()
+    if not quotes:
+        return jsonify({"msg": "No quotes found"}), 404
+
+    quote_list = []
+    for quote in quotes:
+        quote_data = {
+            "name": quote.name,
+            "email": quote.email,
+            "message": quote.message
+        }
+
+        # Convierte la imagen a hexadecimal
+        imagen_largebinary = quote.data
+        imagen_hexadecimal = binascii.hexlify(imagen_largebinary).decode('utf-8')
+        quote_data["image"] = imagen_hexadecimal
+
+        quote_list.append(quote_data)
+
+    response_body = {
+        "msg": "All Quotes:",
+        "results": quote_list
+    }
+
+    return jsonify(response_body), 200

@@ -14,7 +14,7 @@ export const ThankYou = () => {
   <div class="card c-alert-lavender border border-5 mt-5" style={{ width: "80%", height: "65%"}}>
     <div class="card-body">
       <h2 class="card-title">Thank You for Your Support!</h2>
-      <hr className="c-alert-lavender" />
+      <hr className="c- alert c-alert-lavender" />
             <p class="card-text"> Certainly! Here's a longer and more detailed thank-you message for a donation: </p>
             <p class="card-text"> "We want to express our heartfelt gratitude for your incredibly generous donation. Your unwavering support and kindness are invaluable to us, and they play a crucial role in advancing our mission and making a positive impact on the lives of those we serve. </p>
             <p class="card-text"> Your contribution goes beyond a simple financial transaction; it symbolizes your belief in our cause and your commitment to making a difference in the world. With your help, we can continue our important work, striving to achieve our goals and create lasting change in our community and beyond. </p>

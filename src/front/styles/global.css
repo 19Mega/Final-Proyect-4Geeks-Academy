@@ -307,93 +307,184 @@
 
 /* RISK */
 .brd-risk {
-    background-color: var(--color-risk-border)
+    border: solid 2px var(--color-risk-border)
 }
 /* CAUTION */
 .brd-caution {
-    background-color: var(--color-caution-border)
+    border: solid 2px var(--color-caution-border)
 }
 
 /* SILVER */
 .brd-silver {
-    background-color: var(--color-silver-border)
+    border: solid 2px var(--color-silver-border)
 }
 
 /* GOLD */
 .brd-gold {
-   color: var(--color-gold-border)
+    border: solid 2px var(--color-gold-border)
 }
 
 /* LIME */
 .brd-lime {
-    color: var(--color-lime-border)
+    border: solid 2px var(--color-lime-border)
 }
 
 /* AZURE */
 .brd-azure {
-    color: var(--color-azure-border)
+    border: solid 2px var(--color-azure-border)
 }
 
 /* MOCCA */
 .brd-mocca {
-   color: var(--color-mocca-border)
+    border: solid 2px var(--color-mocca-border)
 }
 
 /* AQUA */
 .brd-aqua {
-    color: var(--color-aqua-border)
+    border: solid 2px var(--color-aqua-border)
 }
 
 /* SLATE */
 .brd-slate {
-    color: var(--color-slate-border)
+    border: solid 2px var(--color-slate-border)
 }
 
 /* COMPONENTIFY */
 .brd-componentify {
-    color: var(--color-componentify-border)
+    border: solid 2px var(--color-componentify-border)
 }
 
 /* LOLLYPOP */
 .brd-lollypop {
-    color: var(--color-lollypop-border)
+    border: solid 2px var(--color-lollypop-border)
 }
 
 /* MINT */
 .brd-mint {
-    color: var(--color-mint-border)
+    border: solid 2px var(--color-mint-border)
 }
 
 /* GLOOMY */
 .brd-gloomy {
-    color: var(--color-gloomy-border)
+    border: solid 2px var(--color-gloomy-border)
 }
 
 /* FOG */
 .brd-fog {
-    color: var(--color-fog-border)
+    border: solid 2px var(--color-fog-border)
 }
 
 /* DARK */
 .brd-dark {
-    color:var(--color-dark-border)
+    border: solid 2px var(--color-dark-border)
 }
 
 /* WIN */
 .brd-win {
-    color:var(--color-win-border)
+    border: solid 2px var(--color-win-border)
 }
 
 /* LAVENDER */
 .brd-lavender {
-    color: var(--color-lavender-border)
+    border: solid 2px var(--color-lavender-border)
 }
 
 /* PURPLE */
 .brd-purple {
-    color:var(--color-purple-border)
+    border: solid 2px var(--color-purple-border)
 }
 
+/* SHADOWS */
+
+/* Shadow Risk */
+.c-shadow-risk {
+    box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+}
+
+/* Shadow Caution */
+.c-shadow-caution {
+    box-shadow: 0 6px 20px rgba(255, 202, 40, 0.4);
+}
+
+/* Shadow Silver */
+.c-shadow-silver {
+    box-shadow: 0 6px 20px rgba(196, 196, 196, 0.4);
+}
+
+/* Shadow Gold */
+.c-shadow-gold {
+    box-shadow: 0 6px 20px rgba(223, 194, 35, 0.4);
+}
+
+/* Shadow con color Lime */
+.c-shadow-lime {
+    box-shadow: 0 6px 20px rgba(100, 245, 100, 0.4);
+}
+
+/* Shadow con color Azure */
+.c-shadow-azure {
+    box-shadow: 0 6px 20px rgba(0, 127, 255, 0.4);
+}
+
+/* Shadow con color Mocca */
+.c-shadow-mocca {
+    box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+}
+
+/* Shadow con color Aqua */
+.c-shadow-aqua {
+    box-shadow: 0 6px 20px rgba(81, 243, 243, 0.4);
+}
+
+/* Shadow con color Slate */
+.c-shadow-slate {
+    box-shadow: 0 6px 20px rgba(112, 128, 144, 0.4);
+}
+
+/* Shadow con color Componentify */
+.c-shadow-componentify {
+    box-shadow: 0 6px 20px rgba(253, 88, 18, 0.4);
+}
+
+/* Shadow con color Lollypop */
+.c-shadow-lollypop {
+    box-shadow: 0 6px 20px rgba(247, 93, 170, 0.4);
+}
+
+/* Shadow con color Mint */
+.c-shadow-mint {
+    box-shadow: 0 6px 20px rgba(62, 180, 137, 0.4);
+}
+
+/* Shadow con color Gloomy */
+.c-shadow-gloomy {
+    box-shadow: 0 6px 20px rgba(41, 43, 46, 0.4);
+}
+
+/* Shadow con color Fog */
+.c-shadow-fog {
+    box-shadow: 0 6px 20px rgba(248, 249, 250, 0.4);
+}
+
+/* Shadow con color Dark */
+.c-shadow-dark {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Shadow con color Win */
+.c-shadow-win {
+    box-shadow: 0 6px 20px rgba(25, 135, 84, 0.4);
+}
+
+/* Shadow con color Lavender */
+.c-shadow-lavender {
+    box-shadow: 0 6px 20px rgba(214, 214, 250, 0.4);
+}
+
+/* Shadow con color Purple */
+.c-shadow-purple {
+    box-shadow: 0 6px 20px rgba(160, 8, 160, 0.4);
+}
 
 /* ALERTS */
 
@@ -833,3 +924,239 @@
     font-weight: 600;
 }
 
+/* BANNERS */
+
+.c-banner {
+    padding: 2rem 1rem;
+    border-radius: 0.3rem; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* title */
+  .display-4 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* p */
+  .c-lead {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* hr */
+  .c-my-4 {
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+    margin: 1rem 0;
+  }
+  
+  /* p secondary */
+  .c-banner p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .c-banner a {
+    text-decoration:none;
+  }
+
+
+/* PROGRESS BARS */
+
+.c-progress-25 {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 9px;
+  }
+  
+  .c-progress-25-bar {
+    width: 0;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    animation: c-progress-25 3s ease-in-out forwards;
+    border-radius: 4px;
+  }
+  
+  .c-progress-text {
+    display: block;
+  }
+  
+  /* animation 25 % */
+  @keyframes c-progress-25 {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 25%;
+    }
+  }
+
+  .c-progress-50 {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 9px;
+  }
+  
+  .c-progress-50-bar {
+    width: 0;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    animation: c-progress-50 3s ease-in-out forwards;
+    border-radius: 4px;
+  }
+  
+  .c-progress-text {
+    display: block;
+  }
+  
+  /* animation 50 % */
+  @keyframes c-progress-50 {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 50%;
+    }
+  }
+
+  .c-progress-75 {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 9px;
+  }
+  
+  .c-progress-75-bar {
+    width: 0;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    animation: c-progress-75 3s ease-in-out forwards;
+    border-radius: 4px;
+  }
+  
+  .c-progress-text {
+    display: block;
+  }
+  
+  /* animation 75 % */
+  @keyframes c-progress-75 {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 75%;
+    }
+  }
+
+  .c-progress-100 {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 9px;
+  }
+  
+  .c-progress-100-bar {
+    width: 0;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    animation: c-progress-100 3s ease-in-out forwards;
+    border-radius: 4px;
+  }
+  
+  .c-progress-text {
+    display: block;
+  }
+  
+  /* animation 100 % */
+  @keyframes c-progress-100 {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+ /* FORM */
+ .c-contact-form-azure {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    border-left: solid 2px var(--color-azure)
+  }
+  
+  .c-form {
+    margin-top: 10px;
+  }
+  
+  .c-form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .c-form-control-azure {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .c-form-control-azure:focus {
+    outline: none;
+    border-color: var(--color-azure-border);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .c-contact-form-lavender {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    border-left: solid 3px var(--color-lavender)
+  }
+
+  .c-form-control-lavender {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .c-form-control-lavender:focus {
+    outline: none;
+    border-color: var(--color-lavender-border);
+    box-shadow: 0 0 5px rgba(213, 214, 255, 0.5);
+  }
+  
+  .c-contact-form-mint {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    border-left: solid 3px var(--color-mint)
+  }
+
+  .c-form-control-mint {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .c-form-control-mint:focus {
+    outline: none;
+    border-color: var(--color-mint-border);
+    box-shadow: 0 0 5px rgba(62, 180, 137, 0.5);
+  }
+  

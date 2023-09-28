@@ -1,107 +1,141 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+import { Link, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import { Context } from "../store/appContext";
+
 
 export const Admin = () => {
-  const [components, setComponents] = useState([]);
+  const [quoteData, setQuoteData] = useState([]);
+  const navigate = useNavigate();
+  const { store, actions } = useContext(Context);
 
   useEffect(() => {
-    const fetchComponents = async () => {
-      const response = await fetch(process.env.BACKEND_URL + "/api/components");
+    const fetchQuotes = async () => {
+      const response = await fetch(process.env.BACKEND_URL + "/api/quotes");
       const data = await response.json();
-      setComponents(data.results);
+      setQuoteData(data.results);
+      console.log("All Quotes: ", data.results);
     };
 
-    fetchComponents();
+
+    // Verifica si el usuario está autenticado al cargar la página
+    const isAuthenticated = !!localStorage.getItem('token'); 
+
+    if (!isAuthenticated) {
+      // Si el usuario no está autenticado, alert
+      Swal.fire({
+        icon: 'warning',
+        title: 'Access Denied',
+        text: 'You must loggin as an admin to access this section.',
+        confirmButtonText: 'Go to Login',
+        allowOutsideClick: false,
+      }).then(() => {
+        // Redirige a la página de inicio de login
+        navigate('/login');
+      });
+    }
+    else{
+      fetchQuotes();
+    }
+ 
+    
   }, []);
 
+  // Función para convertir datos hexadecimales en una URL de imagen
+  const hexToImageUrl = (hex) => {
+    const buffer = hexToBuffer(hex);
+    const blob = new Blob([buffer], { type: "image/jpeg" });
+    return URL.createObjectURL(blob);
+  };
+
+  // Función para convertir datos hexadecimales en un ArrayBuffer
+  const hexToBuffer = (hex) => {
+    const buffer = new ArrayBuffer(hex.length / 2);
+    const view = new DataView(buffer);
+
+    for (let i = 0; i < hex.length; i += 2) {
+      view.setUint8(i / 2, parseInt(hex.substr(i, 2), 16));
+    }
+
+    return buffer;
+  };
+
+  async function logout(event) { // al presionar el botón logout, redirecciona al home y tiene que aparecer el botón login en la barra
+    event.preventDefault()
+    actions.logout()
+    navigate("/")
+}
+
+
+  // admin-component
   return (
     <div className="container">
-    
-    <div className="m-5 p-3 border border-4 border-warning rounded text-light bg-dark">        
-    <strong>Alert!</strong> This is a dangerous section that directly affects the database and is exclusively for administrators.
-        </div>
 
-    {components.map(component => (
-        <form className="mt-5 shadow ps-4 pe-2 pt-4 pb-4 border-bottom border-4 border-warning">
-            
+      <h3 class="text-lavender my-3">Admin Section</h3>
 
-            <div className="input-group mb-2">
-                <div className="me-2">
-                <div className="input-group-text ">#id</div>
-                <input type="text" id="disabledTextInput" className="form-control" placeholder="Disabled input" value={component.id}/>
-                </div>
+      <hr/>
 
-                <div className="me-2">
-                <div className="input-group-text">Name</div>
-                <input type="text" id="disabledTextInput" className="form-control" placeholder="Disabled input" value={component.name}/>
-                </div>
+      <div className="m-2 mt-4">
+      <Link to={"/admin-component"} >
+      <button type="button" className="c-btn c-btn-lavender c-btn-lavender-hover">To admin components</button>
+      </Link>
 
-                <div className="me-2">
-                <div className="input-group-text">Type</div>
-                <input type="text" id="disabledTextInput" className="form-control" placeholder="Disabled input" value={component.type}/>
-                </div>
-                 
+      
+      <button type="button" class="c-btn c-btn-fog c-btn-fog-hover ms-5" onClick={logout} >Log out</button>
+     
+
+      </div>
+
+      
+
+      <hr/>
+
+      <div class="c-alert c-alert-lavender" role="alert">  Quote list </div>
+
+
+      <div className="row mt-5">
+      {quoteData.map((quote) => (
+        <div key={quote.id} className="col-md-6 col-lg-4 mb-4 ">
+          <div className="card h-100 brd-lavender">
+            <img 
+              src={hexToImageUrl(quote.image)}
+              className="card-img-top p-3"
+              alt="..."
+              style={{
+                height: "300px",
+                objectFit: "cover"
+              }} 
+              />
+              <div className="card-body d-flex flex-column">
+                <h5 className="card-title">{quote.name}</h5>
+                <p className="card-text flex-grow-1">{quote.message}</p>
+                <p className="mt-auto">{quote.email}</p>
+              </div>
+              <div className="m-2">
+                <button type="button" className="c-btn c-btn-lavender c-btn-lavender-hover">Reply</button>
+                
+              </div>
             </div>
+          </div>
+        ))}
 
 
-            <div className="row mb-3">
-                <label className="col-sm-1 col-form-label">HTML</label>
-                    <div className="col-sm-11">
-                         <textarea className="form-control" id="exampleTextarea" rows="3" value={component.html_code}> </textarea>
-                    </div>
-            </div>
-
-            <div className="row mb-3">
-                <label className="col-sm-1 col-form-label">CSS</label>
-                    <div className="col-sm-11">
-                         <textarea className="form-control" id="exampleTextarea" rows="3" value={component.css_code}> </textarea>
-                    </div>
-            </div>
-
-            <div className="row mb-3">
-                <label className="col-sm-1 col-form-label">JS</label>
-                    <div className="col-sm-11">
-                         <textarea className="form-control" id="exampleTextarea" rows="3" value={component.js_code}> </textarea>
-                    </div>
-            </div>
-
-            <div className="row mb-3">
-                <label className="col-sm-1 col-form-label">REACT</label>
-                    <div className="col-sm-11">
-                         <textarea className="form-control" id="exampleTextarea" rows="3" value={component.react_code}> </textarea>
-                    </div>
-            </div>
-
-
-
-            <button type="submit" className="btn btn-primary me-3">Submit</button>
-            <button className="btn btn-secondary me-3">Check</button>
-            <button className="btn btn-warning me-3">Modify</button>
-            <button className="btn btn-danger me-3">Delete</button>
-            
-        </form>
-
-    
-
-        
-    ))}
-
-
+      </div>
     </div>
   );
 };
 
 
-{/* <div className="container">
-{components.map(component => (
-    <div key={component.id}>
-        {component.id} - {component.type} - {component.name}        
-        {component.type} 
-        <code>{component.html_code}</code>
-        <code>{component.css_code}</code>
-        <code>{component.js_code}</code>
-        <code>{component.react_code}</code>   
-    </div>
-))
-}
-</div> */}
+
+// const [imageData, setImageData] = useState('');
+
+// useEffect(() => {
+//   const fetchImage = async () => {
+//     const response = await fetch(process.env.BACKEND_URL + "/api/image/" + 1);
+//     const data = await response.json();
+//     setImageData(data.results);
+//     console.log("BY NAME: ", data.results);
+//   };
+
+//   fetchImage();
+// }, []);

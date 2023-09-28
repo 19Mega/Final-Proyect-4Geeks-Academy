@@ -1,6 +1,7 @@
 import React from "react";
 import ComponentifyLogoDark from "../../img/componentify-logo-dark.png";
 import { Link } from "react-router-dom";
+import "../../styles/footer.css";
 
 
 
@@ -14,7 +15,7 @@ export const Footer = () => {
       <hr style={{
         color: "#FD5812",
         border: "0px",
-        height: "2px",
+        height: "0px",
         textAlign: "center",
         backgroundImage: "linear-gradient(left, #fff, #FD5812, )"
       }} />
@@ -35,7 +36,7 @@ export const Footer = () => {
               style={{ marginTop: '-10px' }}
             />
             <span className="text-dark ml-2">
-              <h5><strong>COMPONENTIFY</strong></h5>
+              <h5 id="footer-li"><strong>COMPONENTIFY</strong></h5>
             </span>
           </div>
 
@@ -45,20 +46,20 @@ export const Footer = () => {
           <ul className="display-flex list-group">
 
             <li className="list-group-item border-0  p-0  m-0 text-start">
-               <Link  className="text-dark" to="/docs/getting-started/introduction/" style={{ textDecoration: "none" }}>Docs</Link>
+               <Link  className="text-dark" to="/docs/getting-started/introduction/" style={{ textDecoration: "none" }} id="footer-li">Docs</Link>
             </li>
             <li className="list-group-item border-0 p-0  m-0 text-start">
-               <Link className="text-dark" to="/contribute" style={{ textDecoration: "none" }}>Contribute</Link>
+               <Link className="text-dark" to="/contribute" style={{ textDecoration: "none" }} id="footer-li">Contribute</Link>
             </li>
           </ul>
         </div>
         <div class="col">
           <ul className="display-flex list-group">
-            <li className="list-group-item border-0 p-0  m-0 text-start">
-              <Link className="text-dark" to="/contact" style={{ textDecoration: "none" }}>Contact</Link>
+            <li className="list-group-item border-0 p-0  m-0 text-start" >
+              <Link className="text-dark" to="/contact" style={{ textDecoration: "none" }} id="footer-li">Contact</Link>
             </li>
             <li className="list-group-item border-0 p-0  m-0 text-start">
-              <Link className="text-dark" to="/suggest" style={{ textDecoration: "none" }}>Suggest</Link>
+              <Link className="text-dark" to="/suggest" style={{ textDecoration: "none" }} id="footer-li">Suggest</Link>
             </li>
           </ul>
         </div>
